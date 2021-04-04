@@ -29,10 +29,10 @@
       "@generated/*": ["./src/generated/*"],
       "@public/*": ["./public/*"],
       "@utils/*": ["./src/utils/*"],
-      "@app/*": ["./src/app/*"],
-      "@assets/*": ["./src/assets/*"]
+      "@styles/*": ["./src/styles/*"],
+      "@app/*": ["./src/app/*"]
     }
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", "next.config.js"]
+  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", "**/*.svg", "next.config.js"]
 }
