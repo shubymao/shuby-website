@@ -1,0 +1,25 @@
+{
+  "title": "Shuby Mao",
+  "subtitle": "Student • Developer • Engineeer",
+  "mainIcon": "main-icon-home.svg",
+  "intrest": [
+    {
+      "title": "Software Development",
+      "description": "Experienced in developing software for backend system, web, mobile, and desktop applications.",
+      "icon": "code.svg",
+      "links": [{ "name": "Learn More", "url": "#" }]
+    },
+    {
+      "title": "System Management",
+      "description": "Experienced in managing system infrastructure through the use scripting and management tools.",
+      "icon": "server.svg",
+      "links": [{ "name": "Learn More", "url": "#" }]
+    },
+    {
+      "title": "Competitive Programing",
+      "description": "Actively participated in global coding competitions such as Google KickStart and Leetcode Contests.",
+      "icon": "cp.svg",
+      "links": [{ "name": "Learn More", "url": "#" }]
+    }
+  ]
+}
