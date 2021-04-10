@@ -22,7 +22,6 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:import/typescript',
     'prettier',
-    'prettier/@typescript-eslint',
   ],
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
@@ -47,7 +46,6 @@ module.exports = {
       },
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        paths: ['src'],
       },
     },
   },

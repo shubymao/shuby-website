@@ -21,7 +21,7 @@
       "@screens/*": ["./src/screens/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@services/*": ["./src/services/*"],
-      "@constants": ["./src/constants.ts"],
+      "@constants/*": ["./src/constants/*"],
       "@context/*": ["./src/context/*"],
       "@queries/*": ["./src/queries/*"],
       "@data/*": ["./src/data/*"],
@@ -34,5 +34,5 @@
     }
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", "**/*.svg", "next.config.js"]
+  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", "**/*.svg", "**/*.json", "next.config.js"]
 }
