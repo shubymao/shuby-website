@@ -38,14 +38,23 @@ module.exports = {
       'error',
       { functions: false, classes: false, variables: true },
     ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      { devDependencies: false, optionalDependencies: false, peerDependencies: false },
+    ],
+    'import/no-unresolved': [2, { caseSensitive: false }],
   },
   settings: {
     'import/resolver': {
       'babel-module': {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      webpack: {
+        config: {
+          resolve: {
+            modules: ['node_modules'],
+          },
+        },
       },
     },
   },

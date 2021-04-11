@@ -1,4 +1,4 @@
-import { Page } from '@typeDefs/page';
+import { Page } from '@typeDefs/component';
 import React from 'react';
 
 export interface CardProps {
@@ -11,7 +11,7 @@ export interface CardProps {
 const getLinks = (links: Array<Page>) => {
   if (!links || links.length === 0) return null;
   return (
-    <div className="w-full py-3 flex flex-row-reverse border-t">
+    <div className="w-full flex pt-3 space-x-3 border-t">
       {links.map((link) => (
         <a key={link.name} href={link.url}>
           {link.name}
@@ -24,22 +24,15 @@ const getLinks = (links: Array<Page>) => {
 const Card: React.FC<CardProps> = (props) => {
   const { attribution, title, description, links } = props;
   return (
-    <div className="md:border-2 px-6 pt-4 flex flex-col justify-between rounded-xl">
-      <div className="text-center flex flex-col items-center pb-3">
-        {attribution}
-        <div className="mt-2 sm:max-w-lg md:px-2 space-y-2">
-          <h2 className="text-xl">{title}</h2>
-          <p>{description}</p>
-        </div>
+    <div className="md:border-2 md:px-6 py-4 flex flex-col space-y-4 rounded-xl">
+      {attribution}
+      <div className="sm:max-w-lg space-y-4">
+        <h2 className="text-xl">{title}</h2>
+        <p>{description}</p>
+        {getLinks(links)}
       </div>
-      {getLinks(links)}
     </div>
   );
-};
-
-export const generateCards = (cards: Array<CardProps>): Array<JSX.Element> => {
-  if (cards.length === 0) return [];
-  return cards.map((card) => <Card key={card.title} {...card} />);
 };
 
 export default Card;

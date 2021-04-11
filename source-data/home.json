@@ -1,0 +1,70 @@
+{
+  "title": "Shuby Mao",
+  "subtitle": "Student • Developer • Engineeer",
+  "mainIcon": "main-icon-home.svg",
+  "intrest": {
+    "title": "Skills and Intrests",
+    "cards": [
+      {
+        "title": "Software Development",
+        "description": "Experienced in developing software for backend system, web, mobile, and desktop applications.",
+        "attribution": { "path": "code.svg" },
+        "links": [{ "name": "Learn More", "url": "/comingsoon" }]
+      },
+      {
+        "title": "System Management",
+        "description": "Experienced in managing IT infrastructure through the use scripting and management tools.",
+        "attribution": { "path": "server.svg" },
+        "links": [{ "name": "Learn More", "url": "/comingsoon" }]
+      },
+      {
+        "title": "Competitive Programing",
+        "description": "Actively participated in global coding competitions such as Google KickStart and Leetcode Contests.",
+        "attribution": { "path": "cp.svg" },
+        "links": [{ "name": "Learn More", "url": "/comingsoon" }]
+      }
+    ]
+  },
+  "project": {
+    "title": "Projects",
+    "cards": [
+      {
+        "title": "Laptop Lending System",
+        "description": "Developed a full stack application using Django and React for form management and status tracking.",
+        "links": [{ "name": "Learn More", "url": "/comingsoon" }]
+      },
+      {
+        "title": "Sudoku Solver Web",
+        "description": "Experienced in managing IT infrastructure through the use scripting and management tools.",
+        "links": [
+          { "name": "Learn More", "url": "/comingsoon" },
+          { "name": "Github", "url": "https://github.com/shubymao/sudoku-solver-web" }
+        ]
+      },
+      {
+        "title": "Web Multplayer Maze",
+        "description": "Real time web game that tracks player movement using the firestore, real time database.",
+        "links": [{ "name": "Learn More", "url": "/comingsoon" }]
+      }
+    ]
+  },
+  "education": {
+    "logo": "mcgill.svg",
+    "title": "Education",
+    "Subtitle": "Bachlor of Software Engineering",
+    "cards": [
+      {
+        "title": "Academic Excellence",
+        "description": "Passionately engaged in academic courses and maintained a of 3.98/4 CGPA."
+      },
+      {
+        "title": "Extra Curricular Activities",
+        "description": "Actively participated in computer taskforce and school competitions to enhance univeristy experience."
+      },
+      {
+        "title": "Awards and Scholarship",
+        "description": "Received renewable scholarship and named on the Dean's Honour List (top-10%) 3 consective school year."
+      }
+    ]
+  }
+}

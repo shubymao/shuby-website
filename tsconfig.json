@@ -24,13 +24,13 @@
       "@constants/*": ["./src/constants/*"],
       "@context/*": ["./src/context/*"],
       "@queries/*": ["./src/queries/*"],
-      "@data/*": ["./src/data/*"],
       "@typeDefs/*": ["./src/types/*"],
       "@generated/*": ["./src/generated/*"],
-      "@public/*": ["./public/*"],
       "@utils/*": ["./src/utils/*"],
       "@styles/*": ["./src/styles/*"],
-      "@app/*": ["./src/app/*"]
+      "@app/*": ["./src/app/*"],
+      "@public/*": ["./public/*"],
+      "@data/*": ["./source-data/*"]
     }
   },
   "exclude": ["node_modules"],

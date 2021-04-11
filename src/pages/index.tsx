@@ -3,18 +3,16 @@ import React from 'react';
 import Banner from '@components/banner';
 import Section from '@components/section';
 import MetaInfo from '@components/metainfo';
-import home from '@constants/home.json';
-import { CardProps, generateCards } from '@components/card';
+import home from '@data/home.json';
 import importSVGWithClass from '@utils/graphics-utils';
 import CardGrid from '@components/card-grid';
+import SubSection from '@components/subsection';
+import { generateCards } from '@utils/layout-utils';
+import { CARD_SVG_STYLE } from '@styles/styles';
 
-const homeIcon = importSVGWithClass(home.mainIcon, 'w-48 mx-auto');
-const { title } = home;
-const { subtitle } = home;
-const intrests: Array<CardProps> = home.intrest.map((item) => {
-  const attribution = importSVGWithClass(item.icon, 'mx-auto flex-none w-14 md:w-20 ');
-  return { attribution, ...item };
-});
+const { title, subtitle, mainIcon, intrest, project, education } = home;
+const homeIcon = importSVGWithClass(mainIcon, 'w-48 mx-auto');
+const eduLogo = importSVGWithClass(education.logo, 'mx-auto md:w-80 w-48');
 
 export default function Home(): JSX.Element {
   return (
@@ -22,8 +20,20 @@ export default function Home(): JSX.Element {
       <MetaInfo pageTitle={title} />
       <Page>
         <Banner title={title} subtitle={subtitle} attribution={homeIcon} />
-        <Section>
-          <CardGrid>{generateCards(intrests)}</CardGrid>
+        <Section title={intrest.title}>
+          <CardGrid>{generateCards(intrest.cards, CARD_SVG_STYLE)}</CardGrid>
+        </Section>
+        <Section title={project.title}>
+          <CardGrid>{generateCards(project.cards)}</CardGrid>
+        </Section>
+        <Section title={education.title}>
+          {eduLogo}
+          <SubSection title={education.Subtitle} alignTitle="center">
+            <CardGrid>{generateCards(education.cards)}</CardGrid>
+          </SubSection>
+        </Section>
+        <Section title="Articles">
+          <p>Articles Coming Soon</p>
         </Section>
       </Page>
     </>

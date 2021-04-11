@@ -1,6 +1,6 @@
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FooterLink } from '@typeDefs/footer-link';
+import { FooterLink } from '@typeDefs/component';
 import React from 'react';
 import { FOOTER_LINKS } from 'src/constants/page-info';
 import { HOVER_STLYE } from '@styles/styles';

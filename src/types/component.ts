@@ -1,0 +1,39 @@
+import { IconDefinition } from '@fortawesome/fontawesome-common-types';
+import { alignment } from './layout';
+
+export interface FooterLink {
+  icon: IconDefinition;
+  url: string;
+}
+
+export interface Page {
+  name: string;
+  url: string;
+}
+
+export interface CardGridData {
+  type: 'cardgrid';
+  cards: Array<CardData>;
+}
+
+export interface CardData {
+  attribution?: Attribution;
+  title: string;
+  description: string;
+  links?: Array<Page>;
+}
+
+export interface SectionData {
+  title?: string;
+  alignTitle?: alignment;
+}
+
+export interface TextData {
+  content: string;
+  style: string;
+}
+
+export interface Attribution {
+  path: string;
+  alt?: string;
+}

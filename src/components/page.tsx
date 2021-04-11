@@ -11,10 +11,10 @@ const Page: React.FC<PageProps> = (props) => {
   return (
     <div className="w-full">
       <Header />
-      <div className="w-full min-h-screen flex flex-col pb-16" style={{ paddingTop: '40px' }}>
-        {children}
+      <div className="w-full min-h-screen flex flex-col justify-between" style={{ paddingTop: '40px' }}>
+        <div className="pb-16">{children}</div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };
