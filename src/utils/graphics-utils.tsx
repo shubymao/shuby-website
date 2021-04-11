@@ -2,6 +2,10 @@ import dynamic from 'next/dynamic';
 import React, { ComponentType } from 'react';
 import { Attribution } from '@typeDefs/component';
 
+export function stl(style: string): string {
+  return style;
+}
+
 export default function importSVGWithClass(path: string, className: string): JSX.Element {
   const SVGICON: ComponentType = dynamic(() => import(`../../public/${path}`).then((mod) => mod));
   return (
