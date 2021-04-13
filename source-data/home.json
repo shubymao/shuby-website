@@ -1,27 +1,27 @@
 {
   "title": "Shuby Mao",
   "subtitle": "Student • Developer • Engineeer",
-  "mainIcon": "main-icon-home.svg",
+  "mainIcon": "home/main-icon-home.svg",
   "intrest": {
     "title": "Skills and Intrests",
     "cards": [
       {
         "title": "Software Development",
-        "description": "Experienced in developing software for backend system, web, mobile, and desktop applications.",
-        "attribution": { "path": "code.svg" },
-        "links": [{ "name": "Learn More", "url": "/comingsoon" }]
+        "description": "Familiar with commonly used development practices and tools. Experienced in full stack development.",
+        "attribution": { "path": "home/code.svg" },
+        "links": [{ "name": "Learn More", "url": "/software" }]
       },
       {
         "title": "System Management",
         "description": "Experienced in managing IT infrastructure through the use scripting and management tools.",
-        "attribution": { "path": "server.svg" },
+        "attribution": { "path": "home/server.svg" },
         "links": [{ "name": "Learn More", "url": "/comingsoon" }]
       },
       {
         "title": "Competitive Programing",
         "description": "Actively participated in global coding competitions such as Google KickStart and Leetcode Contests.",
-        "attribution": { "path": "cp.svg" },
-        "links": [{ "name": "Learn More", "url": "/comingsoon" }]
+        "attribution": { "path": "home/cp.svg" },
+        "links": [{ "name": "LeetCode Profile", "url": "https://leetcode.com/Le_LI_Mao/" }]
       }
     ]
   },
@@ -49,7 +49,7 @@
     ]
   },
   "education": {
-    "logo": "mcgill.svg",
+    "logo": "home/mcgill.svg",
     "title": "Education",
     "Subtitle": "Bachlor of Software Engineering",
     "cards": [

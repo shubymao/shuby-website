@@ -1,0 +1,94 @@
+{
+  "title": "Software Technologies",
+  "brief": "The software world have a wide variety of problem, one must be familiar with multiple tools to select the right tool for the job.",
+  "languages": {
+    "title": "Programming Languages",
+    "cards": [
+      {
+        "title": "Java",
+        "description": "My main programming languages for developing desktop applications and backend systems. Used to developed application such as Quoridor, GroupUp, and Pet Adoption App.",
+        "attribution": { "path": "languages/java.svg" }
+      },
+      {
+        "title": "Typescript",
+        "description": "Used to develop all web related projects. Example such as this website, sudoku solver web, and web multiplayer maze.",
+        "attribution": { "path": "languages/typescript.svg" }
+      },
+      {
+        "title": "C++",
+        "description": "Primarily used in competitive programing due to the performance benefit it offered over other heavy runtime programing languages.",
+        "attribution": { "path": "languages/cplusplus.svg" }
+      },
+      {
+        "title": "Python",
+        "description": "Mainly for AI/ML project, Django applications and some automation. Some usage includes TSP visualizer, CTF laptop lending system, and Knowledge-Base-Backend.",
+        "attribution": { "path": "languages/python.svg" }
+      },
+      {
+        "title": "C#",
+        "description": "Used during the internship to develop Windows desktop applications to validate networking hardware and perform security verification in the device ROM.",
+        "attribution": { "path": "languages/csharp.svg" }
+      },
+      {
+        "title": "Rust",
+        "description": "Recently learned programming language. It offers some safety memory guarantee while being extremely performant. More project coming soon.",
+        "attribution": { "path": "languages/rust.svg" }
+      },
+      {
+        "title": "Ocaml",
+        "description": "A language that introduced me to the functional programming paradigm. Mainly used in the course COMP-302 Programming Languages and Paradigms.",
+        "attribution": { "path": "languages/ocaml.svg" }
+      }
+    ]
+  },
+  "web": {
+    "title": "Frontend Technologies",
+    "cards": [
+      {
+        "title": "React",
+        "description": "My favorite web development framework. Its component-based system makes creating stateful web application extremely quick and easy.",
+        "attribution": { "path": "web/react.svg" }
+      },
+      {
+        "title": "Next.JS",
+        "description": "The framework used to create this site. It offers the ability to create server-side rendering react application or exported as a static site",
+        "attribution": { "path": "web/next.svg" }
+      },
+      {
+        "title": "Tailwind CSS",
+        "description": "A utility first CSS framework that help build responsive layout with minimal effort. Also used in this website.",
+        "attribution": { "path": "web/tailwind.svg" }
+      },
+      {
+        "title": "HTML",
+        "description": "The most basic building block of the web. I am familiar with majority of the syntax and practices, but I usually use it along with other web frameworks.",
+        "attribution": { "path": "web/html.svg" }
+      },
+      {
+        "title": "CSS",
+        "description": "Although I usually prefer other styling libraries such as tailwind or styled component when it comes to styling html component, I am familiar with majority of the CSS syntax and concepts.",
+        "attribution": { "path": "web/css.svg" }
+      }
+    ]
+  },
+  "backend": {
+    "title": "Backend Technologies",
+    "cards": [
+      {
+        "title": "Spring",
+        "description": "A Java framework ",
+        "attribution": { "path": "backend/spring.svg" }
+      },
+      {
+        "title": "Django",
+        "description": "",
+        "attribution": { "path": "backend/django.svg" }
+      },
+      {
+        "title": "PostgreSQL",
+        "description": "",
+        "attribution": { "path": "backend/postgresql.svg" }
+      }
+    ]
+  }
+}
