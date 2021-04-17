@@ -14,10 +14,10 @@ const blurStyle: React.CSSProperties = { backdropFilter: 'saturate(180%) blur(20
 export default function Header(): JSX.Element {
   return (
     <header style={blurStyle} className="fixed w-full bg-black bg-opacity-70 items-center shadow-xl">
-      <div className="container max-w-5xl flex justify-between mx-auto">
+      <div className="container max-w-6xl flex justify-between mx-auto">
         <a href="/" className="flex items-center mx-auto md:mx-3 px-2 space-x-2">
           <Icon height="40px" />
-          <p className="hidden sm:block whitespace-nowrap text-lg text-white font-bold">{HEADER_TITLE}</p>
+          <p className="sm:block whitespace-nowrap text-lg text-white font-bold">{HEADER_TITLE}</p>
         </a>
         <nav className="hidden md:flex flex-row w-full justify-evenly">
           {MAIN_PAGES.map(rederHeaderItems)}

@@ -46,7 +46,7 @@ const Content: React.FC<ContentProps> = (props) => {
         <p>{description}</p>
       </div>
       <div className="cursor-pointer border-t mt-3" onClick={open}>
-        <p className="cursor-pointer text-center pt-3">Click Here To Learn More</p>
+        <p className="cursor-pointer text-center pt-3">Click here for more detail</p>
       </div>
     </div>
   );
@@ -55,14 +55,17 @@ const Content: React.FC<ContentProps> = (props) => {
 const Detail: React.FC<DetailProps> = (props) => {
   const { close, title, location, date, detail } = props;
   return (
-    <div className="space-y-3 fade-in">
+    <div className="fade-in">
       <div onClick={close} className="cursor-pointer">
         <span className="text-xl">{title}</span>
         <FontAwesomeIcon className="float-right" icon={faTimes} />
       </div>
-      <h3>{location}</h3>
-      <h3>{date}</h3>
-      <ul className="space-y-2">{generateDetail(detail)}</ul>
+      <div className="flex flex-wrap justify-between">
+        <h3 className="mt-2">{location}</h3>
+        <h3 className="mt-2">{date}</h3>
+      </div>
+
+      <ul className="space-y-2 mt-2">{generateDetail(detail)}</ul>
     </div>
   );
 };

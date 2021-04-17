@@ -26,14 +26,14 @@ export default function Home(): JSX.Element {
           <Section title={experience.title}>
             <CardGrid data={experience.cards} attributionStyle={CARD_SVG_STYLE} />
           </Section>
-          <Section title={project.title}>
-            <CardGrid data={project.cards} />
-          </Section>
           <Section title={education.title}>
             {eduLogo}
             <Section title={education.Subtitle} alignTitle="center" depth={1}>
               <CardGrid data={education.cards} />
             </Section>
+          </Section>
+          <Section title={project.title}>
+            <CardGrid data={project.cards} />
           </Section>
           <Section title="Articles">
             <p>Articles Coming Soon</p>
