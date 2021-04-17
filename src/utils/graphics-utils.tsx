@@ -17,9 +17,5 @@ export function processAttribution(attribution: Attribution, style: string): JSX
   if (!attribution) return null;
   const { path, alt } = attribution;
   if (path.includes('.svg')) return importSVGWithClass(path, style);
-  return (
-    <div className={style}>
-      <img src={path} alt={alt} />
-    </div>
-  );
+  return <img src={path} alt={alt} className={style} />;
 }

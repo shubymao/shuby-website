@@ -17,10 +17,18 @@ export interface CardGridData {
 }
 
 export interface CardData {
+  type?: string;
   attribution?: Attribution;
+  attributionStyle?: string;
   title: string;
   description: string;
   links?: Array<Page>;
+}
+
+export interface RevealCardData extends CardData {
+  location?: string;
+  date?: string;
+  detail?: Array<string>;
 }
 
 export interface SectionData {

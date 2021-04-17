@@ -1,5 +1,5 @@
 import Banner from '@components/banner';
-import MetaInfo from '@components/metainfo';
+import MetaInfo from '@components/meta-info';
 import Page from '@components/page';
 import importSVGWithClass, { stl } from '@utils/graphics-utils';
 import { Container } from 'next/app';

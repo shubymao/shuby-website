@@ -1,9 +1,9 @@
 {
   "title": "Shuby Mao",
-  "subtitle": "Student • Developer • Engineeer",
+  "subtitle": "Student • Developer • Engineer",
   "mainIcon": "home/main-icon-home.svg",
-  "intrest": {
-    "title": "Skills and Intrests",
+  "interest": {
+    "title": "Skills and Interests",
     "cards": [
       {
         "title": "Software Development",
@@ -22,6 +22,50 @@
         "description": "Actively participated in global coding competitions such as Google KickStart and Leetcode Contests.",
         "attribution": { "path": "home/cp.svg" },
         "links": [{ "name": "LeetCode Profile", "url": "https://leetcode.com/Le_LI_Mao/" }]
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experiences",
+    "cards": [
+      {
+        "type": "reveal",
+        "date": "May - Sept. 2020",
+        "location": "Amazon",
+        "title": "SDE Intern",
+        "description": "Designed a new template translation framework for the Alexa Presentation Language.",
+        "detail": [
+          "Developed a plugin for Sketch using JavaScript to export sketch design to Alexa Presentation Language",
+          "Utilized AWS S3 and Cloud-Front to upload and generate image URL to simplify user workflow.",
+          "Communicated with the stakeholder and PM to update requirements and provide relevant updates.",
+          "Integrated the framework within the authoring tool website, increasing feature accessibility."
+        ],
+        "attribution": { "path": "home/amazon.svg" }
+      },
+      {
+        "type": "reveal",
+        "date": "Jan - Apr. 2020",
+        "location": "Fonex Data System",
+        "title": "Software Engineer Intern",
+        "description": "Developed production software used to validate networking software and hardwares.",
+        "detail": [
+          "Developed Windows applications in C# to validate networking hardware to reduce manual testing",
+          "Utilized MD5 hashing algorithm in the application to generate security hash to enhance hardware compatibility and security.",
+          "Performed code reviews & system verification on a production software to ensure system quality."
+        ],
+        "attribution": { "path": "home/fonex.svg" }
+      },
+      {
+        "type": "reveal",
+        "date": "Sept. 2017 - Present",
+        "location": "McGill Computer Taskforce",
+        "title": "Hardware Team Member",
+        "description": "Volunteered at a school club to provide IT services for faculty of Science student and build web applications.",
+        "detail": [
+          "Utilized Fog and MDT to manage system image and group policies on the school computers.",
+          "Contributed to the development of a printing service website and laptop lending system."
+        ],
+        "attribution": { "path": "home/ctf.png" }
       }
     ]
   },
