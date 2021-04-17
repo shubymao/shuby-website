@@ -19,7 +19,7 @@ function getFavicons(): Array<JSX.Element> {
     sizes.forEach((s) => {
       const size = `${s}x${s}`;
       const href = `${ICON_PATH}/${prefix}-${size}.png`;
-      favicons.push(<link rel={rel} type={type} sizes={size} href={href} />);
+      favicons.push(<link key={href} rel={rel} type={type} sizes={size} href={href} />);
     });
   });
   return favicons;

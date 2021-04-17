@@ -1,19 +1,13 @@
-import { Page } from '@typeDefs/component';
+import { CardData, Page } from '@typeDefs/component';
+import { processAttribution } from '@utils/graphics-utils';
 import React from 'react';
-
-export interface CardProps {
-  attribution?: JSX.Element;
-  title: string;
-  description: string;
-  links?: Array<Page>;
-}
 
 const getLinks = (links: Array<Page>) => {
   if (!links || links.length === 0) return null;
   return (
-    <div className="w-full flex pt-3 space-x-3 border-t">
+    <div className="w-full flex flex-row-reverse pt-3 border-t">
       {links.map((link) => (
-        <a key={link.name} href={link.url}>
+        <a className="ml-4" key={link.name} href={link.url}>
           {link.name}
         </a>
       ))}
@@ -21,14 +15,17 @@ const getLinks = (links: Array<Page>) => {
   );
 };
 
-const Card: React.FC<CardProps> = (props) => {
-  const { attribution, title, description, links } = props;
+const Card: React.FC<CardData> = (props) => {
+  const { attribution, attributionStyle, title, description, links } = props;
+  const attributionComponent = processAttribution(attribution, attributionStyle);
   return (
-    <div className="md:border-2 md:px-6 py-4 flex flex-col space-y-4 rounded-xl">
-      {attribution}
-      <div className="sm:max-w-lg space-y-4">
-        <h2 className="text-xl">{title}</h2>
-        <p>{description}</p>
+    <div className="border-2 px-6 py-4 flex flex-col space-y-4 rounded-xl shadow-md">
+      {attributionComponent}
+      <div className="flex flex-col h-full justify-between">
+        <div className="space-y-2 pb-3">
+          <h2 className="text-xl">{title}</h2>
+          <p>{description}</p>
+        </div>
         {getLinks(links)}
       </div>
     </div>

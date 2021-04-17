@@ -20,7 +20,7 @@ const renderFooterLink = (item: FooterLink, index: number) => (
 
 const Footer: React.FC = () => (
   <footer className="w-full flex flex-col items-center bg-gray-700">
-    <div className="sm:w-10/12 grid grid-cols-3 my-5">
+    <div className="w-full sm:w-10/12 grid grid-cols-3 my-5">
       <div className="col-span-3 sm:col-span-1 flex flex-col items-center">
         <button type="button" className={FooterItemStyle + HOVER_STLYE} onClick={scrollToTop}>
           <FontAwesomeIcon size={iconSize} icon={faArrowUp} />
