@@ -10,8 +10,8 @@ export interface SectionProp {
 }
 
 const SECTION_STYLE = [
-  { padding: 'pt-10', margin: 'mb-10', mobile: 'text-3xl', size: 'md:text-5xl' },
-  { padding: 'pt-6', margin: 'mb-6', mobile: 'text-2xl', size: 'md:text-4xl' },
+  { padding: 'pt-10', margin: 'mb-6', mobile: 'text-3xl', size: 'md:text-5xl' },
+  { padding: 'pt-6', margin: 'mb-4', mobile: 'text-2xl', size: 'md:text-4xl' },
   { padding: 'pt-4', margin: 'mb-4', mobile: 'text-2xl', size: 'md:text-3xl' },
 ];
 

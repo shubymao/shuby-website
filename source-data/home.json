@@ -7,7 +7,7 @@
     "cards": [
       {
         "title": "Software Development",
-        "description": "Familiar with commonly used development practices and tools. Experienced in full stack development.",
+        "description": "Familiar with common software development process and tools. Experienced in full stack development.",
         "attribution": { "path": "home/code.svg" },
         "links": [{ "name": "Learn More", "url": "/software" }]
       },
@@ -15,11 +15,11 @@
         "title": "System Management",
         "description": "Experienced in managing IT infrastructure through the use scripting and management tools.",
         "attribution": { "path": "home/server.svg" },
-        "links": [{ "name": "Learn More", "url": "/comingsoon" }]
+        "links": [{ "name": "Learn More", "url": "/system" }]
       },
       {
         "title": "Competitive Programing",
-        "description": "Actively participated in global coding competitions such as Google KickStart and Leetcode Contests.",
+        "description": "Actively participated in global coding competitions such as Google Kick Start and Leetcode Contests.",
         "attribution": { "path": "home/cp.svg" },
         "links": [{ "name": "LeetCode Profile", "url": "https://leetcode.com/Le_LI_Mao/" }]
       }
@@ -44,7 +44,7 @@
       },
       {
         "type": "reveal",
-        "date": "Jan - Apr. 2020",
+        "date": "Jan. - Apr. 2020",
         "location": "Fonex Data System",
         "title": "Software Engineer Intern",
         "description": "Developed production software used to validate networking software and hardwares.",
@@ -95,19 +95,19 @@
   "education": {
     "logo": "home/mcgill.svg",
     "title": "Education",
-    "Subtitle": "Bachlor of Software Engineering",
+    "Subtitle": "Bachelor of Software Engineering",
     "cards": [
       {
         "title": "Academic Excellence",
-        "description": "Passionately engaged in academic courses and maintained a of 3.98/4 CGPA."
+        "description": "Passionately engaged in academic courses and maintained a GPA of 3.98/4."
       },
       {
         "title": "Extra Curricular Activities",
-        "description": "Actively participated in computer taskforce and school competitions to enhance univeristy experience."
+        "description": "Actively participated in computer taskforce and school competitions to enhance university experience."
       },
       {
         "title": "Awards and Scholarship",
-        "description": "Received renewable scholarship and named on the Dean's Honour List (top-10%) 3 consective school year."
+        "description": "Received renewable scholarship and named on the Dean's Honour List 3 consecutive school year."
       }
     ]
   }
