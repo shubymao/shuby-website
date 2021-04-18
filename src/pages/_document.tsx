@@ -36,6 +36,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
+          <meta property="og:image" content="preview.png" />
           {getFavicons()}
         </Head>
         <body>
