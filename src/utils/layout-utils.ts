@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { alignment } from '@typeDefs/layout';
 
 export default function getTextAlignClass(align?: alignment): string {

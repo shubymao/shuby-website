@@ -1,4 +1,4 @@
-import { Page } from '@typeDefs/component';
+import { Page } from '@typeDefs/data';
 import React from 'react';
 import { MAIN_PAGES, HEADER_TITLE } from 'src/constants/page-info';
 import Icon from '@public/misc/icon-no-background.svg';

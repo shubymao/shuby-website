@@ -1,9 +1,18 @@
 import { faGithub, faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { FooterLink, Page } from '@typeDefs/component';
+import { FooterLink, Page } from '@typeDefs/data';
 
 const resumeURL =
   'https://firebasestorage.googleapis.com/v0/b/shuby-mao.appspot.com/o/shubycv.pdf?alt=media&token=8bad616e-0e7e-411d-b0f6-7118d882681f';
+
+export const TIME_FORMAT: Intl.DateTimeFormatOptions = {
+  weekday: 'short',
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+};
 
 export const MAIN_PAGES: Array<Page> = [
   { name: 'Home', url: '/' },
