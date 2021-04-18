@@ -1,7 +1,7 @@
 import { Page } from '@typeDefs/component';
 import React from 'react';
 import { MAIN_PAGES, HEADER_TITLE } from 'src/constants/page-info';
-import Icon from '@public/icon-no-background.svg';
+import Icon from '@public/misc/icon-no-background.svg';
 
 export interface HeaderProps {
   title: string;
@@ -20,14 +20,14 @@ export default function Header(): JSX.Element {
           <p className="sm:block whitespace-nowrap text-lg text-white font-bold">{HEADER_TITLE}</p>
         </a>
         <nav className="hidden md:flex flex-row w-full justify-evenly">
-          {MAIN_PAGES.map(rederHeaderItems)}
+          {MAIN_PAGES.map(renderHeaderItems)}
         </nav>
       </div>
     </header>
   );
 }
 
-function rederHeaderItems(item: Page, index: number) {
+function renderHeaderItems(item: Page, index: number) {
   return (
     <a key={item.name} href={item.url}>
       <div className="py-2 px-3 block text-white" key={index}>
