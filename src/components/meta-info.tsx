@@ -3,10 +3,11 @@ import Head from 'next/head';
 
 export interface MetaProps {
   pageTitle: string;
+  description?: string;
 }
 
 const MetaInfo: React.FC<MetaProps> = (props) => {
-  const { pageTitle } = props;
+  const { pageTitle, description = 'A website about Shuby Mao.' } = props;
   return (
     <Head>
       <title>{pageTitle}</title>
@@ -14,6 +15,9 @@ const MetaInfo: React.FC<MetaProps> = (props) => {
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta name="application-name" content={pageTitle} />
       <meta name="msapplication-TileColor" content="#FFFFFF" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={description} />
     </Head>
   );
 };

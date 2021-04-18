@@ -1,6 +1,8 @@
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
 
+const previewURL =
+  'https://firebasestorage.googleapis.com/v0/b/shuby-mao.appspot.com/o/preview.png?alt=media&token=ba1e5506-8f53-41e9-8cf2-20b356f3cb43';
 const icons = [
   {
     rel: 'apple-touch-icon',
@@ -36,6 +38,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
+          <meta property="og:image" content={previewURL} />
           {getFavicons()}
         </Head>
         <body>
