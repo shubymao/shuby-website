@@ -6,16 +6,37 @@ export function stl(style: string): string {
   return style;
 }
 
-export default function importSVGWithClass(path: string, className: string): JSX.Element {
+function importSVGWithClass(path: string, svgStyle: string, wrapperStyle: string): JSX.Element {
   const SVGICON: ComponentType<{ className: string }> = dynamic(() =>
     import(`../../public/${path}`).then((mod) => mod),
   );
-  return <SVGICON className={className} />;
+  return (
+    <div className={wrapperStyle}>
+      <SVGICON className={svgStyle} />
+    </div>
+  );
 }
 
-export function processAttribution(attribution: Attribution, style: string): JSX.Element {
+export function processAttribution(attribution: Attribution): JSX.Element {
   if (!attribution) return null;
-  const { path, alt } = attribution;
-  if (path.includes('.svg')) return importSVGWithClass(path, style);
-  return <img src={path} alt={alt} className={style} />;
+  const { path, alt, style } = attribution;
+  const { contentStyle, wrapperStyle } = style;
+  if (path.includes('.svg')) return importSVGWithClass(path, contentStyle, wrapperStyle);
+  return (
+    <div className={wrapperStyle}>
+      <img src={path} alt={alt} className={contentStyle} />
+    </div>
+  );
 }
+
+export function getSavedTheme(): string {
+  if (typeof window === 'undefined') return 'light';
+  return localStorage.getItem('theme') || 'light';
+}
+
+export function getNextTheme(theme: string): string {
+  if (theme === 'dark') return 'light';
+  return 'dark';
+}
+
+export default importSVGWithClass;

@@ -19,7 +19,6 @@ export interface CardGridData {
 export interface CardData {
   type?: string;
   attribution?: Attribution;
-  attributionStyle?: string;
   title: string;
   description: string;
   links?: Array<Page>;
@@ -44,6 +43,12 @@ export interface TextData {
 export interface Attribution {
   path: string;
   alt?: string;
+  style: AttributionStyle;
+}
+
+export interface AttributionStyle {
+  contentStyle?: string;
+  wrapperStyle?: string;
 }
 
 export interface Project {

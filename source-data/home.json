@@ -53,7 +53,13 @@
           "Utilized MD5 hashing algorithm in the application to generate security hash to enhance hardware compatibility and security.",
           "Performed code reviews & system verification on a production software to ensure system quality."
         ],
-        "attribution": { "path": "home/fonex.svg" }
+        "attribution": {
+          "path": "home/fonex.svg",
+          "style": {
+            "contentStyle": "h-16 w-24 md:h-20:w-28 flex-none object-contain mx-auto",
+            "wrapperStyle": "p-2 bg-white rounded-3xl flex"
+          }
+        }
       },
       {
         "type": "reveal",

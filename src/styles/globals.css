@@ -2,48 +2,8 @@
 
 @tailwind components;
 
-@import './header.module.css';
-
 @tailwind utilities;
 
-.fade-in {
-  animation: animation-fade-in 0.7s;
-}
-
-.fade-in-fast {
-  animation: animation-fade-in 0.4s;
-}
-
-.fade-in-slow {
-  animation: animation-fade-in 1s;
-}
-
-.fade-out {
-  animation: animation-fade-out 0.7s;
-}
-
-.fade-out-fast {
-  animation: animation-fade-out 0.4s;
-}
-
-.fade-out-slow {
-  animation: animation-fade-out 1s;
-}
-
-@keyframes animation-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes animation-fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
+@import './base.css';
+@import './components/header.css';
+@import './components/footer';

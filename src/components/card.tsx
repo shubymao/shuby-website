@@ -16,10 +16,10 @@ const getLinks = (links: Array<Page>) => {
 };
 
 const Card: React.FC<CardData> = (props) => {
-  const { attribution, attributionStyle, title, description, links } = props;
-  const attributionComponent = processAttribution(attribution, attributionStyle);
+  const { attribution, title, description, links } = props;
+  const attributionComponent = processAttribution(attribution);
   return (
-    <div className="border-2 px-6 py-4 flex flex-col space-y-4 rounded-xl shadow-md">
+    <div className="px-6 py-4 flex flex-col space-y-4 items-center rounded-xl bg-surface shadow-lg">
       {attributionComponent}
       <div className="flex flex-col h-full justify-between">
         <div className="space-y-2 pb-3">

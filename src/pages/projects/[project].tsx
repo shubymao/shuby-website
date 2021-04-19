@@ -33,7 +33,7 @@ export default function ProjectPage(props: ProjectProps): JSX.Element {
         <PageContainer>
           <Title name={name} />
           <p>Last Updated on {dateString}</p>
-          <ReactMarkdown remarkPlugins={[gfm]} components={DefaultRenderer}>
+          <ReactMarkdown className="prose max-w-none" remarkPlugins={[gfm]} components={DefaultRenderer}>
             {content}
           </ReactMarkdown>
         </PageContainer>
