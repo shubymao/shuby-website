@@ -1,4 +1,4 @@
-import { CardData, Page } from '@typeDefs/component';
+import { CardData, Page } from '@typeDefs/data';
 import { processAttribution } from '@utils/graphics-utils';
 import React from 'react';
 

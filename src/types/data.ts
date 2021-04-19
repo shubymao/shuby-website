@@ -45,3 +45,13 @@ export interface Attribution {
   path: string;
   alt?: string;
 }
+
+export interface Project {
+  name?: string;
+  path?: string;
+  brief?: string;
+  date?: string;
+  content?: string;
+  ogImage?: string;
+  attribution?: string;
+}

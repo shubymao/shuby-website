@@ -1,4 +1,4 @@
-import { CardData } from '@typeDefs/component';
+import { CardData } from '@typeDefs/data';
 import React from 'react';
 import Card from './card';
 import RevealCard from './reveal-card';

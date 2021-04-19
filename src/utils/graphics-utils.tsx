@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 import React, { ComponentType } from 'react';
-import { Attribution } from '@typeDefs/component';
+import { Attribution } from '@typeDefs/data';
 
 export function stl(style: string): string {
   return style;

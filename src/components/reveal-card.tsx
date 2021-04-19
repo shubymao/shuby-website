@@ -1,6 +1,6 @@
 import { faAngleRight, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { RevealCardData } from '@typeDefs/component';
+import { RevealCardData } from '@typeDefs/data';
 import { processAttribution } from '@utils/graphics-utils';
 import React, { useState } from 'react';
 
