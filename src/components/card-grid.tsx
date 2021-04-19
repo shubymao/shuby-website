@@ -5,7 +5,7 @@ import RevealCard from './reveal-card';
 
 export interface CardGridProps {
   data: Array<CardData>;
-  attributionStyle: AttributionStyle;
+  attributionStyle?: AttributionStyle;
 }
 
 function generateCards(cards: Array<CardData>): Array<JSX.Element> {

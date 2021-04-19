@@ -43,7 +43,7 @@ export interface TextData {
 export interface Attribution {
   path: string;
   alt?: string;
-  style: AttributionStyle;
+  style?: AttributionStyle;
 }
 
 export interface AttributionStyle {

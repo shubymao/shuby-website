@@ -10,8 +10,8 @@ import { CARD_SVG_STYLE } from '@styles/styles';
 import PageContainer from '@components/container';
 
 const { title, subtitle, mainIcon, interest, experience, project, education } = home;
-const homeIcon = importSVGWithClass(mainIcon, stl('w-32 md:w-48 mx-auto'));
-const eduLogo = importSVGWithClass(education.logo, stl('mx-auto md:w-80 w-48'));
+const homeIcon = importSVGWithClass(mainIcon, stl('w-32 md:w-48 mx-auto'), '');
+const eduLogo = importSVGWithClass(education.logo, stl('mx-auto md:w-80 w-48'), '');
 
 export default function Home(): JSX.Element {
   return (
