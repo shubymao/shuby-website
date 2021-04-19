@@ -1,6 +1,6 @@
 import Footer from '@components/footer';
 import Header from '@components/header';
-import React from 'react';
+import React, { useState } from 'react';
 
 export interface PageProps {
   children: React.ReactNode;
@@ -8,11 +8,11 @@ export interface PageProps {
 
 const Page: React.FC<PageProps> = (props) => {
   const { children } = props;
-  const padTop = { paddingTop: '40px' };
+  const [status, setStatus] = useState('idle');
   return (
-    <div className="w-full">
-      <Header />
-      <div className="w-full min-h-screen flex flex-col justify-between" style={padTop}>
+    <div className="w-full h-screen">
+      <Header status={status} setStatus={setStatus} />
+      <div className="w-full h-screen flex flex-col justify-between pt-12">
         <div className="flex-grow pb-16 block">{children}</div>
         <Footer />
       </div>
