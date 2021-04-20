@@ -6,7 +6,6 @@ import Page from '@components/page';
 import Title from '@components/title';
 import ReactMarkdown from 'react-markdown';
 import { Project } from '@typeDefs/data';
-import { TIME_FORMAT } from '@constants/page-info';
 import DefaultRenderer from '@utils/render-util';
 import gfm from 'remark-gfm';
 
@@ -20,19 +19,17 @@ type StaticPropObject = {
   props: ProjectProps;
 };
 
-const projectAttributes = ['name', 'date', 'content'];
+const projectAttributes = ['name', 'content'];
 
 export default function ProjectPage(props: ProjectProps): JSX.Element {
   const { project } = props;
-  const { name, content, date } = project;
-  const dateString = new Date(date).toLocaleDateString('en-US', TIME_FORMAT);
+  const { name, content } = project;
   return (
     <>
       <MetaInfo pageTitle={name} />
       <Page>
         <PageContainer>
           <Title name={name} />
-          <p>Last Updated on {dateString}</p>
           <ReactMarkdown className="prose max-w-none" remarkPlugins={[gfm]} components={DefaultRenderer}>
             {content}
           </ReactMarkdown>
