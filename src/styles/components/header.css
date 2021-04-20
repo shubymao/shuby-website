@@ -1,0 +1,123 @@
+@tailwind components;
+
+@layer components {
+  .header {
+    @apply backdrop-filter bg-primary fixed shadow-lg w-full h-12 items-center overflow-hidden text-primary;
+    -webkit-transition: background 0.5s ease-in-out, height 500ms ease-in-out;
+    -moz-transition: background 0.5s ease-in-out, height 500ms ease-in-out;
+    -o-transition: background 0.5s ease-in-out, height 500ms ease-in-out;
+    transition: background 0.5s ease-in-out, height 500ms ease-in-out;
+  }
+
+  .header .main-wrapper {
+    @apply container max-w-6xl flex items-center justify-between mx-auto;
+  }
+
+  .header.open {
+    @apply bg-primary bg-opacity-100 h-screen;
+  }
+
+  .header .drawer-item {
+    @apply col-span-1 py-6 block rounded-lg border border-gray-400;
+  }
+
+  .trigger {
+    @apply cursor-pointer relative m-auto w-5 h-4;
+    --delay: 0.5s;
+    --pad-open: 7.5px;
+    --pad-closed: 1.5px;
+  }
+
+  .trig-line {
+    @apply h-px w-full absolute bg-onSecondary;
+    transform: (rotate(0deg));
+  }
+
+  .trig-top {
+    top: var(--pad-closed);
+    animation: animation-top-close var(--delay);
+  }
+
+  .trig-bottom {
+    bottom: var(--pad-closed);
+    animation: animation-bottom-close var(--delay);
+  }
+
+  .trig-top.open {
+    top: var(--pad-open);
+    transform: rotate(45deg);
+    animation: animation-top-open var(--delay);
+  }
+
+  .trig-bottom.open {
+    bottom: var(--pad-open);
+    transform: rotate(-45deg);
+    animation: animation-bottom-open var(--delay);
+  }
+
+  @keyframes drawer-open {
+  }
+
+  @keyframes drawer-close {
+  }
+
+  @keyframes animation-top-open {
+    0% {
+      top: 1.5px;
+      transform: rotate(0deg);
+    }
+    60% {
+      top: 7.5px;
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(45deg);
+    }
+  }
+
+  @keyframes animation-top-close {
+    0% {
+      top: 7.5px;
+      transform: rotate(45deg);
+    }
+    60% {
+      top: 7.5px;
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 1.5px;
+    }
+  }
+
+  @keyframes animation-bottom-open {
+    0% {
+      transform: rotate(0deg);
+      bottom: 1.5px;
+    }
+    60% {
+      bottom: 7.5px;
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @keyframes animation-bottom-close {
+    0% {
+      bottom: 7.5px;
+      transform: rotate(-45deg);
+    }
+    60% {
+      bottom: 7.5px;
+      transform: rotate(0deg);
+    }
+    100% {
+      bottom: 1.5px;
+    }
+  }
+
+  .idle {
+    animation: none;
+  }
+}

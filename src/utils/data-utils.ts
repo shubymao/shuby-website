@@ -25,9 +25,6 @@ export function getProjectByFile(fileName: string, fields: string[] = []): Proje
 
 export function getAllProjects(fields: string[] = []): Project[] {
   const files = getAllFileInDir(projectDirectory);
-  const projects = files
-    .map((file) => getProjectByFile(file, fields))
-    .filter((project) => project)
-    .sort((a, b) => (a.date > b.date ? -1 : 1));
+  const projects = files.map((file) => getProjectByFile(file, fields)).filter((project) => project);
   return projects;
 }

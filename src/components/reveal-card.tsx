@@ -1,13 +1,12 @@
 import { faAngleRight, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { RevealCardData } from '@typeDefs/data';
+import { Attribution, RevealCardData } from '@typeDefs/data';
 import { processAttribution } from '@utils/graphics-utils';
 import React, { useState } from 'react';
 
 interface ContentProps {
   open: React.MouseEventHandler<HTMLDivElement>;
-  attributionStyle?: string;
-  attribution?: { path: string };
+  attribution: Attribution;
   title: string;
   description: string;
 }
@@ -34,19 +33,19 @@ function generateDetail(detail?: Array<string>): Array<JSX.Element> {
 }
 
 const Content: React.FC<ContentProps> = (props) => {
-  const { open, attribution, attributionStyle, title, description } = props;
-  const attributionComponent = processAttribution(attribution, attributionStyle);
+  const { open, attribution, title, description } = props;
+  const attributionComponent = processAttribution(attribution);
   return (
-    <div className="flex flex-col h-full justify-between fade-in">
-      <div className="space-y-3">
-        <div className="cursor-pointer" onClick={open}>
+    <div className="flex flex-col items-center h-full justify-between fade-in">
+      <div className="space-y-3 items-center">
+        <div className="cursor-pointer flex flex-col items-center" onClick={open}>
           {attributionComponent}
         </div>
         <h2 className="text-xl">{title}</h2>
         <p>{description}</p>
       </div>
-      <div className="cursor-pointer border-t mt-3" onClick={open}>
-        <p className="cursor-pointer text-center pt-3">Click here for more detail</p>
+      <div className="w-full cursor-pointer border-t mt-3" onClick={open}>
+        <p className="text-center pt-3">Click here for more detail</p>
       </div>
     </div>
   );
@@ -74,11 +73,11 @@ const RevealCard: React.FC<RevealCardData> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const close = () => setIsOpen(false);
   const open = () => setIsOpen(true);
-  const { attribution, attributionStyle, title, description, date, location, detail } = props;
-  const contentProps = { attribution, attributionStyle, title, description, open };
+  const { attribution, title, description, date, location, detail } = props;
+  const contentProps = { attribution, title, description, open };
   const detailProps = { date, location, title, detail, close };
   return (
-    <div className="border-2 px-6 py-4 rounded-xl shadow-md">
+    <div className="px-6 py-4 bg-surface rounded-xl shadow-lg">
       {isOpen ? <Detail {...detailProps} /> : <Content {...contentProps} />}
     </div>
   );

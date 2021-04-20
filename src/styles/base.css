@@ -1,0 +1,76 @@
+@tailwind base;
+
+@layer base {
+  :root {
+    --color-bg-base: 246, 247, 248;
+    --color-bg-surface: 255, 255, 255;
+    --color-bg-primary: 240, 240, 240;
+    --color-bg-accent: 240, 240, 240;
+    --color-bg-secondary: 35, 47, 62;
+
+    --color-on-base: 0, 0, 0;
+    --color-on-surface: 0, 0, 0;
+    --color-on-primary: 0, 0, 0;
+    --color-on-accent: 255, 255, 255;
+    --color-on-secondary: 255, 255, 255;
+
+    @apply text-base bg-base;
+  }
+
+  .dark {
+    --color-bg-base: 18, 18, 18;
+    --color-bg-surface: 45, 45, 45;
+    --color-bg-primary: 60, 60, 60;
+    --color-bg-accent: 0, 0, 0;
+    --color-bg-secondary: 29, 78, 216;
+
+    --color-on-base: 255, 255, 255;
+    --color-on-surface: 255, 255, 255;
+    --color-on-primary: 255, 255, 255;
+    --color-on-accent: 255, 255, 255;
+    --color-on-secondary: 255, 255, 255;
+    @apply text-base bg-base;
+  }
+
+  .fade-in {
+    animation: animation-fade-in 0.7s;
+  }
+
+  .fade-in-fast {
+    animation: animation-fade-in 0.4s;
+  }
+
+  .fade-in-slow {
+    animation: animation-fade-in 1s;
+  }
+
+  .fade-out {
+    animation: animation-fade-out 0.7s;
+  }
+
+  .fade-out-fast {
+    animation: animation-fade-out 0.4s;
+  }
+
+  .fade-out-slow {
+    animation: animation-fade-out 1s;
+  }
+
+  @keyframes animation-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes animation-fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}

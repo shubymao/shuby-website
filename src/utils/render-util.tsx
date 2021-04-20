@@ -5,18 +5,18 @@ import React from 'react';
 /* eslint-disable */
 
 const DefaultRenderer: any = {
-  h1: renderH1,
-  h2: renderH2,
-  h3: renderH3,
-  h4: renderH4,
-  h5: renderH5,
-  h6: renderH6,
-  p: renderP,
-  a: renderA,
-  th: renderTh,
-  td: renderTd,
+  // h1: renderH1,
+  // h2: renderH2,
+  // h3: renderH3,
+  // h4: renderH4,
+  // h5: renderH5,
+  // h6: renderH6,
+  // p: renderP,
+  // a: renderA,
+  // th: renderTh,
+  // td: renderTd,
   code: renderCode,
-  table: renderTable,
+  // table: renderTable,
 };
 
 function renderH1({ node, ...props }): JSX.Element {

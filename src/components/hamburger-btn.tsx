@@ -8,7 +8,7 @@ export interface ButtonProps {
 
 const HamburgerButton = (props: ButtonProps) => {
   const { callBack, status } = props;
-  const hamburgerLayout = stl('flex md:hidden absolute w-12 h-12 justify-center left-1');
+  const hamburgerLayout = stl('flex md:hidden absolute w-12 h-12 justify-center');
   return (
     <div className={hamburgerLayout} onClick={callBack}>
       <div className="trigger">
