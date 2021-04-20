@@ -15,8 +15,8 @@ const Page: React.FC<PageProps> = (props) => {
   const { children } = props;
   const largeScreen = useMediaQuery({ query: md });
   const [drawerStatus, updateDrawerStatus] = useState('idle');
-  const [theme, setTheme] = useState('light');
-
+  const [theme, setTheme] = useState('undefined');
+  const [isLoaded, setIsLoaded] = useState(false);
   const setDrawerStatus = (st: string) => {
     toggleBodyLock(st === 'open');
     updateDrawerStatus(st);
@@ -24,7 +24,8 @@ const Page: React.FC<PageProps> = (props) => {
 
   useEffect(() => {
     const savedTheme = getSavedTheme();
-    if (savedTheme) setTheme(savedTheme);
+    setTheme(savedTheme);
+    setIsLoaded(true);
   }, []);
 
   useEffect(() => {
@@ -45,7 +46,7 @@ const Page: React.FC<PageProps> = (props) => {
   };
 
   return (
-    <div className={`w-full h-screen ${theme}`}>
+    <div className={`w-full h-screen ${theme} ${isLoaded ? '' : 'hidden'}`}>
       <Header drawerStatus={drawerStatus} theme={theme} toggleTheme={toggleTheme} />
       <div className="w-full flex flex-col min-h-screen justify-between pt-12">
         <div className="flex-grow pb-16 block bg-base">{children}</div>

@@ -12,7 +12,6 @@ export interface Page {
 }
 
 export interface CardGridData {
-  type: 'cardgrid';
   cards: Array<CardData>;
 }
 
@@ -54,9 +53,31 @@ export interface AttributionStyle {
 export interface Project {
   name?: string;
   path?: string;
+  github?: string;
+  demo?: string;
+  highlight?: boolean;
   brief?: string;
-  date?: string;
   content?: string;
   ogImage?: string;
-  attribution?: string;
+  attribution?: Attribution;
+}
+
+export interface Note {
+  name: string;
+  date?: string;
+  path: string;
+  brief?: string;
+  content?: string;
+  ogImage?: string;
+  attribution?: Attribution;
+}
+
+export interface Article {
+  name: string;
+  date?: string;
+  path: string;
+  brief?: string;
+  content?: string;
+  ogImage?: string;
+  attribution?: Attribution;
 }
