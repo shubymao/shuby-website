@@ -1,13 +1,12 @@
-import Page from '@components/page';
+import Page from '@components/layout/page';
 import React from 'react';
 import Banner from '@components/banner';
-import Section from '@components/section';
+import Section from '@components/layout/section';
 import MetaInfo from '@components/meta-info';
 import home from '@data/home.json';
 import importSVGWithClass, { stl } from '@utils/graphics-utils';
-import CardGrid from '@components/card-grid';
-import { CARD_SVG_STYLE } from '@styles/styles';
-import PageContainer from '@components/container';
+import CardGrid, { CARD_SVG_STYLE } from '@components/layout/card-grid';
+import PageContainer from '@components/layout/container';
 
 const { title, subtitle, mainIcon, interest, experience, project, education } = home;
 const homeIcon = importSVGWithClass(mainIcon, stl('w-32 md:w-48 mx-auto'), '');

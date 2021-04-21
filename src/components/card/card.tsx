@@ -1,8 +1,9 @@
-import { CardData, Page } from '@typeDefs/data';
+import { CardData, PageLink } from '@typeDefs/data';
 import { processAttribution } from '@utils/graphics-utils';
 import React from 'react';
+import CardWrapper from './card-wrapper';
 
-const getLinks = (links: Array<Page>) => {
+const getLinks = (links: Array<PageLink>) => {
   if (!links || links.length === 0) return null;
   return (
     <div className="w-full flex flex-row-reverse pt-3 border-t">
@@ -19,16 +20,16 @@ const Card: React.FC<CardData> = (props) => {
   const { attribution, title, description, links } = props;
   const attributionComponent = processAttribution(attribution);
   return (
-    <div className="px-6 py-4 flex flex-col space-y-4 items-center rounded-xl bg-surface shadow-lg">
+    <CardWrapper>
       {attributionComponent}
-      <div className="flex flex-col h-full justify-between">
-        <div className="space-y-2 pb-3">
+      <div className="flex flex-col w-full h-full justify-between space-y-3">
+        <div className="space-y-2">
           <h2 className="text-xl">{title}</h2>
           <p>{description}</p>
         </div>
         {getLinks(links)}
       </div>
-    </div>
+    </CardWrapper>
   );
 };
 

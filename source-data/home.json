@@ -56,8 +56,8 @@
         "attribution": {
           "path": "home/fonex.svg",
           "style": {
-            "contentStyle": "h-16 w-24 md:h-20:w-28 flex-none object-contain mx-auto",
-            "wrapperStyle": "p-2 bg-white rounded-3xl flex"
+            "contentStyle": "h-14 md:h-16  flex-none object-contain mx-auto",
+            "wrapperStyle": "p-2 bg-white rounded-2xl flex"
           }
         }
       },

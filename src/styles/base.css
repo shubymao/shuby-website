@@ -2,34 +2,30 @@
 
 @layer base {
   :root {
-    --color-bg-base: 246, 247, 248;
-    --color-bg-surface: 255, 255, 255;
-    --color-bg-primary: 240, 240, 240;
-    --color-bg-accent: 240, 240, 240;
-    --color-bg-secondary: 35, 47, 62;
+    --color-base: 245, 246, 247;
+    --color-surface: 255, 255, 255;
+    --color-primary: 21, 212, 175;
+    --color-secondary: 48, 56, 70;
 
     --color-on-base: 0, 0, 0;
     --color-on-surface: 0, 0, 0;
-    --color-on-primary: 0, 0, 0;
-    --color-on-accent: 255, 255, 255;
+    --color-on-primary: 255, 255, 255;
     --color-on-secondary: 255, 255, 255;
 
-    @apply text-base bg-base;
+    @apply text-onBase bg-base;
   }
 
   .dark {
-    --color-bg-base: 18, 18, 18;
-    --color-bg-surface: 45, 45, 45;
-    --color-bg-primary: 60, 60, 60;
-    --color-bg-accent: 0, 0, 0;
-    --color-bg-secondary: 29, 78, 216;
-
+    --color-base: 18, 18, 18;
+    --color-surface: 35, 35, 35;
     --color-on-base: 255, 255, 255;
     --color-on-surface: 255, 255, 255;
-    --color-on-primary: 255, 255, 255;
-    --color-on-accent: 255, 255, 255;
-    --color-on-secondary: 255, 255, 255;
-    @apply text-base bg-base;
+    @apply text-onBase bg-base;
+  }
+
+  a,
+  button {
+    @apply hover:text-primary;
   }
 
   .fade-in {
