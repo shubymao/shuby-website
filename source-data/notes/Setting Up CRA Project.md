@@ -1,6 +1,6 @@
 ---
 name: Setting Up A CRA TypeScript project
-brief: This article will go through the steps to setup a Create React App Project with typescript, eslint, and prettier.
+brief: This is a quick note to go through the steps to setup a Create React App Project with typescript, eslint, and prettier.
 date: 2021-04-20T21:37:39.805Z
 ---
 

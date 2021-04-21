@@ -85,7 +85,7 @@
       },
       {
         "title": "Sudoku Solver Web",
-        "description": "Experienced in managing IT infrastructure through the use scripting and management tools.",
+        "description": "A Typescript Sudoku solver capable of solving and generating sudoku.",
         "links": [
           { "name": "Learn More", "url": "/comingsoon" },
           { "name": "Github", "url": "https://github.com/shubymao/sudoku-solver-web" }
