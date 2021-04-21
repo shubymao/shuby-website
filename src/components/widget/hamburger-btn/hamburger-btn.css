@@ -1,55 +1,38 @@
 @tailwind components;
 
 @layer components {
-  .header {
-    @apply backdrop-filter bg-primary fixed shadow-lg w-full h-12 items-center overflow-hidden text-primary;
-    -webkit-transition: background 0.5s ease-in-out, height 500ms ease-in-out;
-    -moz-transition: background 0.5s ease-in-out, height 500ms ease-in-out;
-    -o-transition: background 0.5s ease-in-out, height 500ms ease-in-out;
-    transition: background 0.5s ease-in-out, height 500ms ease-in-out;
+  .hamburger-btn {
+    @apply fixed md:hidden w-12 h-12 bottom-5 right-5 flex flex-col justify-items-center items-center rounded-full cursor-pointer bg-onBase;
   }
 
-  .header .main-wrapper {
-    @apply container max-w-6xl flex items-center justify-between mx-auto;
-  }
-
-  .header.open {
-    @apply bg-primary bg-opacity-100 h-screen;
-  }
-
-  .header .drawer-item {
-    @apply col-span-1 py-6 block rounded-lg border border-gray-400;
-  }
-
-  .trigger {
-    @apply cursor-pointer relative m-auto w-5 h-4;
+  .hamburger-btn .trigger {
     --delay: 0.5s;
     --pad-open: 7.5px;
     --pad-closed: 1.5px;
   }
 
-  .trig-line {
-    @apply h-px w-full absolute bg-onSecondary;
+  .hamburger-btn .trig-line {
+    @apply h-px w-full absolute bg-base;
     transform: (rotate(0deg));
   }
 
-  .trig-top {
+  .hamburger-btn .trig-top {
     top: var(--pad-closed);
     animation: animation-top-close var(--delay);
   }
 
-  .trig-bottom {
+  .hamburger-btn .trig-bottom {
     bottom: var(--pad-closed);
     animation: animation-bottom-close var(--delay);
   }
 
-  .trig-top.open {
+  .hamburger-btn .trig-top.open {
     top: var(--pad-open);
     transform: rotate(45deg);
     animation: animation-top-open var(--delay);
   }
 
-  .trig-bottom.open {
+  .hamburger-btn .trig-bottom.open {
     bottom: var(--pad-open);
     transform: rotate(-45deg);
     animation: animation-bottom-open var(--delay);

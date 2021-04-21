@@ -6,7 +6,7 @@ export interface FooterLink {
   url: string;
 }
 
-export interface Page {
+export interface PageLink {
   name: string;
   url: string;
 }
@@ -20,7 +20,7 @@ export interface CardData {
   attribution?: Attribution;
   title: string;
   description: string;
-  links?: Array<Page>;
+  links?: Array<PageLink>;
 }
 
 export interface RevealCardData extends CardData {
@@ -55,11 +55,11 @@ export interface Project {
   path?: string;
   github?: string;
   demo?: string;
-  highlight?: boolean;
+  highlight?: string;
   brief?: string;
   content?: string;
   ogImage?: string;
-  attribution?: Attribution;
+  attributionPath?: string;
 }
 
 export interface Note {

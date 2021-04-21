@@ -1,12 +1,11 @@
-import CardGrid from '@components/card-grid';
-import PageContainer from '@components/container';
+import CardGrid, { CARD_SVG_STYLE } from '@components/layout/card-grid';
+import PageContainer from '@components/layout/container';
 import MetaInfo from '@components/meta-info';
-import Page from '@components/page';
-import Section from '@components/section';
+import Page from '@components/layout/page';
+import Section from '@components/layout/section';
 import Title from '@components/title';
 import React from 'react';
 import system from '@data/system.json';
-import { CARD_SVG_STYLE } from '@styles/styles';
 
 const { title, brief, devops, cloud } = system;
 export default function SoftwareSkill(): JSX.Element {

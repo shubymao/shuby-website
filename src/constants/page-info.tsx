@@ -1,9 +1,14 @@
 import { faGithub, faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { FooterLink, Page } from '@typeDefs/data';
+import { FooterLink, PageLink } from '@typeDefs/data';
 
-const resumeURL =
+export const resumeURL =
   'https://firebasestorage.googleapis.com/v0/b/shuby-mao.appspot.com/o/shubycv.pdf?alt=media&token=8bad616e-0e7e-411d-b0f6-7118d882681f';
+
+export const ogDefaultPreviewURL =
+  'https://firebasestorage.googleapis.com/v0/b/shuby-mao.appspot.com/o/preview.png?alt=media&token=ba1e5506-8f53-41e9-8cf2-20b356f3cb43';
+
+export const ogDefaultDescription = 'A website highlighting Shuby Mao.';
 
 export const TIME_FORMAT: Intl.DateTimeFormatOptions = {
   weekday: 'short',
@@ -20,7 +25,7 @@ export const lg = '(min-width: 1024px)';
 export const xl = '(min-width: 1280px)';
 export const xl2 = '(min-width: 1536px)';
 
-export const MAIN_PAGES: Array<Page> = [
+export const MAIN_PAGES: Array<PageLink> = [
   { name: 'Home', url: '/' },
   { name: 'Projects', url: '/comingsoon' },
   { name: 'Articles', url: '/comingsoon' },

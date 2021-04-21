@@ -19,6 +19,7 @@ export function useDelayState(state: boolean, delayTime: number, initState: bool
 }
 
 export function toggleBodyLock(lock: boolean): void {
-  if (lock) document.querySelector('body').classList.add('overflow-hidden');
-  else document.querySelector('body').classList.remove('overflow-hidden');
+  if (lock) {
+    document.querySelector('body').classList.add('overflow-hidden');
+  } else document.querySelector('body').classList.remove('overflow-hidden');
 }

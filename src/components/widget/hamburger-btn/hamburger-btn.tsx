@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
-import { stl } from '@utils/graphics-utils';
+import React from 'react';
 
 export interface ButtonProps {
   callBack: () => void;
   status: string;
 }
 
-const HamburgerButton = (props: ButtonProps) => {
+const HamburgerButton = (props: ButtonProps): JSX.Element => {
   const { callBack, status } = props;
-  const hamburgerLayout = stl('flex md:hidden absolute w-12 h-12 justify-center');
   return (
-    <div className={hamburgerLayout} onClick={callBack}>
-      <div className="trigger">
+    <div className="hamburger-btn" onClick={callBack}>
+      <div className="trigger relative m-auto w-5 h-4">
         <div className={`trig-line trig-top  ${status}`} />
         <div className={`trig-line trig-bottom ${status}`} />
       </div>

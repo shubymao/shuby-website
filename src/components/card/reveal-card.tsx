@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Attribution, RevealCardData } from '@typeDefs/data';
 import { processAttribution } from '@utils/graphics-utils';
 import React, { useState } from 'react';
+import CardWrapper from './card-wrapper';
 
 interface ContentProps {
   open: React.MouseEventHandler<HTMLDivElement>;
@@ -36,16 +37,18 @@ const Content: React.FC<ContentProps> = (props) => {
   const { open, attribution, title, description } = props;
   const attributionComponent = processAttribution(attribution);
   return (
-    <div className="flex flex-col items-center h-full justify-between fade-in">
-      <div className="space-y-3 items-center">
-        <div className="cursor-pointer flex flex-col items-center" onClick={open}>
-          {attributionComponent}
-        </div>
-        <h2 className="text-xl">{title}</h2>
-        <p>{description}</p>
+    <div className="flex flex-col items-center space-y-3 h-full fade-in">
+      <div className="cursor-pointer" onClick={open}>
+        {attributionComponent}
       </div>
-      <div className="w-full cursor-pointer border-t mt-3" onClick={open}>
-        <p className="text-center pt-3">Click here for more detail</p>
+      <div className="flex flex-col flex-grow space-y-3 justify-between">
+        <div className="space-y-2">
+          <h2 className="text-xl">{title}</h2>
+          <p>{description}</p>
+        </div>
+        <div className="w-full cursor-pointer border-t" onClick={open}>
+          <p className="text-center pt-3">Click here for more detail</p>
+        </div>
       </div>
     </div>
   );
@@ -76,11 +79,7 @@ const RevealCard: React.FC<RevealCardData> = (props) => {
   const { attribution, title, description, date, location, detail } = props;
   const contentProps = { attribution, title, description, open };
   const detailProps = { date, location, title, detail, close };
-  return (
-    <div className="px-6 py-4 bg-surface rounded-xl shadow-lg">
-      {isOpen ? <Detail {...detailProps} /> : <Content {...contentProps} />}
-    </div>
-  );
+  return <CardWrapper>{isOpen ? <Detail {...detailProps} /> : <Content {...contentProps} />}</CardWrapper>;
 };
 
 export default RevealCard;

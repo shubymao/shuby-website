@@ -1,8 +1,8 @@
 import React from 'react';
 import MetaInfo from '@components/meta-info';
-import { getAllProjects, getProjectByFile } from '@utils/data-utils';
-import PageContainer from '@components/container';
-import Page from '@components/page';
+import { getAllProjects, getProjectByFile } from '@utils/data-access-utils';
+import PageContainer from '@components/layout/container';
+import Page from '@components/layout/page';
 import Title from '@components/title';
 import ReactMarkdown from 'react-markdown';
 import { Project } from '@typeDefs/data';

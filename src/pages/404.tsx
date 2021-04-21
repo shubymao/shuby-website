@@ -1,6 +1,6 @@
 import Banner from '@components/banner';
 import MetaInfo from '@components/meta-info';
-import Page from '@components/page';
+import Page from '@components/layout/page';
 import importSVGWithClass, { stl } from '@utils/graphics-utils';
 import React from 'react';
 

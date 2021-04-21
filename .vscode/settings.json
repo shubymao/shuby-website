@@ -19,5 +19,14 @@
   },
   "cSpell.words": [
     "semibold"
-  ]
+  ],
+  "files.exclude": {
+    "**/.**": true,
+    "**/firebase.json": true,
+    "**/LICENSE": true,
+    "**/next*": true,
+    "**/node_modules/": true,
+    "**/out": true,
+    "**/postcss*": true
+  }
 }
