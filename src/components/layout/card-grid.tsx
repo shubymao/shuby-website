@@ -23,7 +23,7 @@ function generateCards(cards: Array<CardData>): Array<JSX.Element> {
 }
 
 const CardGrid: React.FC<CardGridProps> = (props) => {
-  const { data, attributionStyle } = props;
+  const { data, attributionStyle = CARD_SVG_STYLE } = props;
   data.forEach((item) => {
     if (item.attribution) {
       const { attribution } = item;

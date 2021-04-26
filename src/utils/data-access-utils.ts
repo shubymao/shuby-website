@@ -17,8 +17,8 @@ export function getProjectByFile(fileName: string, fields: string[] = []): Proje
   const project: Project = {};
   fields.forEach((field) => {
     if (field === 'content') project.content = content;
-    else if (field === 'path') project.path = `/${nameNoExt}`;
-    else project[field] = data[field] || `Unknown ${field}`;
+    else if (field === 'path') project.path = `${nameNoExt}`;
+    else project[field] = data[field] || null;
   });
   return project;
 }

@@ -27,7 +27,7 @@ export const xl2 = '(min-width: 1536px)';
 
 export const MAIN_PAGES: Array<PageLink> = [
   { name: 'Home', url: '/' },
-  { name: 'Projects', url: '/comingsoon' },
+  { name: 'Projects', url: '/projects' },
   { name: 'Articles', url: '/comingsoon' },
   { name: 'Notes', url: '/comingsoon' },
   {
@@ -45,3 +45,8 @@ export const FOOTER_LINKS: Array<FooterLink> = [
   { icon: faGithub, url: 'https://github.com/shubymao' },
   { icon: faStackOverflow, url: 'https://stackoverflow.com/users/11721204/shuby-mao?tab=profile' },
 ];
+
+export const BASIC_PROJECT = ['name', 'date', 'brief', 'path', 'github', 'demo'];
+export const HIGH_LEVEL_PROJECT = [...BASIC_PROJECT, 'attribution'];
+export const HIGHLIGHT_PROJECT = [...HIGH_LEVEL_PROJECT, 'highlight'];
+export const ALL_PROJECT_ATTRIBUTES = [...HIGHLIGHT_PROJECT, 'ogImage', 'content'];

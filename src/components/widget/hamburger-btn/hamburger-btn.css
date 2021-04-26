@@ -2,11 +2,12 @@
 
 @layer components {
   .hamburger-btn {
-    @apply fixed md:hidden w-12 h-12 bottom-5 right-5 flex flex-col justify-items-center items-center rounded-full cursor-pointer bg-onBase;
+    @apply fixed md:hidden w-12 h-12 bottom-5 right-5 flex flex-col justify-items-center items-center rounded-full cursor-pointer bg-onBase focus:outline-none;
+    z-index: 1;
   }
 
   .hamburger-btn .trigger {
-    --delay: 0.5s;
+    --delay: 0.6s;
     --pad-open: 7.5px;
     --pad-closed: 1.5px;
   }

@@ -3,6 +3,7 @@
 @layer components {
   .nav-bar {
     @apply bg-surface fixed shadow-sm flex flex-col w-full h-12 items-center overflow-hidden text-onSurface;
+    z-index: 1;
     -webkit-transition: height 500ms ease-in-out;
     -moz-transition: height 500ms ease-in-out;
     -o-transition: height 500ms ease-in-out;
@@ -14,7 +15,7 @@
   }
 
   .nav-bar.open {
-    @apply h-screen;
+    @apply h-screen overflow-y-scroll;
   }
 
   .nav-bar .drawer {
