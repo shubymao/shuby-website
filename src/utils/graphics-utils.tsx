@@ -8,7 +8,7 @@ export function stl(style: string): string {
 
 function importSVGWithClass(path: string, svgStyle: string, wrapperStyle: string): JSX.Element {
   const SVGICON: ComponentType<{ className: string }> = dynamic(() =>
-    import(`../../public/${path}`).then((mod) => mod),
+    import(`/public/${path}`).then((mod) => mod),
   );
   return (
     <div className={wrapperStyle}>

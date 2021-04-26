@@ -1,6 +1,8 @@
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 import { alignment } from './layout';
 
+export type StaticPropObject<T> = { props: T };
+
 export interface FooterLink {
   icon: IconDefinition;
   url: string;
@@ -52,14 +54,16 @@ export interface AttributionStyle {
 
 export interface Project {
   name?: string;
+  date?: string;
   path?: string;
   github?: string;
   demo?: string;
-  highlight?: string;
+  highlight?: boolean;
+  category?: string;
   brief?: string;
   content?: string;
   ogImage?: string;
-  attributionPath?: string;
+  attribution?: Attribution;
 }
 
 export interface Note {

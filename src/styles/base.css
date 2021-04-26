@@ -2,6 +2,7 @@
 
 @layer base {
   :root {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     --color-base: 245, 246, 247;
     --color-surface: 255, 255, 255;
     --color-primary: 21, 212, 175;

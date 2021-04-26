@@ -8,6 +8,8 @@ import ReactMarkdown from 'react-markdown';
 import { Project } from '@typeDefs/data';
 import DefaultRenderer from '@utils/render-util';
 import gfm from 'remark-gfm';
+import { getDateInLocalTime } from '@utils/data-translation-util';
+import { ALL_PROJECT_ATTRIBUTES } from '@constants/page-info';
 
 type ProjectProps = { project: Project };
 type StaticInput = { params: { project: string } };
@@ -19,21 +21,21 @@ type StaticPropObject = {
   props: ProjectProps;
 };
 
-const projectAttributes = ['name', 'content'];
-
 export default function ProjectPage(props: ProjectProps): JSX.Element {
   const { project } = props;
-  const { name, content } = project;
+  const { name, date, content } = project;
+  const localTime = getDateInLocalTime(date);
   return (
     <>
       <MetaInfo pageTitle={name} />
       <Page>
-        <PageContainer>
-          <Title name={name} />
-          <ReactMarkdown className="prose max-w-none" remarkPlugins={[gfm]} components={DefaultRenderer}>
+        <div className="w-full pt-14 px-5 md:w-8/12 mx-auto prose md:prose-lg max-w-none">
+          <h1>{name}</h1>
+          {date ? <span>Last Updated: {localTime}</span> : null}
+          <ReactMarkdown className="items-center" remarkPlugins={[gfm]} components={DefaultRenderer}>
             {content}
           </ReactMarkdown>
-        </PageContainer>
+        </div>
       </Page>
     </>
   );
@@ -41,7 +43,7 @@ export default function ProjectPage(props: ProjectProps): JSX.Element {
 
 export async function getStaticProps(staticProp: StaticInput): Promise<StaticPropObject> {
   const projectName = staticProp.params.project;
-  const project = getProjectByFile(projectName, projectAttributes);
+  const project = getProjectByFile(projectName, ALL_PROJECT_ATTRIBUTES);
   const props: ProjectProps = { project };
   return { props };
 }
