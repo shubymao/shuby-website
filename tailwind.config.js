@@ -42,6 +42,15 @@ module.exports = {
             h5: { color: theme('colors.onBase') },
             h6: { color: theme('colors.onBase') },
             p: { color: theme('colors.onBase') },
+            code: {
+              color: theme('colors.onBase'),
+              '&::before': {
+                display: 'none',
+              },
+              '&::after': {
+                display: 'none',
+              },
+            },
             a: {
               color: theme('colors.onBase'),
               '&:hover': {

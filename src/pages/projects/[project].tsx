@@ -1,9 +1,7 @@
 import React from 'react';
 import MetaInfo from '@components/meta-info';
 import { getAllProjects, getProjectByFile } from '@utils/data-access-utils';
-import PageContainer from '@components/layout/container';
 import Page from '@components/layout/page';
-import Title from '@components/title';
 import ReactMarkdown from 'react-markdown';
 import { Project } from '@typeDefs/data';
 import DefaultRenderer from '@utils/render-util';
@@ -32,7 +30,7 @@ export default function ProjectPage(props: ProjectProps): JSX.Element {
         <div className="w-full pt-14 px-5 md:w-8/12 mx-auto prose md:prose-lg max-w-none">
           <h1>{name}</h1>
           {date ? <span>Last Updated: {localTime}</span> : null}
-          <ReactMarkdown className="items-center" remarkPlugins={[gfm]} components={DefaultRenderer}>
+          <ReactMarkdown remarkPlugins={[gfm]} components={DefaultRenderer}>
             {content}
           </ReactMarkdown>
         </div>

@@ -18,19 +18,15 @@ export default function NavBar(props: NavBarProps): JSX.Element {
   return (
     <nav className={`nav-bar ${drawerStatus}`}>
       <div className="main-wrapper">
-        <a href="/" className="flex items-center mx-auto md:mx-3 px-2 space-x-2 hover:text-onBase">
+        <a href="/" className="main-icon">
           {theme === 'dark' ? <WhiteIcon height="48px" /> : <BlackIcon height="48px" />}
-          <p className="sm:block whitespace-nowrap text-xl font-bold">{HEADER_TITLE}</p>
+          <p className="header-title">{HEADER_TITLE}</p>
         </a>
-        <div className="hidden md:flex flex-row w-full justify-evenly">
-          {MAIN_PAGES.map(renderHeaderItems)}
-        </div>
-        <div className="absolute md:relative right-2">{renderToggle(theme, toggleTheme)}</div>
+        <div className="horizontal-nav-list">{MAIN_PAGES.map(renderHeaderItems)}</div>
+        <div className="theme-wrapper">{renderToggle(theme, toggleTheme)}</div>
       </div>
       <div className="drawer">
-        <div className="grid grid-cols-2 w-full p-4 gap-5 text-center">
-          {MAIN_PAGES.map(renderNavBarListItems)}
-        </div>
+        <div className="grid-container">{MAIN_PAGES.map(renderNavBarListItems)}</div>
       </div>
     </nav>
   );
