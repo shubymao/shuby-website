@@ -10,16 +10,36 @@
     transition: height 500ms ease-in-out;
   }
 
-  .nav-bar .main-wrapper {
-    @apply container max-w-6xl flex items-center justify-between mx-auto;
-  }
-
   .nav-bar.open {
     @apply h-screen overflow-y-scroll;
   }
 
+  .nav-bar .main-wrapper {
+    @apply container max-w-6xl flex items-center justify-between mx-auto;
+  }
+
+  .nav-bar .main-wrapper .main-icon {
+    @apply flex items-center mx-auto md:mx-3 px-2 space-x-2 hover:text-onBase;
+  }
+
+  .nav-bar .main-wrapper .main-icon .header-title {
+    @apply sm:block whitespace-nowrap text-xl font-bold;
+  }
+
+  .nav-bar .main-wrapper .horizontal-nav-list {
+    @apply hidden md:flex flex-row w-full justify-evenly;
+  }
+
+  .nav-bar .main-wrapper .theme-wrapper {
+    @apply absolute md:relative right-2;
+  }
+
   .nav-bar .drawer {
     @apply flex-grow w-full;
+  }
+
+  .nav-bar .drawer .grid-container {
+    @apply grid grid-cols-2 w-full p-4 gap-5 text-center;
   }
 
   .nav-bar .drawer-item {

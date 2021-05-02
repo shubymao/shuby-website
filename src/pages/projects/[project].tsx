@@ -32,7 +32,7 @@ export default function ProjectPage(props: ProjectProps): JSX.Element {
         <div className="w-full pt-14 px-5 md:w-8/12 mx-auto prose md:prose-lg max-w-none">
           <h1>{name}</h1>
           {date ? <span>Last Updated: {localTime}</span> : null}
-          <ReactMarkdown className="items-center" remarkPlugins={[gfm]} components={DefaultRenderer}>
+          <ReactMarkdown remarkPlugins={[gfm]} components={DefaultRenderer}>
             {content}
           </ReactMarkdown>
         </div>
