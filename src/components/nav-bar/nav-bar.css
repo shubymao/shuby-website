@@ -11,7 +11,7 @@
   }
 
   .nav-bar.open {
-    @apply h-screen overflow-y-scroll;
+    @apply h-screen;
   }
 
   .nav-bar .main-wrapper {
