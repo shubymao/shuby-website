@@ -35,7 +35,7 @@
   }
 
   .nav-bar .drawer {
-    @apply flex-grow w-full;
+    @apply flex-grow w-full overflow-y-scroll;
   }
 
   .nav-bar .drawer .grid-container {
