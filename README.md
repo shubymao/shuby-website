@@ -3,7 +3,7 @@
 Personal website to showcase project, article, and myself.
 
 ## Deployed Site
-You can find the deployed site [here])(https://shuby-mao.web.app/)
+You can find the deployed site [here](https://shuby-mao.web.app/)
 
 ## Installing Dependency 
 
