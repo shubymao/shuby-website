@@ -35,7 +35,15 @@
   }
 
   .nav-bar .drawer {
-    @apply flex-grow w-full overflow-y-scroll;
+    @apply flex-grow w-full hidden;
+  }
+
+  .nav-bar.moving .drawer {
+    @apply block overflow-hidden;
+  }
+
+  .nav-bar.open:not(.moving) .drawer {
+    @apply block overflow-auto;
   }
 
   .nav-bar .drawer .grid-container {

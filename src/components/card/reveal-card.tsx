@@ -41,13 +41,13 @@ const Content: React.FC<ContentProps> = (props) => {
       <div className="cursor-pointer" onClick={open}>
         {attributionComponent}
       </div>
-      <div className="flex flex-col flex-grow space-y-3 justify-between">
+      <div className="flex flex-col flex-grow justify-between">
         <div className="space-y-2">
           <h2 className="text-xl">{title}</h2>
           <p>{description}</p>
         </div>
-        <div className="w-full cursor-pointer border-t" onClick={open}>
-          <p className="text-center pt-3">Click here for more detail</p>
+        <div className="w-full cursor-pointer pt-2 mt-3 border-t" onClick={open}>
+          <p className="text-center">Click here for more detail</p>
         </div>
       </div>
     </div>
@@ -58,15 +58,14 @@ const Detail: React.FC<DetailProps> = (props) => {
   const { close, title, location, date, detail } = props;
   return (
     <div className="fade-in">
-      <div onClick={close} className="cursor-pointer">
-        <span className="text-xl">{title}</span>
-        <FontAwesomeIcon className="float-right" icon={faTimes} />
+      <div onClick={close} className="flex cursor-pointer justify-between items-center">
+        <p className="text-xl">{title}</p>
+        <FontAwesomeIcon icon={faTimes} />
       </div>
       <div className="flex flex-wrap justify-between">
         <h3 className="mt-2">{location}</h3>
         <h3 className="mt-2">{date}</h3>
       </div>
-
       <ul className="space-y-2 mt-2">{generateDetail(detail)}</ul>
     </div>
   );
