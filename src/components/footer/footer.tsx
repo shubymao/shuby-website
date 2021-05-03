@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="link-wrapper">{links}</div>
       </div>
-      <p className="copy-rights">©2017 - 2021 Shuby Mao, All rights reserved.</p>
+      <p className="copy-rights">© 2017 - 2021 Shuby Mao</p>
     </footer>
   );
 };

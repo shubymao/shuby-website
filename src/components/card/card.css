@@ -4,4 +4,12 @@
   .card-wrapper {
     @apply flex flex-col items-center rounded-xl bg-surface shadow-md text-left;
   }
+
+  .card-wrapper .card-body {
+    @apply flex flex-col w-full h-full justify-between;
+  }
+
+  .card-wrapper .links-container {
+    @apply flex flex-row-reverse flex-wrap pt-2 mt-3 border-t;
+  }
 }

@@ -6,7 +6,7 @@ type CardWrapperProp = {
 };
 
 const CardWrapper: React.FC<CardWrapperProp> = (props) => {
-  const { children, style = 'py-4 px-6 space-y-4' } = props;
+  const { children, style = 'py-4 px-5 space-y-4' } = props;
   return <div className={`card-wrapper ${style}`}> {children}</div>;
 };
 

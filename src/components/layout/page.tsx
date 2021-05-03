@@ -18,7 +18,7 @@ const Page: React.FC<PageProps> = (props) => {
   const [theme, setTheme] = useState('undefined');
   const [isLoaded, setIsLoaded] = useState(false);
   const setDrawerStatus = (st: string) => {
-    toggleBodyLock(st === 'open');
+    toggleBodyLock(st.includes('open'));
     updateDrawerStatus(st);
   };
 
@@ -36,7 +36,10 @@ const Page: React.FC<PageProps> = (props) => {
   }, [largeScreen]);
 
   const toggleDrawer = () => {
-    setDrawerStatus(drawerStatus === 'open' ? 'close' : 'open');
+    if (drawerStatus.includes('moving')) return;
+    const finalState = drawerStatus === 'open' ? 'close' : 'open';
+    setDrawerStatus(`moving ${finalState}`);
+    setTimeout(() => setDrawerStatus(finalState), 700);
   };
 
   const toggleTheme = () => {

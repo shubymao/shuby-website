@@ -6,9 +6,9 @@ import CardWrapper from './card-wrapper';
 const getLinks = (links: Array<PageLink>) => {
   if (!links || links.length === 0) return null;
   return (
-    <div className="w-full flex flex-row-reverse pt-3 border-t">
+    <div className="links-container">
       {links.map((link) => (
-        <a className="ml-4" key={link.name} href={link.url}>
+        <a className="mx-1 whitespace-nowrap" key={link.name} href={link.url}>
           {link.name}
         </a>
       ))}
@@ -22,7 +22,7 @@ const Card: React.FC<CardData> = (props) => {
   return (
     <CardWrapper>
       {attributionComponent}
-      <div className="flex flex-col w-full h-full justify-between space-y-3">
+      <div className="card-body">
         <div className="space-y-2">
           <h2 className="text-xl">{title}</h2>
           <p>{description}</p>
