@@ -1,6 +1,6 @@
 import { alignment } from '@typeDefs/layout';
 import getTextAlignClass from '@utils/layout-utils';
-import React from 'react';
+import React, { useRef } from 'react';
 
 export interface SectionProp {
   title?: string;
@@ -19,8 +19,10 @@ const Section: React.FC<SectionProp> = (props) => {
   const { title, children, alignTitle, depth = 0 } = props;
   const align = getTextAlignClass(alignTitle);
   const { size, mobile, margin, padding } = SECTION_STYLE[depth];
+  const sectionRef = useRef<HTMLElement>();
+
   return (
-    <section className={`w-full ${padding}`}>
+    <section ref={sectionRef} className={`section-wrapper w-full ${padding}`}>
       {title && <h2 className={`${mobile} ${size} ${margin} ${align}`}>{title}</h2>}
       {children}
     </section>

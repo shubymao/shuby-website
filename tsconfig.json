@@ -33,6 +33,7 @@
       "@data/*": ["./source-data/*"]
     }
   },
+  "files": ["node_modules/gsap/types/index.d.ts"],
   "exclude": ["node_modules"],
   "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", "**/*.svg", "**/*.json", "next.config.js"]
 }
