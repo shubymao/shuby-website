@@ -28,8 +28,11 @@ const Page: React.FC<PageProps> = (props) => {
     const savedTheme = getSavedTheme();
     setTheme(savedTheme);
     setIsLoaded(true);
-    initAnimation();
   }, []);
+
+  useEffect(() => {
+    initAnimation();
+  }, [isLoaded]);
 
   useEffect(() => {
     if (largeScreen) {
