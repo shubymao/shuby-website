@@ -1,7 +1,6 @@
 import { AttributionStyle, CardData } from '@typeDefs/data';
-import showOnScrollStagger from '@utils/animation-util';
 import { stl } from '@utils/graphics-utils';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Card from '../card/card';
 import RevealCard from '../card/reveal-card';
 
@@ -25,9 +24,6 @@ function generateCards(cards: Array<CardData>): Array<JSX.Element> {
 
 const CardGrid: React.FC<CardGridProps> = (props) => {
   const { data, attributionStyle = CARD_SVG_STYLE } = props;
-  useEffect(() => {
-    showOnScrollStagger('.card-wrapper');
-  }, []);
   data.forEach((item) => {
     if (item.attribution) {
       const { attribution } = item;
