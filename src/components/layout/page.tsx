@@ -5,7 +5,7 @@ import { toggleBodyLock } from '@utils/layout-utils';
 import { getSavedTheme, getNextTheme } from '@utils/graphics-utils';
 import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import initAnimation from '@utils/animation-util';
+import initAnimation, { hideElements } from '@utils/animation-util';
 import HamburgerButton from '../widget/hamburger-btn/hamburger-btn';
 
 export interface PageProps {
@@ -31,7 +31,10 @@ const Page: React.FC<PageProps> = (props) => {
   }, []);
 
   useEffect(() => {
-    initAnimation();
+    if (isLoaded) {
+      hideElements();
+      setTimeout(() => initAnimation(), 500);
+    }
   }, [isLoaded]);
 
   useEffect(() => {

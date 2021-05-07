@@ -2,15 +2,15 @@
 
 @layer components {
   .footer {
-    @apply bg-secondary text-onSecondary flex flex-col w-full items-center text-center;
+    @apply bg-secondary text-onSecondary h-40 flex flex-col justify-between w-full items-center text-center;
   }
 
   .footer .main-footer-wrapper {
-    @apply grid grid-cols-3 mt-6 mb-4 w-full sm:w-10/12 md:grid-flow-row-dense;
+    @apply grid grid-cols-3 my-auto w-full sm:w-10/12 md:grid-flow-row-dense;
   }
 
   .footer .link-wrapper {
-    @apply flex flex-row mt-2 flex-wrap justify-center space-x-4 col-span-3 sm:col-span-2 lg:col-span-1;
+    @apply flex flex-row mt-2 justify-evenly col-span-3 sm:col-span-2 lg:col-span-1;
   }
 
   .footer .back-top-wrapper {
@@ -18,7 +18,7 @@
   }
 
   .footer .link-item {
-    @apply rounded px-3 py-1 text-2xl focus:outline-none;
+    @apply rounded px-2 py-1 text-2xl focus:outline-none;
   }
 
   .footer .copy-rights {
