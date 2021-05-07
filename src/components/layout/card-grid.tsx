@@ -30,9 +30,8 @@ const CardGrid: React.FC<CardGridProps> = (props) => {
       attribution.style = attribution.style || attributionStyle;
     }
   });
-  const cards = generateCards(data);
   const gridStyle = stl('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4');
-  return <div className={gridStyle}>{cards}</div>;
+  return <div className={gridStyle}>{generateCards(data)}</div>;
 };
 
 export default CardGrid;

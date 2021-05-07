@@ -2,7 +2,7 @@ import { faAngleRight, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Attribution, RevealCardData } from '@typeDefs/data';
 import { processAttribution } from '@utils/graphics-utils';
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import CardWrapper from './card-wrapper';
 
 interface ContentProps {
@@ -33,7 +33,7 @@ function generateDetail(detail?: Array<string>): Array<JSX.Element> {
   });
 }
 
-const Content: React.FC<ContentProps> = (props) => {
+const Content: FC<ContentProps> = (props) => {
   const { open, attribution, title, description } = props;
   const attributionComponent = processAttribution(attribution);
   return (
@@ -54,7 +54,7 @@ const Content: React.FC<ContentProps> = (props) => {
   );
 };
 
-const Detail: React.FC<DetailProps> = (props) => {
+const Detail: FC<DetailProps> = (props) => {
   const { close, title, location, date, detail } = props;
   return (
     <div className="fade-in">
@@ -71,7 +71,7 @@ const Detail: React.FC<DetailProps> = (props) => {
   );
 };
 
-const RevealCard: React.FC<RevealCardData> = (props) => {
+const RevealCard: FC<RevealCardData> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const close = () => setIsOpen(false);
   const open = () => setIsOpen(true);

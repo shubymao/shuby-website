@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import dynamic from 'next/dynamic';
 import React, { ComponentType } from 'react';
 import { Attribution } from '@typeDefs/data';
@@ -7,9 +8,9 @@ export function stl(style: string): string {
 }
 
 function importSVGWithClass(path: string, svgStyle: string, wrapperStyle: string): JSX.Element {
-  const SVGICON: ComponentType<{ className: string }> = dynamic(() =>
-    import(`/public/${path}`).then((mod) => mod),
-  );
+  const SVGICON: ComponentType<{ className: string }> = dynamic(() => import(`/public/${path}`), {
+    loading: () => <div className={svgStyle} />,
+  });
   return (
     <div className={wrapperStyle}>
       <SVGICON className={svgStyle} />

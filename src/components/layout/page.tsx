@@ -5,6 +5,7 @@ import { toggleBodyLock } from '@utils/layout-utils';
 import { getSavedTheme, getNextTheme } from '@utils/graphics-utils';
 import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import initAnimation, { hideElements } from '@utils/animation-util';
 import HamburgerButton from '../widget/hamburger-btn/hamburger-btn';
 
 export interface PageProps {
@@ -17,6 +18,7 @@ const Page: React.FC<PageProps> = (props) => {
   const [drawerStatus, updateDrawerStatus] = useState('idle');
   const [theme, setTheme] = useState('undefined');
   const [isLoaded, setIsLoaded] = useState(false);
+
   const setDrawerStatus = (st: string) => {
     toggleBodyLock(st.includes('open'));
     updateDrawerStatus(st);
@@ -27,6 +29,13 @@ const Page: React.FC<PageProps> = (props) => {
     setTheme(savedTheme);
     setIsLoaded(true);
   }, []);
+
+  useEffect(() => {
+    if (isLoaded) {
+      hideElements();
+      setTimeout(() => initAnimation(), 500);
+    }
+  }, [isLoaded]);
 
   useEffect(() => {
     if (largeScreen) {
@@ -51,8 +60,8 @@ const Page: React.FC<PageProps> = (props) => {
   return isLoaded ? (
     <div className={`w-full h-screen ${theme}`}>
       <NavBar drawerStatus={drawerStatus} theme={theme} toggleTheme={toggleTheme} />
-      <div className="w-full flex flex-col min-h-screen justify-between pt-12">
-        <div className="flex-grow pb-16 block bg-base">{children}</div>
+      <div className="w-full flex flex-col min-h-screen justify-between">
+        <div className="flex-grow mt-12 pb-16 block bg-base">{children}</div>
         <Footer />
       </div>
       <HamburgerButton status={drawerStatus} callBack={toggleDrawer} />

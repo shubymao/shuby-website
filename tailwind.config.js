@@ -18,6 +18,16 @@ module.exports = {
         'screen/2': '50vh',
         'screen-3/4': '75vh',
       },
+      minHeight: {
+        'screen/4': '25vh',
+        'screen/2': '50vh',
+        'screen-3/4': '75vh',
+      },
+      minWidth: {
+        'screen/4': '25vw',
+        'screen/2': '50vw',
+        'screen-3/4': '75vw',
+      },
       colors: {
         base: withOpacity('--color-base'),
         onBase: withOpacity('--color-on-base'),
