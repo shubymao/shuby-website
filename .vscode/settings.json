@@ -21,7 +21,9 @@
     "semibold"
   ],
   "files.exclude": {
-    "**/.**": true,
+    "**/.**rc": true,
+    "**/.git": false,
+    "**/.git**": true,
     "**/firebase.json": true,
     "**/LICENSE": true,
     "**/next*": true,

@@ -13,8 +13,16 @@
     --color-on-surface: 0, 0, 0;
     --color-on-primary: 255, 255, 255;
     --color-on-secondary: 255, 255, 255;
-
     @apply text-onBase bg-base;
+  }
+
+  div,
+  nav,
+  footer {
+    -webkit-transition: background-color 500ms ease-in-out;
+    -moz-transition: background-color 500ms ease-in-out;
+    -o-transition: background-color 500ms ease-in-out;
+    transition: background-color 500ms ease-in-out;
   }
 
   .dark {
@@ -25,8 +33,7 @@
     @apply text-onBase bg-base;
   }
 
-  a,
-  button {
+  a {
     @apply hover:text-primary;
   }
 

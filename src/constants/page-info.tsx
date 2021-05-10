@@ -1,6 +1,6 @@
 import { faGithub, faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { FooterLink, PageLink } from '@typeDefs/data';
+import { ContactInfo, FooterLink, PageLink } from '@typeDefs/data';
 
 export const resumeURL =
   'https://firebasestorage.googleapis.com/v0/b/shuby-mao.appspot.com/o/shubycv.pdf?alt=media&token=8bad616e-0e7e-411d-b0f6-7118d882681f';
@@ -34,16 +34,20 @@ export const MAIN_PAGES: Array<PageLink> = [
     name: 'Resume',
     url: resumeURL,
   },
-  { name: 'Contact', url: '/comingsoon' },
+  { name: 'Contact', url: '/contact' },
 ];
 
 export const HEADER_TITLE = 'Shuby Mao';
 
-export const FOOTER_LINKS: Array<FooterLink> = [
-  { icon: faLinkedin, url: 'https://www.linkedin.com/in/lelimao/' },
-  { icon: faEnvelope, url: 'mailto:shuby@yahoo.ca' },
-  { icon: faGithub, url: 'https://github.com/shubymao' },
-  { icon: faStackOverflow, url: 'https://stackoverflow.com/users/11721204/shuby-mao?tab=profile' },
+export const CONTACT_INFORMATION: Array<ContactInfo> = [
+  { name: 'LinkedIn Page', icon: faLinkedin, url: 'https://www.linkedin.com/in/lelimao/' },
+  { name: 'Email Address', icon: faEnvelope, url: 'shuby1036@gmail.com' },
+  { name: 'Github Profile', icon: faGithub, url: 'https://github.com/shubymao' },
+  {
+    name: 'StackOverflow',
+    icon: faStackOverflow,
+    url: 'https://stackoverflow.com/users/11721204/shuby-mao',
+  },
 ];
 
 export const BASIC_PROJECT = ['name', 'date', 'brief', 'path', 'github', 'demo'];

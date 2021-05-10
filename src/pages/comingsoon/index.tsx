@@ -2,7 +2,6 @@ import Banner from '@components/banner';
 import MetaInfo from '@components/meta-info';
 import Page from '@components/layout/page';
 import importSVGWithClass, { stl } from '@utils/graphics-utils';
-import { Container } from 'next/app';
 import React from 'react';
 
 const title = 'More Detail Coming Soon';
@@ -12,9 +11,9 @@ export default function ComingSoon(): JSX.Element {
     <>
       <MetaInfo pageTitle={title} />
       <Page>
-        <Container>
+        <div className="m-auto">
           <Banner title={title} attribution={construction} />
-        </Container>
+        </div>
       </Page>
     </>
   );

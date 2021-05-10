@@ -8,6 +8,12 @@ export interface FooterLink {
   url: string;
 }
 
+export interface ContactInfo {
+  name: string;
+  icon: IconDefinition;
+  url: string;
+}
+
 export interface PageLink {
   name: string;
   url: string;

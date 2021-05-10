@@ -2,7 +2,7 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FooterLink } from '@typeDefs/data';
 import React from 'react';
-import { FOOTER_LINKS } from 'src/constants/page-info';
+import { CONTACT_INFORMATION } from 'src/constants/page-info';
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -15,7 +15,7 @@ const renderFooterLink = (item: FooterLink, index: number) => (
 );
 
 const Footer: React.FC = () => {
-  const links = FOOTER_LINKS.map(renderFooterLink);
+  const links = CONTACT_INFORMATION.map(renderFooterLink);
   return (
     <footer className="footer">
       <div className="main-footer-wrapper">

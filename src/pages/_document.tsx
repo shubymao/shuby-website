@@ -33,9 +33,9 @@ class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang="en">
+      <Html lang="en" className="bg-black">
         <Head>{getFavIcons()}</Head>
-        <body>
+        <body className="overflow-y-auto overflow-x-hidden">
           <Main />
           <NextScript />
         </body>
