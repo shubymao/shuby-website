@@ -33,7 +33,7 @@ const Page: React.FC<PageProps> = (props) => {
   useEffect(() => {
     if (isLoaded) {
       hideElements();
-      setTimeout(() => initAnimation(), 500);
+      setTimeout(() => initAnimation(), 1000);
     }
   }, [isLoaded]);
 
@@ -48,7 +48,7 @@ const Page: React.FC<PageProps> = (props) => {
     if (drawerStatus.includes('moving')) return;
     const finalState = drawerStatus === 'open' ? 'close' : 'open';
     setDrawerStatus(`moving ${finalState}`);
-    setTimeout(() => setDrawerStatus(finalState), 700);
+    setTimeout(() => setDrawerStatus(finalState), 500);
   };
 
   const toggleTheme = () => {
@@ -60,10 +60,10 @@ const Page: React.FC<PageProps> = (props) => {
   return isLoaded ? (
     <div className={`w-full h-screen ${theme}`}>
       <NavBar drawerStatus={drawerStatus} theme={theme} toggleTheme={toggleTheme} />
-      <div className="w-full flex flex-col min-h-screen justify-between">
-        <div className="flex-grow mt-12 pb-16 block bg-base">{children}</div>
-        <Footer />
+      <div className="bg-base w-full flex flex-col min-h-screen">
+        <div className="mt-12 flex-grow flex flex-col">{children}</div>
       </div>
+      <Footer />
       <HamburgerButton status={drawerStatus} callBack={toggleDrawer} />
     </div>
   ) : (

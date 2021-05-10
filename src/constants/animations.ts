@@ -1,8 +1,25 @@
 import { Effect } from '@typeDefs/alias';
 
+export const RIGHT_HIDDEN: Effect = {
+  duration: 0.7,
+  opacity: 0,
+  x: 50,
+  overwrite: true,
+};
+
 export const BOTTOM_HIDDEN: Effect = {
+  duration: 0.7,
   opacity: 0,
   y: 50,
+  overwrite: true,
+};
+
+export const BOTTOM_HIDDEN_STAGGER: Effect = {
+  duration: 0.7,
+  stagger: 0.3,
+  opacity: 0,
+  y: 50,
+  overwrite: true,
 };
 
 export const HIDDEN: Effect = {
@@ -10,15 +27,6 @@ export const HIDDEN: Effect = {
 };
 
 export const NORMAL: Effect = {
-  duration: 0.8,
-  opacity: 1,
-  y: 0,
-  x: 0,
-};
-
-export const NORMAL_STAGGER: Effect = {
-  duration: 0.8,
-  stagger: 0.2,
   opacity: 1,
   y: 0,
   x: 0,

@@ -1,5 +1,5 @@
 /* eslint-disable */
-
+const defaultTheme = require('tailwindcss/defaultTheme');
 function withOpacity(varName) {
   return ({ opacityValue }) => {
     if (opacityValue !== undefined) return `rgba(var(${varName}),${opacityValue})`;
@@ -12,6 +12,10 @@ module.exports = {
   purge: ['./src/**/*.{js,ts,jsx,tsx,css}', './source-data/**/*.{json,md}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    screens: {
+      xsm: '360px',
+      ...defaultTheme.screens,
+    },
     extend: {
       maxHeight: {
         'screen/4': '25vh',
