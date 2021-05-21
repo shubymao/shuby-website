@@ -34,7 +34,7 @@ export default function NavBar(props: NavBarProps): JSX.Element {
 
 function renderHeaderItems(item: PageLink) {
   return (
-    <a className="py-2 px-3 block" key={item.name} href={item.url}>
+    <a className="block px-3 py-2" key={item.name} href={item.url}>
       <span>{item.name}</span>
     </a>
   );

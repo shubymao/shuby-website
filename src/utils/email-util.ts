@@ -16,10 +16,9 @@ export interface ContactMessage {
 export default async function sendEmail(emailObj: ContactMessage): Promise<void> {
   validateMessage(emailObj);
   try {
-    const response = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, emailObj);
-    console.log('Success...', response.status, response.text);
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, emailObj);
   } catch (err) {
-    console.log('Failed...', err);
+    throw new Error('Some error occurred when sending. Try again later.');
   }
 }
 

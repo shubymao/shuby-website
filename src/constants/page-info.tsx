@@ -1,6 +1,6 @@
 import { faGithub, faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { ContactInfo, FooterLink, PageLink } from '@typeDefs/data';
+import { ContactInfo, PageLink } from '@typeDefs/data';
 
 export const resumeURL =
   'https://firebasestorage.googleapis.com/v0/b/shuby-mao.appspot.com/o/shubycv.pdf?alt=media&token=8bad616e-0e7e-411d-b0f6-7118d882681f';

@@ -25,6 +25,7 @@
   .contact-card-input-wrapper textarea {
     @apply min-h-[150px];
   }
+
   .card-wrapper .contact-form-button {
     @apply w-full p-3 mt-6 bg-secondary hover:bg-gray-600 text-onSecondary rounded;
   }

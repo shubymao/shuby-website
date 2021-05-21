@@ -1,7 +1,9 @@
 @tailwind base;
+
 @import './base.css';
 
 @tailwind components;
+
 @import '@components/footer/footer';
 @import '@components/nav-bar/nav-bar';
 @import '@components/widget/hamburger-btn/hamburger-btn';

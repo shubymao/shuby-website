@@ -35,7 +35,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en" className="bg-black">
         <Head>{getFavIcons()}</Head>
-        <body className="overflow-y-auto overflow-x-hidden">
+        <body className="overflow-x-hidden overflow-y-auto">
           <Main />
           <NextScript />
         </body>
