@@ -27,7 +27,7 @@ export default function ProjectPage(props: ProjectProps): JSX.Element {
     <>
       <MetaInfo pageTitle={name} />
       <Page>
-        <div className="w-full py-14 px-5 md:w-8/12 mx-auto prose md:prose-lg max-w-none">
+        <div className="w-full px-5 mx-auto py-14 md:w-8/12 prose md:prose-lg max-w-none">
           <h1>{name}</h1>
           {date ? <span>Last Updated: {localTime}</span> : null}
           <ReactMarkdown remarkPlugins={[gfm]} components={DefaultRenderer}>

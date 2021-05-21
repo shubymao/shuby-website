@@ -4,6 +4,7 @@ module.exports = {
     node: true,
     es2020: true,
   },
+  ignorePatterns: ['out/**'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
@@ -21,6 +22,7 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
+    'plugin:tailwind/recommended',
     'prettier',
   ],
   rules: {

@@ -34,7 +34,7 @@ const ContactCard: FC = () => {
 
   return (
     <>
-      <p ref={successRef} className="whitespace-pre-line text-onBase text-xl md:text-3xl">
+      <p ref={successRef} className="text-xl whitespace-pre-line text-onBase md:text-3xl">
         {success}
       </p>
       <CardWrapper ref={cardRef} style={stl('mx-auto p-5 sm:p-7 md:p-10 max-w-[700px]')}>
@@ -49,7 +49,7 @@ const ContactCard: FC = () => {
             onChange={onChange(setMessage)}
           />
         </div>
-        {error && <p className="text-red-500 mt-4 md:text-lg">{error}</p>}
+        {error && <p className="mt-4 text-red-500 md:text-lg">{error}</p>}
         <button className="contact-form-button" type="submit" onClick={submitHandler}>
           Submit
         </button>

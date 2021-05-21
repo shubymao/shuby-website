@@ -5,7 +5,7 @@ import Section from '@components/layout/section';
 import MetaInfo from '@components/meta-info';
 import home from '@data/home.json';
 import importSVGWithClass, { stl } from '@utils/graphics-utils';
-import CardGrid, { CARD_SVG_STYLE } from '@components/layout/card-grid';
+import CardGrid from '@components/layout/card-grid';
 import PageContainer from '@components/layout/container';
 import { getAllProjects } from '@utils/data-access-utils';
 import { Project, StaticPropObject } from '@typeDefs/data';

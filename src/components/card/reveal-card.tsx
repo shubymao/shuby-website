@@ -37,16 +37,16 @@ const Content: FC<ContentProps> = (props) => {
   const { open, attribution, title, description } = props;
   const attributionComponent = processAttribution(attribution);
   return (
-    <div className="flex flex-col items-center space-y-3 h-full fade-in">
+    <div className="flex flex-col items-center h-full space-y-3 fade-in">
       <div className="cursor-pointer" onClick={open}>
         {attributionComponent}
       </div>
-      <div className="flex flex-col flex-grow justify-between">
+      <div className="flex flex-col justify-between flex-grow">
         <div className="space-y-2">
           <h2 className="text-xl">{title}</h2>
           <p>{description}</p>
         </div>
-        <div className="w-full cursor-pointer pt-2 mt-3 border-t" onClick={open}>
+        <div className="w-full pt-2 mt-3 border-t cursor-pointer" onClick={open}>
           <p className="text-center">Click here for more detail</p>
         </div>
       </div>
@@ -58,7 +58,7 @@ const Detail: FC<DetailProps> = (props) => {
   const { close, title, location, date, detail } = props;
   return (
     <div className="fade-in">
-      <div onClick={close} className="flex cursor-pointer justify-between items-center">
+      <div onClick={close} className="flex items-center justify-between cursor-pointer">
         <p className="text-xl">{title}</p>
         <FontAwesomeIcon icon={faTimes} />
       </div>
@@ -66,7 +66,7 @@ const Detail: FC<DetailProps> = (props) => {
         <h3 className="mt-2">{location}</h3>
         <h3 className="mt-2">{date}</h3>
       </div>
-      <ul className="space-y-2 mt-2">{generateDetail(detail)}</ul>
+      <ul className="mt-2 space-y-2">{generateDetail(detail)}</ul>
     </div>
   );
 };

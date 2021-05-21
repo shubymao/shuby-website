@@ -60,8 +60,8 @@ const Page: React.FC<PageProps> = (props) => {
   return isLoaded ? (
     <div className={`w-full h-screen ${theme}`}>
       <NavBar drawerStatus={drawerStatus} theme={theme} toggleTheme={toggleTheme} />
-      <div className="bg-base w-full flex flex-col min-h-screen">
-        <div className="mt-12 flex-grow flex flex-col">{children}</div>
+      <div className="flex flex-col w-full min-h-screen bg-base">
+        <div className="flex flex-col flex-grow mt-12">{children}</div>
       </div>
       <Footer />
       <HamburgerButton status={drawerStatus} callBack={toggleDrawer} />

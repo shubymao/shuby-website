@@ -6,7 +6,7 @@ export interface ContainerProps {
 
 function PageContainer(props: ContainerProps): JSX.Element {
   const { children } = props;
-  return <div className="mx-auto px-5 pb-12 w-full flex-grow md:w-10/12">{children}</div>;
+  return <div className="flex-grow w-full px-5 pb-12 mx-auto md:w-10/12">{children}</div>;
 }
 
 export default PageContainer;
