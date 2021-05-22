@@ -46,7 +46,7 @@
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
     "@types/node": "^15.0.2",
-    "@types/react": "^17.0.3",
+    "@types/react": "17.0.6",
     "@types/react-syntax-highlighter": "^13.5.0",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
