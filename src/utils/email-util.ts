@@ -6,12 +6,12 @@ const { EMAILJS_USER_ID, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } = publicRunti
 emailjs.init(EMAILJS_USER_ID);
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
 
-export interface ContactMessage {
+export type ContactMessage = {
   name: string;
   subject: string;
   email: string;
   message: string;
-}
+};
 
 export default async function sendEmail(emailObj: ContactMessage): Promise<void> {
   validateMessage(emailObj);
