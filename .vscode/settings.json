@@ -8,6 +8,8 @@
   "editor.quickSuggestions": {
     "strings": true
   },
+  "css.validate": false, // Disable css built-in lint
+  "stylelint.enable": true, // Enable sytlelint
   "editor.autoClosingQuotes": "always",
   "tailwindCSS.experimental.classRegex": [
     "stl\\(\"([^\"]*)\"\\)", // stl("style")
