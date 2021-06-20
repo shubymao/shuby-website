@@ -22,7 +22,6 @@
   "cSpell.words": ["semibold"],
   "files.exclude": {
     "**/.**rc": true,
-    "**/.git": false,
     "**/.git**": true,
     "**/firebase.json": true,
     "**/LICENSE": true,
