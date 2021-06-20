@@ -11,8 +11,16 @@ module.exports = withTM({
     webpack5: true,
   },
   webpack(config) {
-    const conf = config;
-    conf.module.rules = [
+    const newConfig = config;
+    const existingRules = config.module.rules;
+    const ruleWithoutSVG = existingRules.map((rule) => {
+      if (rule.test && rule.test.toString().includes('svg')) {
+        const test = rule.test.toString().replace('svg|', '').replace(/\//g, '');
+        return { ...rule, test: new RegExp(test) };
+      }
+      return rule;
+    });
+    newConfig.module.rules = [
       {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
@@ -21,8 +29,8 @@ module.exports = withTM({
         test: /\.(png|jpg|gif)$/i,
         use: ['url-loader?limit=100000'],
       },
-      ...config.module.rules,
+      ...ruleWithoutSVG,
     ];
-    return config;
+    return newConfig;
   },
 });
