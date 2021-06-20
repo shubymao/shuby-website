@@ -4,9 +4,9 @@
 
 @tailwind components;
 
-@import '@components/footer/footer';
-@import '@components/nav-bar/nav-bar';
-@import '@components/widget/hamburger-btn/hamburger-btn';
-@import '@components/card/card';
+@import '@components/footer/footer.css';
+@import '@components/nav-bar/nav-bar.css';
+@import '@components/widget/hamburger-btn/hamburger-btn.css';
+@import '@components/card/card.css';
 
 @tailwind utilities;
