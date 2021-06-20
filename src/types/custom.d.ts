@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 declare module '*.svg' {
-  const content: any;
-  export default content;
+  import { SVGProps } from 'react';
+
+  const element: (props: SVGProps) => JSX.Element;
+  export default element;
 }

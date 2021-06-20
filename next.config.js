@@ -7,12 +7,22 @@ module.exports = withTM({
     EMAILJS_SERVICE_ID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
     EMAILJS_TEMPLATE_ID: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
   },
-  future: {
-    webpack5: true,
+  eslint: {
+    // Warning: Dangerously allow production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
   },
   webpack(config) {
-    const conf = config;
-    conf.module.rules = [
+    const newConfig = config;
+    const existingRules = config.module.rules;
+    const ruleWithoutSVG = existingRules.map((rule) => {
+      if (rule.test && rule.test.toString().includes('svg')) {
+        const test = rule.test.toString().replace('svg|', '').replace(/\//g, '');
+        return { ...rule, test: new RegExp(test) };
+      }
+      return rule;
+    });
+    newConfig.module.rules = [
       {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
@@ -21,8 +31,8 @@ module.exports = withTM({
         test: /\.(png|jpg|gif)$/i,
         use: ['url-loader?limit=100000'],
       },
-      ...config.module.rules,
+      ...ruleWithoutSVG,
     ];
-    return config;
+    return newConfig;
   },
 });

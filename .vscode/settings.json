@@ -17,16 +17,13 @@
     "typescript": "javascript",
     "typescriptreact": "javascript"
   },
-  "cSpell.words": [
-    "semibold"
-  ],
+  "cSpell.words": ["semibold"],
   "files.exclude": {
     "**/.**rc": true,
     "**/.git": false,
     "**/.git**": true,
     "**/firebase.json": true,
     "**/LICENSE": true,
-    "**/next*": true,
     "**/node_modules/": true,
     "**/out": true,
     "**/postcss*": true
