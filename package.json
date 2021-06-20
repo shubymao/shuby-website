@@ -9,6 +9,11 @@
     "lint": "eslint --fix --ext .tsx,.ts,.js,.jsx .",
     "lintStyle": "stylelint **/*.css --fix "
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "src/**/*.{ts,tsx,js}": [
       "eslint . --fix",
@@ -18,11 +23,6 @@
       "stylelint --syntax css --fix",
       "git add"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "dependencies": {
     "@fortawesome/fontawesome-common-types": "0.2.35",
@@ -34,7 +34,7 @@
     "@types/react-responsive": "8.0.2",
     "emailjs-com": "3.1.0",
     "gray-matter": "4.0.3",
-    "gsap": "3.6.1",
+    "gsap": "3.7.0",
     "next": "11.0.0",
     "next-transpile-modules": "8.0.0",
     "react": "17.0.2",
@@ -48,9 +48,9 @@
     "@svgr/webpack": "5.5.0",
     "@types/node": "15.0.2",
     "@types/react": "17.0.11",
-    "@types/react-syntax-highlighter": "13.5.0",
-    "@typescript-eslint/eslint-plugin": "4.26.1",
-    "@typescript-eslint/parser": "4.26.1",
+    "@types/react-syntax-highlighter": "13.5.1",
+    "@typescript-eslint/eslint-plugin": "4.27.0",
+    "@typescript-eslint/parser": "4.27.0",
     "autoprefixer": "10.2.6",
     "babel-plugin-module-resolver": "4.1.0",
     "eslint": "7.29.0",
