@@ -1170,11 +1170,14 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
+<<<<<<< HEAD
 "@rushstack/eslint-patch@^1.0.6":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.0.6.tgz#023d72a5c4531b4ce204528971700a78a85a0c50"
   integrity sha512-Myxw//kzromB9yWgS8qYGuGVf91oBUUJpNvy5eM50sqvmKLbKjwLxohJnkWGTeeI9v9IBMtPLxz5Gc60FIfvCA==
 
+=======
+>>>>>>> 220c3239612dac768281e4d8d4287c01edbfdef8
 "@stylelint/postcss-css-in-js@^0.37.2":
   version "0.37.2"
   resolved "https://registry.yarnpkg.com/@stylelint/postcss-css-in-js/-/postcss-css-in-js-0.37.2.tgz#7e5a84ad181f4234a2480803422a47b8749af3d2"
@@ -1364,10 +1367,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-syntax-highlighter@13.5.0":
-  version "13.5.0"
-  resolved "https://registry.yarnpkg.com/@types/react-syntax-highlighter/-/react-syntax-highlighter-13.5.0.tgz#b93c05f28844e7c35a5f1d38d3819099ffa82fbd"
-  integrity sha512-U7DrUaQRv3b+fsbPXMf7vC21K7DOkdNCQtp14Wm0Z5YLI9fPhndN4YTZ9eVXwmAivIg6lZ3YBVtGYucAS3H76A==
+"@types/react-syntax-highlighter@13.5.1":
+  version "13.5.1"
+  resolved "https://registry.yarnpkg.com/@types/react-syntax-highlighter/-/react-syntax-highlighter-13.5.1.tgz#12275c2acff30b776cbe054079336926037be484"
+  integrity sha512-nyWZcbi+O6gRyMi78fYy5MwoUXyl15mZZftMGlT+YbfQ1RIj/vtDaf+oCwTOHcMPFCy5lzrS2N8TfNmwMbPZ4Q==
   dependencies:
     "@types/react" "*"
 
