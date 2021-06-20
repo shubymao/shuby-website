@@ -1,12 +1,9 @@
-@tailwind base;
-
 @import './base.css';
+@import '../components/footer/footer.css';
+@import '../components/nav-bar/nav-bar.css';
+@import '../components/widget/hamburger-btn/hamburger-btn.css';
+@import '../components/card/card.css';
 
+@tailwind base;
 @tailwind components;
-
-@import '@components/footer/footer.css';
-@import '@components/nav-bar/nav-bar.css';
-@import '@components/widget/hamburger-btn/hamburger-btn.css';
-@import '@components/card/card.css';
-
 @tailwind utilities;

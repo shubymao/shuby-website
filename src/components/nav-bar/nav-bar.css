@@ -1,5 +1,3 @@
-@tailwind components;
-
 @layer components {
   .nav-bar {
     @apply bg-surface fixed shadow-sm flex flex-col w-full h-12 items-center overflow-hidden text-onSurface;
