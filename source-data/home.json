@@ -33,7 +33,7 @@
         "date": "May - Sept. 2020 & 2021",
         "location": "Amazon",
         "title": "SDE Intern",
-        "description": "Designed a new template translation framework for the Alexa Presentation Language.",
+        "description": "Designed a new set of software tools and services for the Alexa Experience Team.",
         "detail": [
           "Developed a react component library to enable design sharing and reduce code duplication by up to 50%.",
           "Developed a back-end service in Java to facilitate vector graphics uploading for Alexa Skill using AWS",
