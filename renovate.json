@@ -2,6 +2,10 @@
   "extends": ["config:base"],
   "packageRules": [
     {
+      "matchPackagePatterns": ["^remark-gfm"],
+      "excludePackageNames": ["remark-gfm"]
+    },
+    {
       "updateTypes": ["major"],
       "automerge": false
     },
