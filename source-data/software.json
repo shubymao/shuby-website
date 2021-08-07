@@ -16,7 +16,7 @@
       },
       {
         "title": "C++",
-        "description": "Primarily used in competitive programing due to the performance benefit it offered over other heavy runtime programing languages.",
+        "description": "Primarily used in competitive programing due to the performance benefit it offered over other heavy runtime programing languages. Also used to develop desktop applications.",
         "attribution": { "path": "languages/cplusplus.svg" }
       },
       {
