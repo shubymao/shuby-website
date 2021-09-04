@@ -55,7 +55,7 @@ const Content: FC<ContentProps> = (props) => {
 };
 
 const Detail: FC<DetailProps> = (props) => {
-  const { close, title, location = '', date = '', detail = [] } = props;
+  const { close, title, location, date, detail } = props;
   return (
     <div className="fade-in">
       <div onClick={close} className="flex items-center justify-between cursor-pointer">
@@ -69,6 +69,12 @@ const Detail: FC<DetailProps> = (props) => {
       <ul className="mt-2 space-y-2">{generateDetail(detail)}</ul>
     </div>
   );
+};
+
+Detail.defaultProps = {
+  location: '',
+  date: '',
+  detail: [],
 };
 
 const RevealCard: FC<RevealCardData> = (props) => {
