@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 export interface BannerProps {
   attribution?: JSX.Element;
@@ -6,7 +6,7 @@ export interface BannerProps {
   subtitle?: string;
 }
 
-const Banner: React.FC<BannerProps> = (props) => {
+const Banner: FC<BannerProps> = (props) => {
   const { attribution, title, subtitle } = props;
   return (
     <div className="items-center pt-6 text-center banner-wrapper space-y-4">
@@ -16,5 +16,7 @@ const Banner: React.FC<BannerProps> = (props) => {
     </div>
   );
 };
+
+Banner.defaultProps = { attribution: null, subtitle: '' };
 
 export default Banner;

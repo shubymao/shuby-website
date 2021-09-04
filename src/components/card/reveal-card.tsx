@@ -71,6 +71,12 @@ const Detail: FC<DetailProps> = (props) => {
   );
 };
 
+Detail.defaultProps = {
+  location: '',
+  date: '',
+  detail: [],
+};
+
 const RevealCard: FC<RevealCardData> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const close = () => setIsOpen(false);
