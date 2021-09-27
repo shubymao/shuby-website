@@ -17,6 +17,4 @@ const Banner: FC<BannerProps> = (props) => {
   );
 };
 
-Banner.defaultProps = { attribution: null, subtitle: '' };
-
 export default Banner;
