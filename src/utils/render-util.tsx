@@ -12,7 +12,7 @@ const DefaultRenderer: any = {
 };
 
 function img({ ...props }): JSX.Element {
-  return <img className="max-h-screen/2 object-contain" {...props} />;
+  return <img className="bg-white max-h-screen/2 object-contain" {...props} />;
 }
 
 function pre({ ...props }): JSX.Element {
@@ -27,7 +27,7 @@ function renderCode({ node, inline, className, children }): JSX.Element {
   if (typeof children[0] === 'string') children[0] = removeLastLineBreak(children[0]);
   if (!language) return <SyntaxHighlighter className={style} children={children} style={tomorrow} />;
   return (
-    <SyntaxHighlighter className={style} language={language} style={tomorrow}>
+    <SyntaxHighlighter showLineNumbers={true} className={style} language={language} style={tomorrow}>
       {children}
     </SyntaxHighlighter>
   );
