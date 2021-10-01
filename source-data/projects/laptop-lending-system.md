@@ -5,4 +5,4 @@ category: 'Full Stack'
 attribution: { path: 'projects/laptop.svg' }
 ---
 
-More Detail Coming Soon !!
+More Detail Coming Soon !!!
