@@ -14,7 +14,7 @@
   }
 
   .nav-bar .main-wrapper {
-    @apply container max-w-6xl flex items-center justify-between mx-auto;
+    @apply container h-12 max-w-6xl flex items-center justify-between mx-auto;
   }
 
   .nav-bar .main-wrapper .main-icon {
