@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["ES6", "dom", "dom.iterable", "esnext"],
+    "lib": [
+      "ES6",
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -15,25 +20,69 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@api/*": ["./src/api/*"],
-      "@models/*": ["./src/models/*"],
-      "@screens/*": ["./src/screens/*"],
-      "@hooks/*": ["./src/hooks/*"],
-      "@services/*": ["./src/services/*"],
-      "@constants/*": ["./src/constants/*"],
-      "@context/*": ["./src/context/*"],
-      "@queries/*": ["./src/queries/*"],
-      "@typeDefs/*": ["./src/types/*"],
-      "@generated/*": ["./src/generated/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@app/*": ["./src/app/*"],
-      "@public/*": ["./public/*"],
-      "@data/*": ["./source-data/*"]
-    }
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@api/*": [
+        "./src/api/*"
+      ],
+      "@models/*": [
+        "./src/models/*"
+      ],
+      "@screens/*": [
+        "./src/screens/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@services/*": [
+        "./src/services/*"
+      ],
+      "@constants/*": [
+        "./src/constants/*"
+      ],
+      "@context/*": [
+        "./src/context/*"
+      ],
+      "@queries/*": [
+        "./src/queries/*"
+      ],
+      "@typeDefs/*": [
+        "./src/types/*"
+      ],
+      "@generated/*": [
+        "./src/generated/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
+      "@app/*": [
+        "./src/app/*"
+      ],
+      "@public/*": [
+        "./public/*"
+      ],
+      "@data/*": [
+        "./source-data/*"
+      ]
+    },
+    "incremental": true
   },
-  "files": ["node_modules/gsap/types/index.d.ts"],
-  "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", "**/*.svg", "**/*.json", "next.config.js"]
+  "files": [
+    "node_modules/gsap/types/index.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    "**/*.svg",
+    "**/*.json",
+    "next.config.js"
+  ]
 }
