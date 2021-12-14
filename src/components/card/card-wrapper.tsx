@@ -1,19 +1,20 @@
 import { Div } from '@typeDefs/alias';
-import React, { forwardRef, ForwardRefRenderFunction } from 'react';
+import React, { LegacyRef } from 'react';
 
 type CardWrapperProp = {
-  children?: JSX.Element | Array<JSX.Element>;
+  containerRef?: LegacyRef<Div>;
   style?: string;
+  children: React.ReactNode;
 };
 
-const RenderCardWrapperWithRef: ForwardRefRenderFunction<Div, CardWrapperProp> = (props, ref) => {
-  const { children, style = 'py-4 px-5 space-y-4' } = props;
+const CardWrapper = (props: CardWrapperProp) => {
+  const { children, style, containerRef } = props;
   return (
-    <div ref={ref} className={`card-wrapper ${style}`}>
+    <div ref={containerRef} className={`card-wrapper ${style}`}>
       {children}
     </div>
   );
 };
 
-const CardWrapper = forwardRef(RenderCardWrapperWithRef);
+CardWrapper.defaultProps = { style: 'py-4 px-5 space-y-4', containerRef: null };
 export default CardWrapper;

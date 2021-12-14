@@ -24,6 +24,7 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:tailwind/recommended',
     'prettier',
+    'next',
   ],
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
@@ -46,6 +47,7 @@ module.exports = {
       'error',
       { devDependencies: false, optionalDependencies: false, peerDependencies: false },
     ],
+    'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
     'import/no-unresolved': [2, { caseSensitive: false }],
   },
   settings: {

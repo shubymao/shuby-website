@@ -13,7 +13,7 @@ const title = 'Projects';
 
 type ProjectPageProps = { projects: Project[] };
 
-export default function ProjectsPage(props: ProjectPageProps): JSX.Element {
+const ProjectsPage = (props: ProjectPageProps): JSX.Element => {
   const { projects } = props;
   const cardData = makeCardDataFromProjects(projects);
   return (
@@ -28,7 +28,9 @@ export default function ProjectsPage(props: ProjectPageProps): JSX.Element {
       </Page>
     </>
   );
-}
+};
+
+export default ProjectsPage;
 
 export async function getStaticProps(): Promise<StaticPropObject<ProjectPageProps>> {
   const projects = getAllProjects(HIGH_LEVEL_PROJECT);

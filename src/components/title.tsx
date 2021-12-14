@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 export interface TitleProps {
   name: string;
 }
 
-const Title = (props: TitleProps): JSX.Element => {
+const Title = (props: TitleProps): ReactElement => {
   const { name } = props;
   return (
     <header>

@@ -1,10 +1,9 @@
 import { alignment } from '@typeDefs/layout';
 import getTextAlignClass from '@utils/layout-utils';
-import React, { useRef } from 'react';
+import React, { PropsWithChildren, useRef } from 'react';
 
 export interface SectionProp {
   title?: string;
-  children?: JSX.Element | Array<JSX.Element>;
   alignTitle?: alignment;
   depth?: 0 | 1 | 2;
 }
@@ -15,7 +14,7 @@ const SECTION_STYLE = [
   { padding: 'pt-4', margin: 'mb-4', mobile: 'text-2xl', size: 'md:text-3xl' },
 ];
 
-const Section: React.FC<SectionProp> = (props) => {
+const Section = (props: PropsWithChildren<SectionProp>) => {
   const { title, children, alignTitle, depth = 0 } = props;
   const align = getTextAlignClass(alignTitle);
   const { size, mobile, margin, padding } = SECTION_STYLE[depth];

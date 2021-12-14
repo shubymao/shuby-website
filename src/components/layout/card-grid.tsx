@@ -1,6 +1,6 @@
 import { AttributionStyle, CardData } from '@typeDefs/data';
 import { stl } from '@utils/graphics-utils';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Card from '../card/card';
 import RevealCard from '../card/reveal-card';
 
@@ -22,7 +22,7 @@ function generateCards(cards: Array<CardData>): Array<JSX.Element> {
   });
 }
 
-const CardGrid: React.FC<CardGridProps> = (props) => {
+const CardGrid = (props: CardGridProps): ReactElement => {
   const { data, attributionStyle = CARD_SVG_STYLE } = props;
   data.forEach((item) => {
     if (item.attribution) {
