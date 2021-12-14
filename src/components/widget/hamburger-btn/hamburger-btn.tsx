@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 export interface ButtonProps {
   callBack: () => void;
   status: string;
 }
 
-const HamburgerButton = (props: ButtonProps): JSX.Element => {
+const HamburgerButton = (props: ButtonProps): ReactElement => {
   const { callBack, status } = props;
   return (
     <div className="hamburger-btn" onClick={callBack}>

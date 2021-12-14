@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Head from 'next/head';
 import { ogDefaultDescription, ogDefaultPreviewURL } from '@constants/page-info';
 
@@ -8,7 +8,7 @@ export interface MetaProps {
   ogPreviewURL?: string;
 }
 
-const MetaInfo: React.FC<MetaProps> = (props) => {
+const MetaInfo = (props: MetaProps): ReactElement => {
   const { pageTitle, ogDescription, ogPreviewURL } = props;
   const previewURL = ogPreviewURL || ogDefaultPreviewURL;
   const description = ogDescription || ogDefaultDescription;

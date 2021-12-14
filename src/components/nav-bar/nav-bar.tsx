@@ -1,10 +1,11 @@
 import { PageLink } from '@typeDefs/data';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { MAIN_PAGES, HEADER_TITLE } from 'src/constants/page-info';
 import BlackIcon from '@public/misc/icon-no-background.svg';
 import WhiteIcon from '@public/misc/icon-no-background-white.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 export interface NavBarProps {
   drawerStatus: string;
@@ -12,16 +13,18 @@ export interface NavBarProps {
   toggleTheme: () => void;
 }
 
-export default function NavBar(props: NavBarProps): JSX.Element {
+const NavBar = (props: NavBarProps): ReactElement => {
   const { drawerStatus, theme, toggleTheme } = props;
 
   return (
     <nav className={`nav-bar ${drawerStatus}`}>
       <div className="main-wrapper">
-        <a href="/" className="main-icon">
-          {theme === 'dark' ? <WhiteIcon height="48px" /> : <BlackIcon height="48px" />}
-          <p className="header-title">{HEADER_TITLE}</p>
-        </a>
+        <Link href="/" passHref>
+          <a className="main-icon">
+            {theme === 'dark' ? <WhiteIcon height="48px" /> : <BlackIcon height="48px" />}
+            <p className="header-title">{HEADER_TITLE}</p>
+          </a>
+        </Link>
         <div className="horizontal-nav-list">{MAIN_PAGES.map(renderHeaderItems)}</div>
         <div className="theme-wrapper">{renderToggle(theme, toggleTheme)}</div>
       </div>
@@ -30,7 +33,7 @@ export default function NavBar(props: NavBarProps): JSX.Element {
       </div>
     </nav>
   );
-}
+};
 
 function renderHeaderItems(item: PageLink) {
   return (
@@ -61,3 +64,5 @@ function renderToggle(theme: string, toggleTheme: () => void) {
     </div>
   );
 }
+
+export default NavBar;

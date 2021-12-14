@@ -3,16 +3,12 @@ import NavBar from '@components/nav-bar/nav-bar';
 import { md } from '@constants/page-info';
 import { toggleBodyLock } from '@utils/layout-utils';
 import { getSavedTheme, getNextTheme } from '@utils/graphics-utils';
-import React, { useEffect, useState } from 'react';
+import React, { PropsWithChildren, useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import initAnimation, { hideElements } from '@utils/animation-util';
 import HamburgerButton from '../widget/hamburger-btn/hamburger-btn';
 
-export interface PageProps {
-  children: React.ReactNode;
-}
-
-const Page: React.FC<PageProps> = (props) => {
+const Page = (props: PropsWithChildren<object>) => {
   const { children } = props;
   const largeScreen = useMediaQuery({ query: md });
   const [drawerStatus, updateDrawerStatus] = useState('idle');

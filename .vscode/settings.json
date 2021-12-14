@@ -19,11 +19,10 @@
     "typescript": "javascript",
     "typescriptreact": "javascript"
   },
-  "cSpell.words": ["semibold"],
+  "cSpell.words": [
+    "semibold"
+  ],
   "files.exclude": {
-    "**/.**rc": true,
-    "**/.git**": true,
-    "**/firebase.json": true,
     "**/LICENSE": true,
     "**/node_modules/": true,
     "**/out": true,

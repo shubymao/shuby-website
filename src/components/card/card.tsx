@@ -1,6 +1,6 @@
-import { CardData, PageLink } from '@typeDefs/data';
+import { PageLink } from '@typeDefs/data';
 import { processAttribution } from '@utils/graphics-utils';
-import React, { FC } from 'react';
+import React from 'react';
 import CardWrapper from './card-wrapper';
 
 const getLinks = (links: Array<PageLink>) => {
@@ -16,7 +16,7 @@ const getLinks = (links: Array<PageLink>) => {
   );
 };
 
-const Card: FC<CardData> = (props) => {
+const Card = (props): JSX.Element => {
   const { attribution, title, description, links } = props;
   const attributionComponent = processAttribution(attribution);
   return (

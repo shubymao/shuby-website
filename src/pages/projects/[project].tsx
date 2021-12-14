@@ -19,7 +19,7 @@ type StaticPropObject = {
   props: ProjectProps;
 };
 
-export default function ProjectPage(props: ProjectProps): JSX.Element {
+const ProjectPage = (props: ProjectProps): JSX.Element => {
   const { project } = props;
   const { name, date, content } = project;
   const localTime = getDateInLocalTime(date);
@@ -37,7 +37,9 @@ export default function ProjectPage(props: ProjectProps): JSX.Element {
       </Page>
     </>
   );
-}
+};
+
+export default ProjectPage;
 
 export async function getStaticProps(staticProp: StaticInput): Promise<StaticPropObject> {
   const projectName = staticProp.params.project;

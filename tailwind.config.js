@@ -8,9 +8,8 @@ function withOpacity(varName) {
 }
 
 module.exports = {
-  mode: 'jit',
-  purge: ['./src/**/*.{js,ts,jsx,tsx,css}', './source-data/**/*.{json,md}'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./src/**/*.{js,ts,jsx,tsx,css}', './source-data/**/*.{json,md}'],
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     screens: {
       xsm: '360px',

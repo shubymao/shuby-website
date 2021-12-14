@@ -8,22 +8,22 @@ import React from 'react';
 import system from '@data/system.json';
 
 const { title, brief, devops, cloud } = system;
-export default function SoftwareSkill(): JSX.Element {
-  return (
-    <>
-      <MetaInfo pageTitle={title} />
-      <Page>
-        <PageContainer>
-          <Title name={title} />
-          <p className="mt-10 text-lg italic">{brief}</p>
-          <Section title={devops.title}>
-            <CardGrid data={devops.cards} attributionStyle={CARD_SVG_STYLE} />
-          </Section>
-          <Section title={cloud.title}>
-            <CardGrid data={cloud.cards} attributionStyle={CARD_SVG_STYLE} />
-          </Section>
-        </PageContainer>
-      </Page>
-    </>
-  );
-}
+const SoftwareSkill = (): JSX.Element => (
+  <>
+    <MetaInfo pageTitle={title} />
+    <Page>
+      <PageContainer>
+        <Title name={title} />
+        <p className="mt-10 text-lg italic">{brief}</p>
+        <Section title={devops.title}>
+          <CardGrid data={devops.cards} attributionStyle={CARD_SVG_STYLE} />
+        </Section>
+        <Section title={cloud.title}>
+          <CardGrid data={cloud.cards} attributionStyle={CARD_SVG_STYLE} />
+        </Section>
+      </PageContainer>
+    </Page>
+  </>
+);
+
+export default SoftwareSkill;

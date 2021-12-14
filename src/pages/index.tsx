@@ -19,7 +19,7 @@ const { title, subtitle, mainIcon, interest, experience, education } = home;
 const homeIcon = importSVGWithClass(mainIcon, stl('w-32 md:w-48 mx-auto'), '');
 const eduLogo = importSVGWithClass(education.logo, stl('mx-auto md:w-80 w-48'), '');
 
-export default function Home(props: HomePageProps): JSX.Element {
+const Home = (props: HomePageProps): JSX.Element => {
   const { projects } = props;
   const projectCardData = makeCardDataFromProjects(projects);
   return (
@@ -50,7 +50,9 @@ export default function Home(props: HomePageProps): JSX.Element {
       </Page>
     </>
   );
-}
+};
+
+export default Home;
 
 export async function getStaticProps(): Promise<StaticPropObject<HomePageProps>> {
   let projects = getAllProjects(HIGHLIGHT_PROJECT);

@@ -2,7 +2,7 @@ import { faAngleRight, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Attribution, RevealCardData } from '@typeDefs/data';
 import { processAttribution } from '@utils/graphics-utils';
-import React, { FC, useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import CardWrapper from './card-wrapper';
 
 interface ContentProps {
@@ -20,7 +20,7 @@ interface DetailProps {
   detail?: Array<string>;
 }
 
-function generateDetail(detail?: Array<string>): Array<JSX.Element> {
+const generateDetail = (detail?: Array<string>): Array<ReactElement> => {
   if (!detail) return null;
   return detail.map((item, i) => {
     const key = `content ${i}`;
@@ -31,9 +31,9 @@ function generateDetail(detail?: Array<string>): Array<JSX.Element> {
       </li>
     );
   });
-}
+};
 
-const Content: FC<ContentProps> = (props) => {
+const Content = (props: ContentProps): ReactElement => {
   const { open, attribution, title, description } = props;
   const attributionComponent = processAttribution(attribution);
   return (
@@ -54,7 +54,7 @@ const Content: FC<ContentProps> = (props) => {
   );
 };
 
-const Detail: FC<DetailProps> = (props) => {
+const Detail = (props: DetailProps): ReactElement => {
   const { close, title, location, date, detail } = props;
   return (
     <div className="fade-in">
@@ -74,10 +74,10 @@ const Detail: FC<DetailProps> = (props) => {
 Detail.defaultProps = {
   location: '',
   date: '',
-  detail: [],
+  detail: null,
 };
 
-const RevealCard: FC<RevealCardData> = (props) => {
+const RevealCard = (props: RevealCardData): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
   const close = () => setIsOpen(false);
   const open = () => setIsOpen(true);

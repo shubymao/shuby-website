@@ -2,12 +2,12 @@ import { Div } from '@typeDefs/alias';
 import { slideOut } from '@utils/animation-util';
 import sendEmail from '@utils/email-util';
 import { stl } from '@utils/graphics-utils';
-import React, { ChangeEventHandler, Dispatch, FC, SetStateAction, useRef, useState } from 'react';
+import React, { ChangeEventHandler, Dispatch, SetStateAction, useRef, useState } from 'react';
 import CardWrapper from './card-wrapper';
 
 type Input = HTMLInputElement | HTMLTextAreaElement;
 const SUCCESS_MESSAGE = 'Message Successfully Sent. \n I will get back to you soon. 😃';
-const ContactCard: FC = () => {
+const ContactCard = (): JSX.Element => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [name, setName] = useState('');
@@ -37,7 +37,7 @@ const ContactCard: FC = () => {
       <p ref={successRef} className="text-xl whitespace-pre-line text-onBase md:text-3xl">
         {success}
       </p>
-      <CardWrapper ref={cardRef} style={stl('mx-auto p-5 sm:p-7 md:p-10 max-w-[700px]')}>
+      <CardWrapper containerRef={cardRef} style={stl('mx-auto p-5 sm:p-7 md:p-10 max-w-[700px]')}>
         <div className="contact-card-input-wrapper">
           <input placeholder="Your Name" value={name} onChange={onChange(setName)} />
           <input placeholder="Your Email" type="email" value={email} onChange={onChange(setEmail)} />
