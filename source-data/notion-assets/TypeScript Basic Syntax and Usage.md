@@ -1,14 +1,10 @@
 ---
 name: 'TypeScript Basic Syntax and Usage'
 author: 'Shuby Mao'
-date: '2022-01-31T00:52:00.000Z'
+date: '2022-01-31T22:51:00.000Z'
 category: 'TypeScript'
 tags: []
 ---
-
-Category: TypeScript
-Level: Basic
-
 ### Variable Initialization
 
 ```tsx

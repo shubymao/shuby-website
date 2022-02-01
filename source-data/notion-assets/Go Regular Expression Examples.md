@@ -5,9 +5,6 @@ date: '2022-01-30T19:22:00.000Z'
 category: 'Golang'
 tags: []
 ---
-
-Category: Golang
-
 ### Basic Usage
 
 ```cpp

@@ -1,12 +1,18 @@
 ---
 name: 'Python Basic Syntax and Usage'
 author: 'Shuby Mao'
-date: '2022-01-31T22:32:00.000Z'
+date: '2022-02-01T01:49:00.000Z'
 category: 'Python'
 tags: []
 ---
+### Initialize Variable
 
-Category: Python
-Level: Basic
+```python
+my_var = 3.14159  # No need for type or keyword
+my_bool = True  # True, False
+my_string = 'Hello World' # can also use single quotes
+# python integer is not restricted by bit
+my_int = 4000000000000000000000000000
+```
 
-[Untitled](https://www.notion.so/4b6443f6bb0a486e9222c1bbf121b873)
+### More Content Coming Soon 🚧

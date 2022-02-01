@@ -5,10 +5,6 @@ date: '2022-01-31T22:31:00.000Z'
 category: 'Golang'
 tags: []
 ---
-
-Category: Golang
-Level: Basic
-
 ### Initialize variable
 
 ```go
