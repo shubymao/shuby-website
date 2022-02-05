@@ -1,13 +1,31 @@
 ---
-name: 'Go Regular Expression Examples'
+title: 'Go Advance Standard Library'
 author: 'Shuby Mao'
-date: '2022-01-30T19:22:00.000Z'
+date: '2022-02-05T19:14:00.000Z'
 category: 'Golang'
 tags: []
+emoji: '🚆'
 ---
-### Basic Usage
+### Environment Variable
 
-```cpp
+```go
+import (
+    "fmt"
+    "os"
+)
+// Setting environment variable
+os.Setenv("MY_ENV_VAR", "1")
+// Getting environment variable
+fmt.Println("MY_ENV_VAR: ", os.Getenv("MY_ENV_VAR"))
+// Iterating through environment variable
+for _, e := range os.Environ() {
+	// e is the a string in the format ENV_VAR=VALUE
+}
+```
+
+### Regular Expression
+
+```go
 package main
 
 import (
