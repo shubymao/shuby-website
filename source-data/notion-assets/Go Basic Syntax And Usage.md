@@ -1,9 +1,10 @@
 ---
-name: 'Go Basic Syntax And Usage'
+title: 'Go Basic Syntax And Usage'
 author: 'Shuby Mao'
-date: '2022-01-31T22:31:00.000Z'
+date: '2022-02-05T19:14:00.000Z'
 category: 'Golang'
 tags: []
+emoji: '🚂'
 ---
 ### Initialize variable
 

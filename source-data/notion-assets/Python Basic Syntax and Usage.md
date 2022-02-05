@@ -1,9 +1,10 @@
 ---
-name: 'Python Basic Syntax and Usage'
+title: 'Python Basic Syntax and Usage'
 author: 'Shuby Mao'
-date: '2022-02-01T01:49:00.000Z'
+date: '2022-02-01T06:47:00.000Z'
 category: 'Python'
 tags: []
+emoji: '🐍'
 ---
 ### Initialize Variable
 

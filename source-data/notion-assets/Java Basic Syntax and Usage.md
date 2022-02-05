@@ -1,9 +1,10 @@
 ---
-name: 'Java Basic Syntax and Usage'
+title: 'Java Basic Syntax and Usage'
 author: 'Shuby Mao'
-date: '2022-02-01T01:44:00.000Z'
+date: '2022-02-01T06:43:00.000Z'
 category: 'Java'
 tags: []
+emoji: '☕'
 ---
 ### Data Types
 
