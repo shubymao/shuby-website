@@ -1,4 +1,4 @@
-import CardGrid, { CARD_SVG_STYLE } from '@components/layout/card-grid';
+import CardGrid, { generateCards } from '@components/layout/card-grid';
 import PageContainer from '@components/layout/container';
 import MetaInfo from '@components/meta-info';
 import Page from '@components/layout/page';
@@ -16,10 +16,10 @@ const SoftwareSkill = (): JSX.Element => (
         <Title name={title} />
         <p className="mt-10 text-lg italic">{brief}</p>
         <Section title={devops.title}>
-          <CardGrid data={devops.cards} attributionStyle={CARD_SVG_STYLE} />
+          <CardGrid>{generateCards(devops.cards)}</CardGrid>
         </Section>
         <Section title={cloud.title}>
-          <CardGrid data={cloud.cards} attributionStyle={CARD_SVG_STYLE} />
+          <CardGrid>{generateCards(cloud.cards)}</CardGrid>
         </Section>
       </PageContainer>
     </Page>

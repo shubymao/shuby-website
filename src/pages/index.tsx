@@ -5,7 +5,7 @@ import Section from '@components/layout/section';
 import MetaInfo from '@components/meta-info';
 import home from '@data/home.json';
 import importSVGWithClass, { stl } from '@utils/graphics-utils';
-import CardGrid from '@components/layout/card-grid';
+import CardGrid, { generateCards } from '@components/layout/card-grid';
 import PageContainer from '@components/layout/container';
 import { getAllProjects } from '@utils/data-access-utils';
 import { Project, StaticPropObject } from '@typeDefs/data';
@@ -16,7 +16,7 @@ interface HomePageProps {
   projects: Project[];
 }
 const { title, subtitle, mainIcon, interest, experience, education } = home;
-const homeIcon = importSVGWithClass(mainIcon, stl('w-32 md:w-48 mx-auto'), '');
+const homeIcon = importSVGWithClass(mainIcon, stl('w-32 md:w-48 h-32 md:h-48 mx-auto'), '');
 const eduLogo = importSVGWithClass(education.logo, stl('mx-auto md:w-80 w-48'), '');
 
 const Home = (props: HomePageProps): JSX.Element => {
@@ -29,22 +29,22 @@ const Home = (props: HomePageProps): JSX.Element => {
         <PageContainer>
           <Banner title={title} subtitle={subtitle} attribution={homeIcon} />
           <Section title={interest.title}>
-            <CardGrid data={interest.cards} />
+            <CardGrid>{generateCards(interest.cards)}</CardGrid>
           </Section>
           <Section title={experience.title}>
-            <CardGrid data={experience.cards} />
+            <CardGrid>{generateCards(experience.cards)}</CardGrid>
           </Section>
           <Section title={education.title}>
             {eduLogo}
             <Section title={education.Subtitle} alignTitle="center" depth={1}>
-              <CardGrid data={education.cards} />
+              <CardGrid>{generateCards(education.cards)}</CardGrid>
             </Section>
           </Section>
           <Section title="Featured Projects">
-            <CardGrid data={projectCardData} />
+            <CardGrid>{generateCards(projectCardData)}</CardGrid>
           </Section>
           <Section title="Articles">
-            <p>Articles Coming Soon</p>
+            <p>Articles Coming Soon 🚧</p>
           </Section>
         </PageContainer>
       </Page>

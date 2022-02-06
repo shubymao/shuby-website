@@ -6,18 +6,21 @@
     "title": "Skills and Interests",
     "cards": [
       {
+        "id": "interest-card-1",
         "title": "Software Development",
         "description": "Familiar with common software development process and tools. Experienced in full stack development.",
         "attribution": { "path": "home/code.svg" },
         "links": [{ "name": "Learn More", "url": "/software" }]
       },
       {
+        "id": "interest-card-2",
         "title": "System Management",
         "description": "Experienced in managing IT infrastructure through the use scripting and management tools.",
         "attribution": { "path": "home/server.svg" },
         "links": [{ "name": "Learn More", "url": "/system" }]
       },
       {
+        "id": "interest-card-3",
         "title": "Competitive Programing",
         "description": "Actively participated in global coding competitions such as Google Kick Start and Leetcode Contests.",
         "attribution": { "path": "home/cp.svg" },
@@ -29,6 +32,7 @@
     "title": "Experiences",
     "cards": [
       {
+        "id": "experience-card-1",
         "type": "reveal",
         "date": "May - Sept. 2020 & 2021",
         "location": "Amazon",
@@ -42,6 +46,7 @@
         "attribution": { "path": "home/amazon.svg" }
       },
       {
+        "id": "experience-card-2",
         "type": "reveal",
         "date": "Jan. - Apr. 2020",
         "location": "Fonex Data System",
@@ -55,12 +60,13 @@
         "attribution": {
           "path": "home/fonex.svg",
           "style": {
-            "contentStyle": "h-14 md:h-16  flex-none object-contain mx-auto",
+            "contentStyle": "h-14 md:h-16 min-w-[3.75rem] md:min-w-[4rem] flex-none object-contain mx-auto",
             "wrapperStyle": "p-2 bg-white rounded-2xl flex"
           }
         }
       },
       {
+        "id": "experience-card-3",
         "type": "reveal",
         "date": "Sept. 2017 - Present",
         "location": "McGill Computer Taskforce",
@@ -80,14 +86,17 @@
     "Subtitle": "Bachelor of Software Engineering",
     "cards": [
       {
+        "id": "education-card-1",
         "title": "Academic Excellence",
         "description": "Passionately engaged in academic courses and maintained a GPA of 3.99/4."
       },
       {
+        "id": "education-card-2",
         "title": "Extra Curricular Activities",
         "description": "Actively participated in computer taskforce and school competitions to enhance university experience."
       },
       {
+        "id": "education-card-3",
         "title": "Awards and Scholarship",
         "description": "Received renewable scholarship and named on the Dean's Honour List 3 consecutive school year."
       }

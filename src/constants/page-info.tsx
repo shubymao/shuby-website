@@ -28,12 +28,12 @@ export const xl2 = '(min-width: 1536px)';
 export const MAIN_PAGES: Array<PageLink> = [
   { name: 'Home', url: '/' },
   { name: 'Projects', url: '/projects' },
-  { name: 'Articles', url: '/comingsoon' },
-  { name: 'Notes', url: '/comingsoon' },
+  { name: 'Notes', url: '/notes' },
   {
     name: 'Resume',
     url: resumeURL,
   },
+  { name: 'Articles', url: '/comingsoon' },
   { name: 'Contact', url: '/contact' },
 ];
 

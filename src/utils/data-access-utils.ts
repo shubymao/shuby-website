@@ -1,18 +1,66 @@
-import fs from 'fs';
+import { readdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
-import { Project } from '@typeDefs/data';
+import { Note, NoteProperty, Project } from '@typeDefs/data';
 
+const cacheFile = 'cache.tmp';
 const projectDirectory = join(process.cwd(), 'source-data', 'projects');
+const notionDirectory = join(process.cwd(), 'source-data', 'notion-assets');
+const noteDirectory = join(process.cwd(), 'source-data', 'notes');
 
 function getAllFileInDir(dirPath: string) {
-  return fs.readdirSync(dirPath);
+  return readdirSync(dirPath);
+}
+
+function saveCache(obj: any, directory: string) {
+  writeFileSync(join(directory, cacheFile), JSON.stringify(obj));
+}
+
+function loadCache(directory: string): any {
+  const cache = readFileSync(join(directory, cacheFile), 'utf8');
+  return JSON.parse(cache);
+}
+
+function loadAllFiles(filesDir: string, callback: (path: string, content: string) => void) {
+  const files = getAllFileInDir(filesDir);
+  files.forEach((file) => {
+    const filePath = join(filesDir, file);
+    const fileContents = readFileSync(filePath, 'utf8');
+    callback(filePath, fileContents);
+  });
+}
+
+export function getNoteByURL(noteURL: string): Note {
+  const cache = loadCache(noteDirectory);
+  const filePath = cache[noteURL];
+  const fileContent = readFileSync(filePath, 'utf8');
+  const { data, content } = matter(fileContent);
+  const { title, date, emoji, category, author, tags } = data;
+  return { title, date, emoji, category, author, tags, content };
+}
+
+export function getAllNotesProperty(): NoteProperty[] {
+  const notes: NoteProperty[] = [];
+  const urlToPath: { [k: string]: string } = {};
+  loadAllFiles(notionDirectory, (filePath, fileContent) => {
+    if (!filePath.endsWith('.md')) return;
+    const { data } = matter(fileContent);
+    const { title, emoji, category } = data;
+    if (!title || !category) return;
+    const id = title.replace(/\s/g, '-').toLowerCase();
+    const url = `/notes/${id}`;
+    const link = { name: title, url };
+    notes.push({ id, filePath, title, emoji, category, link });
+    urlToPath[id] = filePath;
+  });
+  saveCache(urlToPath, noteDirectory);
+  return notes;
 }
 
 export function getProjectByFile(fileName: string, fields: string[] = []): Project {
   const nameNoExt = fileName.replace(/\.md$/, '');
   const fullPath = join(projectDirectory, `${nameNoExt}.md`);
-  const fileContent = fs.readFileSync(fullPath);
+  const fileContent = readFileSync(fullPath);
   const { data, content } = matter(fileContent);
   const project: Project = {};
   fields.forEach((field) => {

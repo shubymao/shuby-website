@@ -17,7 +17,13 @@ export function makeCardDataFromProjects(projects: Project[]): CardData[] {
     if (path) links.push(makePage('More Detail', `/projects/${path}`));
     if (github) links.push(makePage('Github', github));
     if (demo) links.push(makePage('Demo', demo));
-    const card: CardData = { attribution, links, title: name, description: brief };
+    const card: CardData = {
+      id: name.replaceAll(' ', '-'),
+      attribution,
+      links,
+      title: name,
+      description: brief,
+    };
     return card;
   });
   return cardData;

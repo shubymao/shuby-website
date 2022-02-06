@@ -2,6 +2,7 @@
 import dynamic from 'next/dynamic';
 import React, { ComponentType } from 'react';
 import { Attribution } from '@typeDefs/data';
+import SkeletonDiv from '@components/widget/skeleton-div';
 
 export function stl(style: string): string {
   return style;
@@ -9,7 +10,7 @@ export function stl(style: string): string {
 
 function importSVGWithClass(path: string, svgStyle: string, wrapperStyle: string): JSX.Element {
   const SVGICON: ComponentType<{ className: string }> = dynamic(() => import(`/public/${path}`), {
-    loading: () => <div className={svgStyle} />,
+    loading: () => <SkeletonDiv style={svgStyle} />,
   });
   return (
     <div className={wrapperStyle}>
