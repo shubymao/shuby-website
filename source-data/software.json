@@ -5,31 +5,37 @@
     "title": "Programming Languages",
     "cards": [
       {
+        "id": "pl-1",
         "title": "Java",
         "description": "My main programming languages for developing desktop applications and backend systems. Used to developed application such as Quoridor, GroupUp, and Pet Adoption App.",
         "attribution": { "path": "languages/java.svg" }
       },
       {
+        "id": "pl-2",
         "title": "Typescript",
         "description": "Used to develop all web related projects. Example such as this website, sudoku solver web, and web multiplayer maze.",
         "attribution": { "path": "languages/typescript.svg" }
       },
       {
+        "id": "pl-3",
         "title": "C++",
         "description": "Primarily used in competitive programing due to the performance benefit it offered over other heavy runtime programing languages. Also used to develop desktop applications.",
         "attribution": { "path": "languages/cplusplus.svg" }
       },
       {
+        "id": "pl-4",
         "title": "Python",
         "description": "Mainly for AI/ML project, Django applications and some automation. Some usage includes TSP visualizer, CTF laptop lending system, and Knowledge-Base-Backend.",
         "attribution": { "path": "languages/python.svg" }
       },
       {
+        "id": "pl-5",
         "title": "C#",
         "description": "Used during the internship to develop Windows desktop applications to validate networking hardware and perform security verification in the device ROM.",
         "attribution": { "path": "languages/csharp.svg" }
       },
       {
+        "id": "pl-6",
         "title": "Rust",
         "description": "Recently learned programming language. It offers some safety memory guarantee while being extremely performent. More project coming soon.",
         "attribution": { "path": "languages/rust.svg" }
@@ -47,26 +53,31 @@
     "title": "Frontend Technologies",
     "cards": [
       {
+        "id": "web-1",
         "title": "React",
         "description": "My favorite web development framework. Its component-based system makes creating stateful web application fast and simple.",
         "attribution": { "path": "web/react.svg" }
       },
       {
+        "id": "web-2",
         "title": "Next.JS",
         "description": "The framework used to create this site. It offers the ability to create server-side rendering react application or export as a static site",
         "attribution": { "path": "web/next.svg" }
       },
       {
+        "id": "web-3",
         "title": "Tailwind CSS",
         "description": "A utility first CSS framework that help build responsive layout with minimal effort. Also used in this website.",
         "attribution": { "path": "web/tailwind.svg" }
       },
       {
+        "id": "web-4",
         "title": "HTML",
         "description": "The most basic building block of the web. I am familiar with majority of the syntax and practices.",
         "attribution": { "path": "web/html.svg" }
       },
       {
+        "id": "web-5",
         "title": "CSS",
         "description": "The fundamental of styling html component and create responsive layout. I am familiar with majority of the CSS syntax and concepts.",
         "attribution": { "path": "web/css.svg" }
@@ -77,16 +88,19 @@
     "title": "Backend Technologies",
     "cards": [
       {
+        "id": "backend-1",
         "title": "Spring",
         "description": "A Java framework that offer extension to perform data access and web integration. Used for creating GroupUp and Pet Adoption App.",
         "attribution": { "path": "backend/spring.svg" }
       },
       {
+        "id": "backend-2",
         "title": "Django",
         "description": "A web framework that uses model template view design pattern. It allow user to develop secure web application rapidly. Used for Laptop Lending System and Knowledge Base Backend.",
         "attribution": { "path": "backend/django.svg" }
       },
       {
+        "id": "backend-3",
         "title": "PostgreSQL",
         "description": "An open source SQL relational database management system. Used in all my backend projects.",
         "attribution": { "path": "backend/postgresql.svg" }
@@ -97,26 +111,31 @@
     "title": "Testing Tools",
     "cards": [
       {
+        "id": "test-1",
         "title": "JUnit 5",
         "description": "A Java testing framework that is commonly used to test Java applications. Used in GroupUp, Quoridor, and Pet Finder.",
-        "attribution": { "path": "test/junit.png" }
+        "attribution": { "path": "/test/junit.png" }
       },
       {
+        "id": "test-2",
         "title": "Mocha",
         "description": "A JavaScript/TypeScript test runner that is commonly used. Used in Sudoku Solver Web and this website.",
         "attribution": { "path": "test/mocha.svg" }
       },
       {
+        "id": "test-3",
         "title": "Chai",
         "description": "A JavaScript/TypeScript assertion library that provides TDD style syntax and many useful apis. Used in Sudoku Solver Web and this website.",
         "attribution": { "path": "test/chai.svg" }
       },
       {
+        "id": "test-4",
         "title": "Pytest",
         "description": "A python testing framework mainly used to write test for APIs. Used in Knowledge Base Backend",
         "attribution": { "path": "test/pytest.svg" }
       },
       {
+        "id": "test-5",
         "title": "Cucumber",
         "description": "A software tool that support behavior driven development (BBD). Used in Quoridor and GroupUp",
         "attribution": { "path": "test/cucumber.svg" }
@@ -127,16 +146,19 @@
     "title": "Other Tools",
     "cards": [
       {
+        "id": "other-1",
         "title": "Git",
         "description": "The most popular version control system for software development.",
         "attribution": { "path": "tools/git.svg" }
       },
       {
+        "id": "other-2",
         "title": "NPM",
         "description": "Node package manager for installing, updating, and publishing Javascript packages for a project.",
         "attribution": { "path": "tools/npm.svg" }
       },
       {
+        "id": "other-3",
         "title": "Figma",
         "description": "UX design tool for creating UI designs. Used to create some icons and visual for this website.",
         "attribution": { "path": "tools/figma.svg" }

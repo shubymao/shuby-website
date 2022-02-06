@@ -5,26 +5,31 @@
     "title": "Dev Ops",
     "cards": [
       {
+        "id": "devops-1",
         "title": "Linux",
         "description": "A open source unix like operating system. Mainly used to run the container and serve web content for my projects.",
         "attribution": { "path": "systems/linux.png" }
       },
       {
+        "id": "devops-2",
         "title": "Docker",
         "description": "A light-weight platform that provides virtualization and separation of concern. Used in deploying the knowledge base project.",
         "attribution": { "path": "systems/docker.svg" }
       },
       {
+        "id": "devops-3",
         "title": "Kubernetes",
         "description": "A container management system used to automate container deployment and scaling.",
         "attribution": { "path": "systems/kubernetes.svg" }
       },
       {
+        "id": "devops-4",
         "title": "Nginx",
         "description": "A web server that can be used for reverse proxy, load balancing and http cache. Used to serve the frontend and backend for the knowledge base project.",
         "attribution": { "path": "systems/nginx.svg" }
       },
       {
+        "id": "devops-5",
         "title": "Bash",
         "description": "A scripting language for automating OS related tasks. Familiar with the syntax to automate starting and shutting down services.",
         "attribution": { "path": "systems/bash.svg" }
@@ -35,16 +40,19 @@
     "title": "Cloud",
     "cards": [
       {
+        "id": "cloud-1",
         "title": "AWS",
         "description": "Mainly used during my Amazon internship to upload images and generate url for UI design template. Familiar with services such as S3, EC2 and Lambda.",
         "attribution": { "path": "systems/aws.svg" }
       },
       {
+        "id": "cloud-2",
         "title": "Firebase",
         "description": " Primarily used to host my static sites and used the real time database SDK for the real time maze project. Familiar with services such as Firebase CLI, hosting and FireStore.",
         "attribution": { "path": "systems/firebase.svg" }
       },
       {
+        "id": "cloud-3",
         "title": "Heroku",
         "description": "Used to deploy proof of concept services and application developed for school projects. Familiar with services such as code deployment, Dyno and Heroku Postgres.",
         "attribution": { "path": "systems/heroku.svg" }

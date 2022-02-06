@@ -1,4 +1,4 @@
-import CardGrid, { CARD_SVG_STYLE } from '@components/layout/card-grid';
+import CardGrid, { generateCards } from '@components/layout/card-grid';
 import PageContainer from '@components/layout/container';
 import MetaInfo from '@components/meta-info';
 import Page from '@components/layout/page';
@@ -16,19 +16,19 @@ const SoftwareSkill = (): JSX.Element => (
         <Title name={title} />
         <p className="mt-10 text-lg italic">{brief}</p>
         <Section title={languages.title}>
-          <CardGrid data={languages.cards} attributionStyle={CARD_SVG_STYLE} />
+          <CardGrid>{generateCards(languages.cards)}</CardGrid>
         </Section>
         <Section title={web.title}>
-          <CardGrid data={web.cards} attributionStyle={CARD_SVG_STYLE} />
+          <CardGrid>{generateCards(web.cards)}</CardGrid>
         </Section>
         <Section title={backend.title}>
-          <CardGrid data={backend.cards} attributionStyle={CARD_SVG_STYLE} />
+          <CardGrid>{generateCards(backend.cards)}</CardGrid>
         </Section>
         <Section title={test.title}>
-          <CardGrid data={test.cards} attributionStyle={CARD_SVG_STYLE} />
+          <CardGrid>{generateCards(test.cards)}</CardGrid>
         </Section>
         <Section title={other.title}>
-          <CardGrid data={other.cards} attributionStyle={CARD_SVG_STYLE} />
+          <CardGrid>{generateCards(other.cards)}</CardGrid>
         </Section>
       </PageContainer>
     </Page>

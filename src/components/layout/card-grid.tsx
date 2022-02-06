@@ -1,6 +1,6 @@
 import { AttributionStyle, CardData } from '@typeDefs/data';
 import { stl } from '@utils/graphics-utils';
-import React, { ReactElement } from 'react';
+import React, { PropsWithChildren, ReactElement } from 'react';
 import Card from '../card/card';
 import RevealCard from '../card/reveal-card';
 
@@ -10,28 +10,29 @@ export const CARD_SVG_STYLE: AttributionStyle = {
 };
 
 export interface CardGridProps {
-  data: Array<CardData>;
-  attributionStyle?: AttributionStyle;
+  gridStyle?: string;
 }
 
-function generateCards(cards: Array<CardData>): Array<JSX.Element> {
+export function generateCards(cards: Array<CardData>): Array<JSX.Element> {
   if (cards.length === 0) return [];
+  cards.forEach((item) => {
+    if (item.attribution) {
+      const { attribution } = item;
+      attribution.style = attribution.style || CARD_SVG_STYLE;
+    }
+  });
   return cards.map((card) => {
-    if (card.type === 'reveal') return <RevealCard key={card.title} {...card} />;
+    const { type, id } = card;
+    if (type === 'reveal') return <RevealCard key={id} {...card} />;
     return <Card key={card.title} {...card} />;
   });
 }
 
-const CardGrid = (props: CardGridProps): ReactElement => {
-  const { data, attributionStyle = CARD_SVG_STYLE } = props;
-  data.forEach((item) => {
-    if (item.attribution) {
-      const { attribution } = item;
-      attribution.style = attribution.style || attributionStyle;
-    }
-  });
-  const gridStyle = stl('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4');
-  return <div className={gridStyle}>{generateCards(data)}</div>;
+const CardGrid = (props: PropsWithChildren<CardGridProps>): ReactElement => {
+  const { children } = props;
+  const { gridStyle = stl('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4') } = props;
+
+  return <div className={gridStyle}>{children}</div>;
 };
 
 export default CardGrid;

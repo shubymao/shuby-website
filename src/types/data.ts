@@ -24,11 +24,31 @@ export interface CardGridData {
 }
 
 export interface CardData {
+  id: string;
   type?: string;
   attribution?: Attribution;
   title: string;
-  description: string;
+  description?: string;
   links?: Array<PageLink>;
+}
+
+export interface NoteProperty {
+  id: string;
+  emoji: string;
+  filePath: string;
+  title: string;
+  category: string;
+  link: PageLink;
+}
+
+export interface Note {
+  title: string;
+  date: string;
+  emoji: string;
+  category: string;
+  author: string;
+  tags: string[];
+  content: string;
 }
 
 export interface RevealCardData extends CardData {
@@ -66,16 +86,6 @@ export interface Project {
   demo?: string;
   highlight?: boolean;
   category?: string;
-  brief?: string;
-  content?: string;
-  ogImage?: string;
-  attribution?: Attribution;
-}
-
-export interface Note {
-  name: string;
-  date?: string;
-  path: string;
   brief?: string;
   content?: string;
   ogImage?: string;

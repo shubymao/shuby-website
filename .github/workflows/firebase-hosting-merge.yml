@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'yarn' # or npm
       - name: Install Dependency
         run: yarn install --frozen-lockfile
       - name: Building production site
