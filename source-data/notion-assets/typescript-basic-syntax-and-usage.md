@@ -1,7 +1,7 @@
 ---
 title: 'TypeScript Basic Syntax and Usage'
 author: 'Shuby Mao'
-date: '2022-02-07T21:26:00.000Z'
+date: '2022-02-07T22:43:00.000Z'
 category: 'TypeScript'
 tags: []
 emoji: '⌨️'
@@ -39,11 +39,8 @@ const isSmart = true; // boolean type
 | + (Addition) | returns the sum of the operands | 2 + 3 is 5 |
 | - (Subtraction) | returns the difference of the values | 16 - 5 is 11 |
 | * (Multiplication) | returns the product of the values | 2 * 21 is 42 |
-| / (Division) | performs division operation and returns the quotient | 4 / 2  is 2
-7 / 5  is 1.4 |
-| % (Modulus) | performs division operation and returns the remainder | 12 % 7 is 5
--11 % 7 is -4 
-(Note it can be negative) |
+| / (Division) | performs division operation and returns the quotient | 4 / 2  is 2, 7 / 5  is 1.4 |
+| % (Modulus) | performs division operation and returns the remainder | 12 % 7 is 5, -11 % 7 is -4 (Note it can be negative) |
 | ++ (Increment) | Increments the value of the variable by one | a++ (a becomes 11) |
 | -- (Decrement) | Decrements the value of the variable by one | b-- (b become 19) |
 
