@@ -14,7 +14,8 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.PAT }}
-          branch: main
+          branch: notion-dev
+          base: main
           delete-branch: false
           title: 'Upate Notion Notes'
           body: |
