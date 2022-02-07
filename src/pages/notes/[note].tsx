@@ -26,7 +26,7 @@ const NotePage = (props: NotePageProps): JSX.Element => {
     <>
       <MetaInfo pageTitle={title} />
       <Page>
-        <div className="w-full px-5 mx-auto py-14 md:w-8/12 prose md:prose-lg max-w-none">
+        <div className="w-full px-5 mx-auto py-14 prose md:prose-lg lg:prose-xl">
           <h1>{emoji + title}</h1>
           <span>
             Last Updated: {localTime} by {author}

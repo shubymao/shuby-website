@@ -1,6 +1,8 @@
 import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import React from 'react';
+import { md } from '@constants/page-info';
+import { useMediaQuery } from 'react-responsive';
 import { stl } from './graphics-utils';
 
 /* eslint-disable */
@@ -23,11 +25,13 @@ function renderCode({ node, inline, className, children }): JSX.Element {
   const match = /language-(\w+)/.exec(className || '');
   const language = match ? match[1] : undefined;
   const style = inline ? stl('inline') : stl('block');
+  const largeScreen = useMediaQuery({ query: md });
+  const customStyle = largeScreen ? { fontSize: '0.8rem' } : { fontSize: '0.7rem' };
   if (inline) return <code className={style}>{children}</code>;
   if (typeof children[0] === 'string') children[0] = removeLastLineBreak(children[0]);
-  if (!language) return <SyntaxHighlighter className={style} children={children} style={tomorrow} />;
+  if (!language) return <SyntaxHighlighter customStyle={customStyle} className={style} children={children} style={tomorrow} />;
   return (
-    <SyntaxHighlighter showLineNumbers={true} className={style} language={language} style={tomorrow}>
+    <SyntaxHighlighter customStyle={customStyle} showLineNumbers={true} className={style} language={language} style={tomorrow}>
       {children}
     </SyntaxHighlighter>
   );
