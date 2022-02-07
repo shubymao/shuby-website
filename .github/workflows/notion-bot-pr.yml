@@ -2,7 +2,8 @@ name: notion-bot-pull-request
 
 on:
   push:
-    branches: ['notion-dev']
+    branches:
+      - 'notion-dev'
 
 jobs:
   create-pr:
@@ -11,16 +12,16 @@ jobs:
       - name: Checkout package
         uses: actions/checkout@v2
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: repo-sync/pull-request@v2
         with:
-          token: ${{ secrets.PAT }}
+          github_token: ${{ secrets.PAT }}
           branch: notion-dev
-          base: main
+          destination_branch: main
           delete-branch: false
-          title: 'Upate Notion Notes'
-          body: |
+          pr_title: 'Upate Notion Notes'
+          pr_body: |
             Upate Notion Notes
       - name: Check outputs
         run: |
-          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
-          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
+          echo "Pull Request Number - echo ${{steps.open-pr.outputs.pr_number}}"
+          echo "Pull Request URL - ${{steps.open-pr.outputs.pr_url}}"
