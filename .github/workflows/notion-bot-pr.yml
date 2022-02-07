@@ -15,6 +15,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           committer: GitHub <noreply@github.com>
+          base: main
           delete-branch: false
           title: 'Upate Notion Notes'
           body: |
