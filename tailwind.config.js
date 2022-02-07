@@ -48,12 +48,14 @@ module.exports = {
         DEFAULT: {
           css: {
             color: theme('colors.onBase'),
+            th: { color: theme('colors.onBase') },
             h1: { color: theme('colors.onBase') },
             h2: { color: theme('colors.onBase') },
             h3: { color: theme('colors.onBase') },
             h4: { color: theme('colors.onBase') },
             h5: { color: theme('colors.onBase') },
             h6: { color: theme('colors.onBase') },
+            strong: { color: theme('colors.onBase') },
             p: { color: theme('colors.onBase') },
             code: {
               color: theme('colors.onBase'),
