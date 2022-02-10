@@ -5,49 +5,55 @@
     "title": "Programming Languages",
     "cards": [
       {
-        "id": "pl-1",
+        "id": "java",
         "title": "Java",
         "description": "My main programming languages for developing desktop applications and backend systems. Used to developed application such as Quoridor, GroupUp, and Pet Adoption App.",
         "attribution": { "path": "languages/java.svg" }
       },
       {
-        "id": "pl-2",
+        "id": "typescript",
         "title": "Typescript",
         "description": "Used to develop all web related projects. Example such as this website, sudoku solver web, and web multiplayer maze.",
         "attribution": { "path": "languages/typescript.svg" }
       },
       {
-        "id": "pl-3",
+        "id": "cpp",
         "title": "C++",
         "description": "Primarily used in competitive programing due to the performance benefit it offered over other heavy runtime programing languages. Also used to develop desktop applications.",
         "attribution": { "path": "languages/cplusplus.svg" }
       },
       {
-        "id": "pl-4",
+        "id": "golang",
+        "title": "GoLang",
+        "description": "Backend and server side programming language. Used to develop graphql server for rate my internship.",
+        "attribution": { "path": "languages/go.svg" }
+      },
+      {
+        "id": "python",
         "title": "Python",
         "description": "Mainly for AI/ML project, Django applications and some automation. Some usage includes TSP visualizer, CTF laptop lending system, and Knowledge-Base-Backend.",
         "attribution": { "path": "languages/python.svg" }
       },
       {
-        "id": "pl-5",
+        "id": "csharp",
         "title": "C#",
         "description": "Used during the internship to develop Windows desktop applications to validate networking hardware and perform security verification in the device ROM.",
         "attribution": { "path": "languages/csharp.svg" }
       },
       {
-        "id": "pl-6",
+        "id": "rust",
         "title": "Rust",
         "description": "Recently learned programming language. It offers some safety memory guarantee while being extremely performent. More project coming soon.",
         "attribution": { "path": "languages/rust.svg" }
-      }
-    ],
-    "extraCards": [
+      },
       {
+        "id": "ocaml",
         "title": "Ocaml",
         "description": "A language that introduced me to the functional programming paradigm. Mainly used in the course COMP-302 Programming Languages and Paradigms.",
         "attribution": { "path": "languages/ocaml.svg" }
       }
-    ]
+    ],
+    "extraCards": []
   },
   "web": {
     "title": "Frontend Technologies",
