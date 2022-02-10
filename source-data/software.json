@@ -17,7 +17,7 @@
         "attribution": { "path": "languages/typescript.svg" }
       },
       {
-        "id": "pl-3",
+        "id": "cpp",
         "title": "C++",
         "description": "Primarily used in competitive programing due to the performance benefit it offered over other heavy runtime programing languages. Also used to develop desktop applications.",
         "attribution": { "path": "languages/cplusplus.svg" }
@@ -47,6 +47,7 @@
         "attribution": { "path": "languages/rust.svg" }
       },
       {
+        "id": "ocaml",
         "title": "Ocaml",
         "description": "A language that introduced me to the functional programming paradigm. Mainly used in the course COMP-302 Programming Languages and Paradigms.",
         "attribution": { "path": "languages/ocaml.svg" }
