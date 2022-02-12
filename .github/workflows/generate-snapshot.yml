@@ -5,7 +5,9 @@ name: Gnerate New Snapshot
 
 on:
   push:
-    branches: ['**']
+    branches:
+      - '*'
+      - '!snapshot-patch-*'
 
 jobs:
   build-and-test:
@@ -40,7 +42,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           commit-message: 'Updated snapshot'
-          branch: snapshot-patch
+          branch: snapshot-patch-${{ github.ref_name }}
           title: 'Updated Snapshot'
           body: Updating snapshot. Refer to action artifact for report
           delete-branch: true
