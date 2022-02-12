@@ -1,0 +1,28 @@
+name: Integration Test
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  e2etest:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout package
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn' # or npm
+      - name: Install Dependency
+        run: yarn install --frozen-lockfile
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps
+      - name: Run End to End Test
+        run: yarn test

@@ -3,6 +3,8 @@ import { Effect } from '@typeDefs/alias';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
+const NO_REDUCED_MOTION = '(prefers-reduced-motion: no-preference)';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export function slideOut(element: HTMLElement, callBack?: () => void): void {
@@ -16,14 +18,21 @@ export function slideOut(element: HTMLElement, callBack?: () => void): void {
   gsap.to(element, effect);
 }
 
-export function hideElements(): void {
+function hideElements(): void {
   hidden('.section-wrapper');
   hidden('.card-wrapper');
 }
 
 export default function initAnimation(): void {
-  showOnScroll('.section-wrapper', 20);
-  showOnScrollStagger('.card-wrapper', 30);
+  // Disable animation on reduce motion media query
+  if (!window?.matchMedia(NO_REDUCED_MOTION).matches) {
+    return;
+  }
+  hideElements();
+  setTimeout(() => {
+    showOnScroll('.section-wrapper', 20);
+    showOnScrollStagger('.card-wrapper', 30);
+  }, 1000);
 }
 
 export function showOnScroll(elements: string, offset = 0): void {
