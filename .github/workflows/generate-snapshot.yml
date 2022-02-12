@@ -6,8 +6,8 @@ name: Gnerate New Snapshot
 on:
   push:
     branches:
-      - '*'
-      - '!snapshot-patch-*'
+      - '**'
+      - '!snapshot-patch-**'
 
 jobs:
   build-and-test:
