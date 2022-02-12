@@ -1,0 +1,53 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Gnerate New Snapshot
+
+on:
+  push:
+    branches:
+      - '**'
+      - '!snapshot-patch-**'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout package
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn' # or npm
+      - name: Install Dependency
+        run: yarn install --frozen-lockfile
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps
+      - name: Run End to End Test and move Report
+        id: e2etest
+        run: yarn test:report
+        continue-on-error: true
+      - name: Generate New Snapshot
+        if: steps.e2etest.outcome == 'failure'
+        run: yarn test:update
+      - name: Create Pull Request
+        if: steps.e2etest.outcome == 'failure'
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.PAT }}
+          commit-message: 'Updated snapshot'
+          branch: snapshot-patch-${{ github.ref_name }}
+          title: 'Updated Snapshot'
+          body: Updating snapshot. Refer to action artifact for report
+          delete-branch: true
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Reports
+          path: ./tests/reports/*

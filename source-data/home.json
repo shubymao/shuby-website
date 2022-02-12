@@ -1,6 +1,6 @@
 {
   "title": "Shuby Mao",
-  "subtitle": "Student • Developer • Engineer",
+  "subtitle": "Developer • Engineer",
   "mainIcon": "home/main-icon-home.svg",
   "interest": {
     "title": "Skills and Interests",
@@ -8,7 +8,7 @@
       {
         "id": "interest-card-1",
         "title": "Software Development",
-        "description": "Familiar with common software development process and tools. Experienced in full stack development.",
+        "description": "Familiar with advanced software development process and tools. Fluent in full stack development.",
         "attribution": { "path": "home/code.svg" },
         "links": [{ "name": "Learn More", "url": "/software" }]
       },

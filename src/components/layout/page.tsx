@@ -5,7 +5,7 @@ import { toggleBodyLock } from '@utils/layout-utils';
 import { getSavedTheme, getNextTheme } from '@utils/graphics-utils';
 import React, { PropsWithChildren, useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import initAnimation, { hideElements } from '@utils/animation-util';
+import initAnimation from '@utils/animation-util';
 import HamburgerButton from '../widget/hamburger-btn/hamburger-btn';
 
 const Page = (props: PropsWithChildren<object>) => {
@@ -28,8 +28,7 @@ const Page = (props: PropsWithChildren<object>) => {
 
   useEffect(() => {
     if (isLoaded) {
-      hideElements();
-      setTimeout(() => initAnimation(), 1000);
+      initAnimation();
     }
   }, [isLoaded]);
 

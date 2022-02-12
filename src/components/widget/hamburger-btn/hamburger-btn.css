@@ -1,6 +1,8 @@
 @layer components {
   .hamburger-btn {
-    @apply fixed md:hidden w-12 h-12 bottom-5 right-5 flex flex-col justify-items-center items-center rounded-full cursor-pointer bg-onBase focus:outline-none;
+    @apply fixed md:hidden w-12 h-12 bottom-5 right-5 flex flex-col;
+    @apply justify-items-center items-center rounded-full cursor-pointer;
+    @apply bg-onBase focus:outline-none;
 
     z-index: 1;
   }

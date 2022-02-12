@@ -1,6 +1,6 @@
 @layer base {
   :root {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
 
     --color-base: 245, 246, 247;
     --color-surface: 255, 255, 255;
@@ -17,9 +17,6 @@
   div,
   nav,
   footer {
-    -webkit-transition: background-color 500ms ease-in-out;
-    -moz-transition: background-color 500ms ease-in-out;
-    -o-transition: background-color 500ms ease-in-out;
     transition: background-color 500ms ease-in-out;
   }
 
@@ -86,11 +83,13 @@
 
   @keyframes loading-animation {
     0.0% {
-      background: #cccccc;
+      background: #ccc;
     }
+
     100% {
-      background: #cccccc;
+      background: #ccc;
     }
+
     50.0% {
       background: #e0e0e0;
     }
