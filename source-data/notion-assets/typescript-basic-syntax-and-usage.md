@@ -1,7 +1,7 @@
 ---
 title: 'TypeScript Basic Syntax and Usage'
 author: 'Shuby Mao'
-date: '2022-02-07T22:43:00.000Z'
+date: '2022-02-08T20:26:00.000Z'
 category: 'TypeScript'
 tags: []
 emoji: '⌨️'
@@ -34,15 +34,15 @@ const isSmart = true; // boolean type
 
 ### **Arithmetic Operators**
 
-| Operator | Description | Example ( assume a = 10, b = 20 ) |
+| Operator | Description | Example |
 | --- | --- | --- |
 | + (Addition) | returns the sum of the operands | 2 + 3 is 5 |
 | - (Subtraction) | returns the difference of the values | 16 - 5 is 11 |
 | * (Multiplication) | returns the product of the values | 2 * 21 is 42 |
 | / (Division) | performs division operation and returns the quotient | 4 / 2  is 2, 7 / 5  is 1.4 |
 | % (Modulus) | performs division operation and returns the remainder | 12 % 7 is 5, -11 % 7 is -4 (Note it can be negative) |
-| ++ (Increment) | Increments the value of the variable by one | a++ (a becomes 11) |
-| -- (Decrement) | Decrements the value of the variable by one | b-- (b become 19) |
+| ++ (Increment) | Increments the value of the variable by one | a++ (a = a+1) |
+| -- (Decrement) | Decrements the value of the variable by one | b-- (b=b-1) |
 
 ### **Relational Operators**
 
@@ -68,24 +68,36 @@ let five = addTwo(3);
 
 ```tsx
 // Initialize array
-const myArr[:number] = [1,2,3.14,9];
+const myArr[:number] = [8, 3.14, 9, 4];
 const words: Array<string> = ['hello', 'world'];
 
 // Access array value - 0 indexed
-const piOverTwo = myArr[2] / 2; // 3.14 / 2
+const piOverTwo = myArr[1] / 2; // 3.14 / 2
 
 // Set array value
-myArr[3] = 4; // myArr[1,2,3.14,4]
+myArr[3] = 1; // myArr[8, 3.14, 9, 1]
 
 // Push into the array
-myArr.push(5); // myArr[1,2,3.14,5]
+myArr.push(5); // myArr[8, 3.14, 9, 4, 5]
 
 // Pop last element
-const five = myArr.pop(); // myArr[1,2,3.14,5]
+const five = myArr.pop(); // myArr[8, 3.14, 9, 4]
 
 // Map array to another array using the given function
 const allCapWords = words.map((word)=>{return word.toUpperCase();});
 // [ 'HELLO', 'WORLD' ]
+
+// Sort Array - Comparator (a, b) -> number. Same as java
+// If a is should come AFTER b return positive number
+// If a should come BEOFRE b return negative number
+// If a and b are same, return 0
+const ascdArr = myArr.sort((a, b) => {
+	return a - b;
+}); // [3.14, 4, 8, 9]
+
+const descArr = myArr.sort((a, b) => {
+	return b - a;
+}); // [9, 8, 4, 3.14]
 ```
 
 ### Object
@@ -138,19 +150,135 @@ myA  = goodUnknown['a'] // not allowed, will create compiled error
 
 // It forces you to do a type check on the input to ensure things are correct
 if(typeof unknownVar === 'object' && unknownVar.hasOwnProperty('a')){
-	// we know at this point a exist in the object
+	// compiler know at this point key 'a' exist in the object
 	myA = goodUnknown['a']; 
 }
 ```
 
 ### Map
 
-### Set
+```tsx
+let nameAgeMapping = new Map<string, number>();
+
+// Add entries
+nameAgeMapping.set('Lokesh', 37);
+nameAgeMapping.set('John', 40);
+
+// Get entries
+let age = nameAgeMapping.get('John');		// 40
+let unknownAge = nameAgeMapping.get('Hello'); // undefined
+
+// Check entry by Key
+nameAgeMapping.has('Lokesh');		        // true
+nameAgeMapping.has('Brian');		        // false
+
+// Size of the Map
+let count = nameAgeMapping.size; 	        // count = 2
+
+// Delete an entry
+let isDeleted = nameAgeMapping.delete("Lokesh");	        // isDeleted = true
+
+// Clear whole Map
+nameAgeMapping.clear();				//Clear all entries
+
+//1. Iterate over map keys
+for (let key of nameAgeMapping.keys()) {}
+
+// Iterate over map values
+for (let value of nameAgeMapping.values()) {}
+
+// Iterate over map entries
+for (let entry of nameAgeMapping.entries()) {}
+
+// Using object destructuring
+for (let [key, value] of nameAgeMapping) {}
+```
 
 ### Queue
 
+Inefficient yet simple implementation
+
+```tsx
+// initialize array
+let queue[:number] = [];
+
+// Push O(1)
+queue.push(2);         // queue is now [2]
+queue.push(5);         // queue is now [2, 5]
+
+// Pop O(n)
+let i = queue.shift(); // queue is now [5], i is 2
+```
+
+More complex but more efficient implementation
+
+```tsx
+class MyQueue<Type> {
+    private _storage: Map<number,Type>;
+    private _frontIndex: number;
+    private _backIndex: number;
+    
+    constructor() {
+        this._storage = new Map<number,Type>();
+        this._frontIndex = 0;
+        this._backIndex = 0;
+    }
+
+    push(item: Type): void {
+        this._storage.set(this._backIndex, item);
+        this._backIndex++;
+    }
+
+    peek(): Type | null {
+        if(this._backIndex === this._frontIndex){
+            return null;
+        }
+        return this._storage.get(this._frontIndex);
+    }
+
+    pop(): Type | null {
+        if(this._backIndex === this._frontIndex){
+            return null;
+        }
+        let item = this._storage.get(this._frontIndex);
+        this._storage.delete(this._frontIndex);
+        this._frontIndex++;
+        return item;
+    }
+
+    size(): number {
+        return this._backIndex - this._frontIndex;
+    }
+}
+
+// Initialization
+let q = new MyQueue<number>();
+
+// Pushing item O(1)
+q.push(25);
+q.push(30);
+
+q.size(); // O(1) - 2
+
+q.pop();  // O(1) - 25
+
+q.peek(); // O(1) - 30
+```
+
 ### Stack
+
+```tsx
+// initialize array
+let stack[:number] = [];
+
+// Push O(1)
+stack.push(2);         // stack is now [2]
+stack.push(5);         // stack is now [2, 5]
+
+// Pop O(1)
+let val = stack.pop(); // 5
+```
 
 ### Priority Queue
 
-### More Content Coming Soon 🚧
+Coming Soon

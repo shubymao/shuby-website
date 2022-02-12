@@ -13,7 +13,27 @@ const DefaultRenderer: any = {
   pre,
 };
 
+export const getLocalizedRederer = (path: string): any => {
+  return {
+    code: renderCode,
+    img: localImage(path),
+    pre,
+  }
+}
+
 function img({ ...props }): JSX.Element {
+  return <Image {...props} />;
+}
+
+function localImage(path): (prop: any) => JSX.Element {
+  const handler = (prop: any): JSX.Element => {
+    prop['src'] = path + "/" + prop['src'];
+    return <Image {...prop} />;
+  };
+  return handler;
+}
+
+function Image({ ...props }): JSX.Element {
   return <img className="bg-white max-h-screen/2 object-contain" {...props} />;
 }
 
@@ -39,6 +59,7 @@ function renderCode({ node, inline, className, children }): JSX.Element {
 
 /* eslint-enable */
 export default DefaultRenderer;
+
 function removeLastLineBreak(children: string): string {
   if (children.charAt(children.length - 1) !== '\n') return children;
   return children.substring(0, children.length - 1);

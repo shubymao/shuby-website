@@ -27,6 +27,10 @@ jobs:
           cache: 'yarn' # or npm
       - name: Install Dependency
         run: yarn install --frozen-lockfile
+      - name: Lint
+        run: yarn lint
+      - name: Lint Style
+        run: yarn lintStyle
       - name: Building production site
         run: yarn run build
         env:

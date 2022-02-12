@@ -17,7 +17,8 @@
 
   .contact-card-input-wrapper input,
   .contact-card-input-wrapper textarea {
-    @apply w-full px-3 py-3 relative bg-transparent text-onSurface rounded border-onSurface border shadow focus:outline-none md:text-lg placeholder-onSurface focus:ring ring-primary;
+    @apply w-full px-3 py-3 relative bg-transparent text-onSurface rounded border-onSurface;
+    @apply border shadow focus:outline-none md:text-lg placeholder-onSurface focus:ring ring-primary;
   }
 
   .contact-card-input-wrapper textarea {
