@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, writeFileSync } from 'fs';
+import { lstatSync, readdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 import { Note, NoteProperty, Project } from '@typeDefs/data';
@@ -24,9 +24,10 @@ function loadCache(directory: string): any {
 function loadAllFiles(filesDir: string, callback: (path: string, content: string) => void) {
   const files = getAllFileInDir(filesDir);
   files.forEach((file) => {
-    const filePath = join(filesDir, file);
-    const fileContents = readFileSync(filePath, 'utf8');
-    callback(filePath, fileContents);
+    const path = join(filesDir, file);
+    if (lstatSync(path).isDirectory()) return;
+    const fileContents = readFileSync(path, 'utf8');
+    callback(path, fileContents);
   });
 }
 
