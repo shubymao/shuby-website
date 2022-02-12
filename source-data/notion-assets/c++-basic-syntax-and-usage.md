@@ -1,7 +1,7 @@
 ---
 title: 'C++ Basic Syntax and Usage'
 author: 'Shuby Mao'
-date: '2022-02-07T19:40:00.000Z'
+date: '2022-02-08T20:27:00.000Z'
 category: 'C++'
 tags: []
 emoji: '⛺'
