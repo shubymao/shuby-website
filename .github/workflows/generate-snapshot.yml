@@ -27,9 +27,9 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Install Playwright browser
         run: npx playwright install --with-deps
-      - name: Run End to End Test
+      - name: Run End to End Test and move Report
         id: e2etest
-        run: yarn test
+        run: yarn test:report
         continue-on-error: true
       - name: Generate New Snapshot
         if: steps.e2etest.outcome == 'failure'
@@ -48,4 +48,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Reports
-          path: ./tests/test-results/*
+          path: ./tests/reports/*

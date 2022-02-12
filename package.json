@@ -8,7 +8,9 @@
     "start": "next build && next start",
     "lint": "next lint",
     "lintStyle": "stylelint **/*.css --fix ",
+    "move-report": "mv ./tests/output/test-report ./tests/reports/",
     "test": "playwright test -c ./tests/playwright.config.ts",
+    "test:report": "yarn test && yarn move-report",
     "test:update": "playwright test -c ./tests/playwright.config.ts -u"
   },
   "husky": {
