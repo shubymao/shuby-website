@@ -5,7 +5,7 @@ category: TypeScript/JavaScript
 date: '2022-02-13T07:50:36.706Z'
 ---
 
-# Setting Up A CRA TypeScript Project
+## Introduction
 
 This for setting up a Create react app project with typescript, eslint, and prettier.
 
