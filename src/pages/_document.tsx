@@ -1,4 +1,11 @@
-import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document';
+import Document, {
+  DocumentContext,
+  DocumentInitialProps,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from 'next/document';
 import React from 'react';
 
 const icons = [
@@ -19,14 +26,18 @@ function getFavIcons(): Array<JSX.Element> {
     sizes.forEach((s) => {
       const size = `${s}x${s}`;
       const href = `${ICON_PATH}/${prefix}-${size}.png`;
-      favicons.push(<link key={href} rel={rel} type={type} sizes={size} href={href} />);
+      favicons.push(
+        <link key={href} rel={rel} type={type} sizes={size} href={href} />,
+      );
     });
   });
   return favicons;
 }
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+  static async getInitialProps(
+    ctx: DocumentContext,
+  ): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx);
     return initialProps;
   }

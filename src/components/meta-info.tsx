@@ -1,6 +1,9 @@
 import React, { ReactElement } from 'react';
 import Head from 'next/head';
-import { ogDefaultDescription, ogDefaultPreviewURL } from '@constants/page-info';
+import {
+  ogDefaultDescription,
+  ogDefaultPreviewURL,
+} from '@constants/page-info';
 
 export interface MetaProps {
   pageTitle: string;

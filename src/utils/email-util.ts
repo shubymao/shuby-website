@@ -2,7 +2,8 @@ import emailjs from 'emailjs-com';
 import getConfig from 'next/config';
 
 const { publicRuntimeConfig } = getConfig();
-const { EMAILJS_USER_ID, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } = publicRuntimeConfig;
+const { EMAILJS_USER_ID, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } =
+  publicRuntimeConfig;
 emailjs.init(EMAILJS_USER_ID);
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
 
@@ -13,7 +14,9 @@ export type ContactMessage = {
   message: string;
 };
 
-export default async function sendEmail(emailObj: ContactMessage): Promise<void> {
+export default async function sendEmail(
+  emailObj: ContactMessage,
+): Promise<void> {
   validateMessage(emailObj);
   try {
     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, emailObj);

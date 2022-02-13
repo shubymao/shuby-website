@@ -22,9 +22,7 @@
     "typescript": "javascript",
     "typescriptreact": "javascript"
   },
-  "cSpell.words": [
-    "semibold"
-  ],
+  "cSpell.words": ["semibold"],
   "files.exclude": {
     "**/LICENSE": true,
     "**/node_modules/": true,

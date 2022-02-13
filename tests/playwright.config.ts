@@ -15,7 +15,9 @@ const config: PlaywrightTestConfig = {
   use: {
     screenshot: 'only-on-failure',
   },
-  reporter: [['html', { outputFolder: 'tests/output/test-report', open: 'never' }]],
+  reporter: [
+    ['html', { outputFolder: 'tests/output/test-report', open: 'never' }],
+  ],
   projects: [
     {
       name: 'chromium',

@@ -6,6 +6,7 @@ category: 'Linux'
 tags: []
 emoji: '🐧'
 ---
+
 ## Introduction
 
 Windows Subsystem for Linux or WSL for short allows you to run Linux virtually within windows. This enables developers to run, test, and develop within the Linux environment as servers tend to run using Linux.
@@ -30,7 +31,7 @@ Go into the Microsoft Store and install your preferred Linux distribution. Here 
 
 ### Install ZSH
 
-On ubuntu simply install ZSH by running 
+On ubuntu simply install ZSH by running
 
 ```bash
 sudo apt install zsh -y

@@ -5,7 +5,9 @@ import Card from '../card/card';
 import RevealCard from '../card/reveal-card';
 
 export const CARD_SVG_STYLE: AttributionStyle = {
-  contentStyle: stl('h-14 w-14 md:h-16 md:w-16 flex-none object-contain mx-auto'),
+  contentStyle: stl(
+    'h-14 w-14 md:h-16 md:w-16 flex-none object-contain mx-auto',
+  ),
   wrapperStyle: stl('p-3 bg-white rounded-2xl block'),
 };
 
@@ -30,7 +32,9 @@ export function generateCards(cards: Array<CardData>): Array<JSX.Element> {
 
 const CardGrid = (props: PropsWithChildren<CardGridProps>): ReactElement => {
   const { children } = props;
-  const { gridStyle = stl('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4') } = props;
+  const {
+    gridStyle = stl('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'),
+  } = props;
 
   return <div className={gridStyle}>{children}</div>;
 };

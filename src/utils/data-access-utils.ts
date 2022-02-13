@@ -66,7 +66,10 @@ export function getAllNotesProperty(): NoteProperty[] {
   return notes;
 }
 
-export function getProjectByFile(fileName: string, fields: string[] = []): Project {
+export function getProjectByFile(
+  fileName: string,
+  fields: string[] = [],
+): Project {
   const nameNoExt = fileName.replace(/\.md$/, '');
   const fullPath = join(projectDirectory, `${nameNoExt}.md`);
   const fileContent = readFileSync(fullPath);

@@ -8,7 +8,11 @@ export default function getTextAlignClass(align?: alignment): string {
   return 'text-right';
 }
 
-export function useDelayState(state: boolean, delayTime: number, initState: boolean): boolean {
+export function useDelayState(
+  state: boolean,
+  delayTime: number,
+  initState: boolean,
+): boolean {
   const [delayState, setDelayState] = useState(initState);
   useEffect(() => {
     let timeoutId: null | ReturnType<typeof setTimeout>;

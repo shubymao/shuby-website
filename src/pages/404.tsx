@@ -5,7 +5,11 @@ import importSVGWithClass, { stl } from '@utils/graphics-utils';
 import React from 'react';
 
 const title = 'Page Not Found';
-const lighthouse = importSVGWithClass('misc/lighthouse.svg', stl('w-48 mx-auto'), '');
+const lighthouse = importSVGWithClass(
+  'misc/lighthouse.svg',
+  stl('w-48 mx-auto'),
+  '',
+);
 const Custom404 = () => (
   <>
     <MetaInfo pageTitle={title} />
