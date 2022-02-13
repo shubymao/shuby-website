@@ -32,7 +32,7 @@ jobs:
       - name: Lint Style
         run: yarn lintStyle
       - name: Building production site
-        run: yarn run build
+        run: yarn run export
         env:
           NEXT_PUBLIC_EMAILJS_USER_ID: ${{secrets.EJS_USER_ID}}
           NEXT_PUBLIC_EMAILJS_SERVICE_ID: ${{secrets.EJS_SERVICE_ID}}

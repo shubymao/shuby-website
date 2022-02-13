@@ -4,7 +4,7 @@ import { getAllNotesProperty, getNoteByURL } from '@utils/data-access-utils';
 import Page from '@components/layout/page';
 import ReactMarkdown from 'react-markdown';
 import { Note } from '@typeDefs/data';
-import { getLocalizedRederer } from '@utils/render-util';
+import DefaultRenderer, { getLocalizedRederer } from '@utils/render-util';
 import gfm from 'remark-gfm';
 import { getDateInLocalTime } from '@utils/data-translation-util';
 
@@ -20,9 +20,9 @@ type StaticPropObject = {
 
 const NotePage = (props: NotePageProps): JSX.Element => {
   const { note } = props;
-  const { emoji, title, date, content, author } = note;
+  const { emoji, title, date, isNotion, content, author } = note;
   const localTime = getDateInLocalTime(date);
-  const localizedRenderer = getLocalizedRederer("/notion-assets");
+  const renderer = isNotion ? getLocalizedRederer("/notion-assets") : DefaultRenderer;
   return (
     <>
       <MetaInfo pageTitle={title} />
@@ -32,7 +32,7 @@ const NotePage = (props: NotePageProps): JSX.Element => {
           <span>
             Last Updated: {localTime} by {author}
           </span>
-          <ReactMarkdown remarkPlugins={[gfm]} components={localizedRenderer}>
+          <ReactMarkdown remarkPlugins={[gfm]} components={renderer}>
             {content}
           </ReactMarkdown>
         </div>

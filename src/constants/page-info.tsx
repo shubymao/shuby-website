@@ -50,7 +50,7 @@ export const CONTACT_INFORMATION: Array<ContactInfo> = [
   },
 ];
 
-export const BASIC_PROJECT = ['name', 'date', 'brief', 'path', 'github', 'demo'];
+export const BASIC_PROJECT = ['name', 'date', 'brief', 'path', 'github', 'omit', 'demo'];
 export const HIGH_LEVEL_PROJECT = [...BASIC_PROJECT, 'attribution'];
 export const HIGHLIGHT_PROJECT = [...HIGH_LEVEL_PROJECT, 'highlight'];
 export const ALL_PROJECT_ATTRIBUTES = [...HIGHLIGHT_PROJECT, 'ogImage', 'content'];

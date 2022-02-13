@@ -25,4 +25,4 @@ jobs:
       - name: Install Playwright browser
         run: npx playwright install --with-deps
       - name: Run End to End Test
-        run: yarn test
+        run: yarn build && yarn test
