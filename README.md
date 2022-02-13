@@ -25,7 +25,13 @@ npm run dev
 
 ### Test
 
-To run the test within the project simply run the test command.
+To run the test within the project, first install playwright by running
+
+```bash
+npx playwright install
+```
+
+Then simply run the test command.
 
 ```bash
 npm run test
@@ -33,8 +39,8 @@ npm run test
 
 ### Build/Export
 
-To build and export the project as static site simply run the build command.
+To build and export the project as static site simply run the export command.
 
 ```bash
-npm run build
+npm run export
 ```
