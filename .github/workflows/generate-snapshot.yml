@@ -29,6 +29,8 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Install Playwright browser
         run: npx playwright install --with-deps
+      - name: Run Build
+        run: yarn build
       - name: Run End to End Test and move Report
         id: e2etest
         run: yarn test:report
