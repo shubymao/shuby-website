@@ -34,6 +34,7 @@ export default ProjectsPage;
 
 export async function getStaticProps(): Promise<StaticPropObject<ProjectPageProps>> {
   const projects = getAllProjects(HIGH_LEVEL_PROJECT);
-  const props: ProjectPageProps = { projects };
+  const projectsToShow = projects.filter((project) => !project.omit)
+  const props: ProjectPageProps = { projects: projectsToShow };
   return { props };
 }

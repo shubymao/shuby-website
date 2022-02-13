@@ -1,7 +1,8 @@
 ---
-name: Setting Up A CRA TypeScript project
-brief: This is a quick note to go through the steps to setup a Create React App Project with typescript, eslint, and prettier.
-date: 2021-04-20T21:37:39.805Z
+title: Setting Up A CRA TypeScript project
+author: Shuby Mao
+category: TypeScript/JavaScript
+date: '2022-02-13T07:50:36.706Z'
 ---
 
 # Setting Up A CRA TypeScript Project
@@ -108,5 +109,3 @@ Within your project, create a setting.json within the .vscode folder and add the
   ...
 }
 ```
-
-If you have any other project setup type recommendation, send me a email through link at the footer below. Or make a PR at the GitGub Repo.

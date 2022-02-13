@@ -7,6 +7,7 @@ const cacheFile = 'cache.tmp';
 const projectDirectory = join(process.cwd(), 'source-data', 'projects');
 const notionDirectory = join(process.cwd(), 'source-data', 'notion-assets');
 const noteDirectory = join(process.cwd(), 'source-data', 'notes');
+const notesDirectories = [noteDirectory, notionDirectory];
 
 function getAllFileInDir(dirPath: string) {
   return readdirSync(dirPath);
@@ -21,7 +22,10 @@ function loadCache(directory: string): any {
   return JSON.parse(cache);
 }
 
-function loadAllFiles(filesDir: string, callback: (path: string, content: string) => void) {
+function loadAllFiles(
+  filesDir: string,
+  callback: (path: string, content: string) => void,
+) {
   const files = getAllFileInDir(filesDir);
   files.forEach((file) => {
     const path = join(filesDir, file);
@@ -36,23 +40,27 @@ export function getNoteByURL(noteURL: string): Note {
   const filePath = cache[noteURL];
   const fileContent = readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContent);
-  const { title, date, emoji, category, author, tags } = data;
-  return { title, date, emoji, category, author, tags, content };
+  const { title, date, category, author } = data;
+  const { tags = [], emoji = '📗' } = data;
+  const isNotion = noteURL.includes('filePath');
+  return { title, date, emoji, category, author, tags, content, isNotion };
 }
 
 export function getAllNotesProperty(): NoteProperty[] {
   const notes: NoteProperty[] = [];
   const urlToPath: { [k: string]: string } = {};
-  loadAllFiles(notionDirectory, (filePath, fileContent) => {
-    if (!filePath.endsWith('.md')) return;
-    const { data } = matter(fileContent);
-    const { title, emoji, category } = data;
-    if (!title || !category) return;
-    const id = title.replace(/\s/g, '-').toLowerCase();
-    const url = `/notes/${id}`;
-    const link = { name: title, url };
-    notes.push({ id, filePath, title, emoji, category, link });
-    urlToPath[id] = filePath;
+  notesDirectories.forEach((dir) => {
+    loadAllFiles(dir, (filePath, fileContent) => {
+      if (!filePath.endsWith('.md')) return;
+      const { data } = matter(fileContent);
+      const { title, emoji = '📗', category, omit = false } = data;
+      if (!title || !category) return;
+      const id = title.replace(/\s/g, '-').toLowerCase();
+      const url = `/notes/${id}`;
+      const link = { name: title, url };
+      notes.push({ id, omit, filePath, title, emoji, category, link });
+      urlToPath[id] = filePath;
+    });
   });
   saveCache(urlToPath, noteDirectory);
   return notes;
@@ -74,6 +82,8 @@ export function getProjectByFile(fileName: string, fields: string[] = []): Proje
 
 export function getAllProjects(fields: string[] = []): Project[] {
   const files = getAllFileInDir(projectDirectory);
-  const projects = files.map((file) => getProjectByFile(file, fields)).filter((project) => project);
+  const projects = files
+    .map((file) => getProjectByFile(file, fields))
+    .filter((project) => project);
   return projects;
 }

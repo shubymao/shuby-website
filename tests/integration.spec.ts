@@ -38,31 +38,22 @@ test('Contact Page', async ({ context, baseURL }) => {
 });
 
 test('Projects Pages', async ({ context, baseURL }) => {
-  const projectsRoot = baseURL + '/projects';
-  await visitAndSnapShot(context, projectsRoot, 'projects.jpg', 750);
-  const page = await context.newPage();
-  await page.goto(projectsRoot);
-  const hrefs = await page.evaluate(() => {
-    return Array.from(document.links).map((item) => item.href);
-  });
-  const projectLinks = hrefs.filter((url) => url.match(/^.*\/projects\/.+$/));
-  for (const url of projectLinks) {
-    const name = url.match(/^.*\/projects\/(.+$)/)[1];
-    await visitAndSnapShot(context, url, name + '.jpg', 300);
-  }
+  await visitAndSnapShot(context, baseURL + '/projects', 'projects.jpg', 750);
 });
 
 test('Notes Pages', async ({ baseURL, context }) => {
-  const notesRoot = baseURL + '/notes';
-  await visitAndSnapShot(context, notesRoot, 'notes.jpg', 750);
-  const page = await context.newPage();
-  await page.goto(notesRoot);
-  const hrefs = await page.evaluate(() => {
-    return Array.from(document.links).map((item) => item.href);
-  });
-  const noteLinks = hrefs.filter((url) => url.match(/^.*\/notes\/.+$/));
-  for (const url of noteLinks) {
-    const name = url.match(/^.*\/notes\/(.+$)/)[1];
-    await visitAndSnapShot(context, url, name + '.jpg', 300);
-  }
+  await visitAndSnapShot(context, baseURL + '/notes', 'notes.jpg', 750);
+});
+
+test('Sample Note Page', async ({ baseURL, context }) => {
+  await visitAndSnapShot(context, baseURL + '/notes/sample-note', 'sample-note.jpg', 750);
+});
+
+test('Sample Project Page', async ({ baseURL, context }) => {
+  await visitAndSnapShot(
+    context,
+    baseURL + '/projects/sample-project',
+    'sample-project.jpg',
+    750,
+  );
 });

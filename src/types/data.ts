@@ -39,6 +39,7 @@ export interface NoteProperty {
   title: string;
   category: string;
   link: PageLink;
+  omit?: boolean;
 }
 
 export interface Note {
@@ -49,6 +50,7 @@ export interface Note {
   author: string;
   tags: string[];
   content: string;
+  isNotion: boolean;
 }
 
 export interface RevealCardData extends CardData {
@@ -84,6 +86,7 @@ export interface Project {
   path?: string;
   github?: string;
   demo?: string;
+  omit?: boolean;
   highlight?: boolean;
   category?: string;
   brief?: string;
