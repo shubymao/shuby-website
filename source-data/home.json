@@ -24,7 +24,12 @@
         "title": "Competitive Programing",
         "description": "Actively participated in global coding competitions such as Google Kick Start and Leetcode Contests.",
         "attribution": { "path": "home/cp.svg" },
-        "links": [{ "name": "LeetCode Profile", "url": "https://leetcode.com/Le_LI_Mao/" }]
+        "links": [
+          {
+            "name": "LeetCode Profile",
+            "url": "https://leetcode.com/Le_LI_Mao/"
+          }
+        ]
       }
     ]
   },

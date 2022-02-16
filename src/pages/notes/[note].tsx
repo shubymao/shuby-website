@@ -22,7 +22,9 @@ const NotePage = (props: NotePageProps): JSX.Element => {
   const { note } = props;
   const { emoji, title, date, isNotion, content, author } = note;
   const localTime = getDateInLocalTime(date);
-  const renderer = isNotion ? getLocalizedRederer("/notion-assets") : DefaultRenderer;
+  const renderer = isNotion
+    ? getLocalizedRederer('/notion-assets')
+    : DefaultRenderer;
   return (
     <>
       <MetaInfo pageTitle={title} />
@@ -43,7 +45,9 @@ const NotePage = (props: NotePageProps): JSX.Element => {
 
 export default NotePage;
 
-export async function getStaticProps(conext: StaticInput): Promise<StaticPropObject> {
+export async function getStaticProps(
+  conext: StaticInput,
+): Promise<StaticPropObject> {
   const note = getNoteByURL(conext.params.note);
   const props: NotePageProps = { note };
   return { props };

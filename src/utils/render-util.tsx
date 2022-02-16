@@ -18,8 +18,8 @@ export const getLocalizedRederer = (path: string): any => {
     code: renderCode,
     img: localImage(path),
     pre,
-  }
-}
+  };
+};
 
 function img({ ...props }): JSX.Element {
   return <Image {...props} />;
@@ -27,7 +27,7 @@ function img({ ...props }): JSX.Element {
 
 function localImage(path): (prop: any) => JSX.Element {
   const handler = (prop: any): JSX.Element => {
-    prop['src'] = path + "/" + prop['src'];
+    prop['src'] = path + '/' + prop['src'];
     return <Image {...prop} />;
   };
   return handler;
@@ -46,12 +46,29 @@ function renderCode({ node, inline, className, children }): JSX.Element {
   const language = match ? match[1] : undefined;
   const style = inline ? stl('inline') : stl('block');
   const largeScreen = useMediaQuery({ query: md });
-  const customStyle = largeScreen ? { fontSize: '0.8rem' } : { fontSize: '0.7rem' };
+  const customStyle = largeScreen
+    ? { fontSize: '0.8rem' }
+    : { fontSize: '0.7rem' };
   if (inline) return <code className={style}>{children}</code>;
-  if (typeof children[0] === 'string') children[0] = removeLastLineBreak(children[0]);
-  if (!language) return <SyntaxHighlighter customStyle={customStyle} className={style} children={children} style={tomorrow} />;
+  if (typeof children[0] === 'string')
+    children[0] = removeLastLineBreak(children[0]);
+  if (!language)
+    return (
+      <SyntaxHighlighter
+        customStyle={customStyle}
+        className={style}
+        children={children}
+        style={tomorrow}
+      />
+    );
   return (
-    <SyntaxHighlighter customStyle={customStyle} showLineNumbers={true} className={style} language={language} style={tomorrow}>
+    <SyntaxHighlighter
+      customStyle={customStyle}
+      showLineNumbers={true}
+      className={style}
+      language={language}
+      style={tomorrow}
+    >
       {children}
     </SyntaxHighlighter>
   );

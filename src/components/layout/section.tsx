@@ -22,7 +22,9 @@ const Section = (props: PropsWithChildren<SectionProp>) => {
 
   return (
     <section ref={sectionRef} className={`section-wrapper w-full ${padding}`}>
-      {title && <h2 className={`${mobile} ${size} ${margin} ${align}`}>{title}</h2>}
+      {title && (
+        <h2 className={`${mobile} ${size} ${margin} ${align}`}>{title}</h2>
+      )}
       {children}
     </section>
   );

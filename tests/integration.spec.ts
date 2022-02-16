@@ -46,7 +46,12 @@ test('Notes Pages', async ({ baseURL, context }) => {
 });
 
 test('Sample Note Page', async ({ baseURL, context }) => {
-  await visitAndSnapShot(context, baseURL + '/notes/sample-note', 'sample-note.jpg', 750);
+  await visitAndSnapShot(
+    context,
+    baseURL + '/notes/sample-note',
+    'sample-note.jpg',
+    750,
+  );
 });
 
 test('Sample Project Page', async ({ baseURL, context }) => {

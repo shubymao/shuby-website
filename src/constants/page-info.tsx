@@ -1,4 +1,8 @@
-import { faGithub, faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
+import {
+  faGithub,
+  faLinkedin,
+  faStackOverflow,
+} from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { ContactInfo, PageLink } from '@typeDefs/data';
 
@@ -40,9 +44,17 @@ export const MAIN_PAGES: Array<PageLink> = [
 export const HEADER_TITLE = 'Shuby Mao';
 
 export const CONTACT_INFORMATION: Array<ContactInfo> = [
-  { name: 'LinkedIn Page', icon: faLinkedin, url: 'https://www.linkedin.com/in/lelimao/' },
+  {
+    name: 'LinkedIn Page',
+    icon: faLinkedin,
+    url: 'https://www.linkedin.com/in/lelimao/',
+  },
   { name: 'Email Address', icon: faEnvelope, url: 'shuby1036@gmail.com' },
-  { name: 'Github Profile', icon: faGithub, url: 'https://github.com/shubymao' },
+  {
+    name: 'Github Profile',
+    icon: faGithub,
+    url: 'https://github.com/shubymao',
+  },
   {
     name: 'StackOverflow',
     icon: faStackOverflow,
@@ -50,7 +62,19 @@ export const CONTACT_INFORMATION: Array<ContactInfo> = [
   },
 ];
 
-export const BASIC_PROJECT = ['name', 'date', 'brief', 'path', 'github', 'omit', 'demo'];
+export const BASIC_PROJECT = [
+  'name',
+  'date',
+  'brief',
+  'path',
+  'github',
+  'omit',
+  'demo',
+];
 export const HIGH_LEVEL_PROJECT = [...BASIC_PROJECT, 'attribution'];
 export const HIGHLIGHT_PROJECT = [...HIGH_LEVEL_PROJECT, 'highlight'];
-export const ALL_PROJECT_ATTRIBUTES = [...HIGHLIGHT_PROJECT, 'ogImage', 'content'];
+export const ALL_PROJECT_ATTRIBUTES = [
+  ...HIGHLIGHT_PROJECT,
+  'ogImage',
+  'content',
+];

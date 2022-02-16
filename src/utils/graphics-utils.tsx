@@ -8,10 +8,17 @@ export function stl(style: string): string {
   return style;
 }
 
-function importSVGWithClass(path: string, svgStyle: string, wrapperStyle: string): JSX.Element {
-  const SVGICON: ComponentType<{ className: string }> = dynamic(() => import(`/public/${path}`), {
-    loading: () => <SkeletonDiv style={svgStyle} />,
-  });
+function importSVGWithClass(
+  path: string,
+  svgStyle: string,
+  wrapperStyle: string,
+): JSX.Element {
+  const SVGICON: ComponentType<{ className: string }> = dynamic(
+    () => import(`/public/${path}`),
+    {
+      loading: () => <SkeletonDiv style={svgStyle} />,
+    },
+  );
   return (
     <div className={wrapperStyle}>
       <SVGICON className={svgStyle} />
@@ -23,7 +30,8 @@ export function processAttribution(attribution: Attribution): JSX.Element {
   if (!attribution) return null;
   const { path, alt, style } = attribution;
   const { contentStyle, wrapperStyle } = style;
-  if (path.includes('.svg')) return importSVGWithClass(path, contentStyle, wrapperStyle);
+  if (path.includes('.svg'))
+    return importSVGWithClass(path, contentStyle, wrapperStyle);
   return (
     <div className={wrapperStyle}>
       <img src={path} alt={alt} className={contentStyle} />

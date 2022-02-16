@@ -12,7 +12,10 @@ module.exports = withTM({
     const existingRules = config.module.rules;
     const ruleWithoutSVG = existingRules.map((rule) => {
       if (rule.test && rule.test.toString().includes('svg')) {
-        const test = rule.test.toString().replace('svg|', '').replace(/\//g, '');
+        const test = rule.test
+          .toString()
+          .replace('svg|', '')
+          .replace(/\//g, '');
         return { ...rule, test: new RegExp(test) };
       }
       return rule;

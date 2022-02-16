@@ -46,7 +46,10 @@ const Content = (props: ContentProps): ReactElement => {
           <h2 className="text-xl">{title}</h2>
           <p>{description}</p>
         </div>
-        <div className="w-full pt-2 mt-3 border-t cursor-pointer" onClick={open}>
+        <div
+          className="w-full pt-2 mt-3 border-t cursor-pointer"
+          onClick={open}
+        >
           <p className="text-center">Click here for more detail</p>
         </div>
       </div>
@@ -58,7 +61,10 @@ const Detail = (props: DetailProps): ReactElement => {
   const { close, title, location, date, detail } = props;
   return (
     <div className="fade-in">
-      <div onClick={close} className="flex items-center justify-between cursor-pointer">
+      <div
+        onClick={close}
+        className="flex items-center justify-between cursor-pointer"
+      >
         <p className="text-xl">{title}</p>
         <FontAwesomeIcon icon={faTimes} />
       </div>
@@ -84,7 +90,11 @@ const RevealCard = (props: RevealCardData): ReactElement => {
   const { attribution, title, description, date, location, detail } = props;
   const contentProps = { attribution, title, description, open };
   const detailProps = { date, location, title, detail, close };
-  return <CardWrapper>{isOpen ? <Detail {...detailProps} /> : <Content {...contentProps} />}</CardWrapper>;
+  return (
+    <CardWrapper>
+      {isOpen ? <Detail {...detailProps} /> : <Content {...contentProps} />}
+    </CardWrapper>
+  );
 };
 
 export default RevealCard;

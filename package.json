@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "lint": "next lint",
-    "lintStyle": "stylelint **/*.css --fix ",
+    "format": "yarn lint && yarn tidy && yarn lintStyle",
+    "lint": "next lint --ignore-path .lintignore",
+    "tidy": "prettier --w '**/*.{js,jsx,md,ts,tsx,json}' --ignore-path .lintignore",
+    "lintStyle": "stylelint src/**/*.css --fix ",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -12,22 +14,49 @@
     "test": "playwright test -c ./tests/playwright.config.ts",
     "move-report": "mv ./tests/output/test-report ./tests/reports/",
     "test:report": "yarn test && yarn move-report",
-    "test:update": "playwright test -c ./tests/playwright.config.ts -u"
+    "test:update": "playwright test -c ./tests/playwright.config.ts -u",
+    "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "arrowParens": "always"
   },
-  "lint-staged": {
-    "src/**/*.{ts,tsx,js}": [
-      "eslint . --fix",
-      "git add"
-    ],
-    "src/**/*.css": [
-      "stylelint --syntax css --fix",
-      "git add"
+  "eslintConfig": {
+    "extends": [
+      "next/core-web-vitals",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:tailwind/recommended",
+      "prettier"
     ]
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard"
+    ],
+    "rules": {
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "tailwind",
+            "layer",
+            "apply",
+            "variants",
+            "responsive",
+            "screen"
+          ]
+        }
+      ],
+      "no-invalid-position-at-import-rule": null,
+      "declaration-block-trailing-semicolon": null,
+      "no-descending-specificity": null
+    }
   },
   "dependencies": {
     "@fortawesome/fontawesome-common-types": "0.3.0",
@@ -67,6 +96,7 @@
     "eslint-plugin-tailwind": "0.2.1",
     "file-loader": "6.2.0",
     "husky": "7.0.4",
+    "lint-staged": ">=10",
     "postcss": "8.4.6",
     "postcss-import": "14.0.2",
     "prettier": "2.5.1",
@@ -75,5 +105,9 @@
     "tailwindcss": "3.0.22",
     "typescript": "4.5.5",
     "url-loader": "4.1.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md}": "prettier --write",
+    "*.css": "stylelint --fix"
   }
 }

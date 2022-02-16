@@ -7,7 +7,9 @@ type SkeletonDivProps = {
 
 const SkeletonDiv = (props: SkeletonDivProps): JSX.Element => {
   const { style } = props;
-  return <div className={stl(`${style} rounded-full loading-animation`)}> </div>;
+  return (
+    <div className={stl(`${style} rounded-full loading-animation`)}> </div>
+  );
 };
 
 export default SkeletonDiv;

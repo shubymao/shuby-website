@@ -1,4 +1,9 @@
-import { BOTTOM_HIDDEN, HIDDEN, NORMAL, RIGHT_HIDDEN } from '@constants/animations';
+import {
+  BOTTOM_HIDDEN,
+  HIDDEN,
+  NORMAL,
+  RIGHT_HIDDEN,
+} from '@constants/animations';
 import { Effect } from '@typeDefs/alias';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';

@@ -41,7 +41,9 @@ const ProjectPage = (props: ProjectProps): JSX.Element => {
 
 export default ProjectPage;
 
-export async function getStaticProps(staticProp: StaticInput): Promise<StaticPropObject> {
+export async function getStaticProps(
+  staticProp: StaticInput,
+): Promise<StaticPropObject> {
   const projectName = staticProp.params.project;
   const project = getProjectByFile(projectName, ALL_PROJECT_ATTRIBUTES);
   const props: ProjectProps = { project };

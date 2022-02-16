@@ -2,11 +2,18 @@ import { Div } from '@typeDefs/alias';
 import { slideOut } from '@utils/animation-util';
 import sendEmail from '@utils/email-util';
 import { stl } from '@utils/graphics-utils';
-import React, { ChangeEventHandler, Dispatch, SetStateAction, useRef, useState } from 'react';
+import React, {
+  ChangeEventHandler,
+  Dispatch,
+  SetStateAction,
+  useRef,
+  useState,
+} from 'react';
 import CardWrapper from './card-wrapper';
 
 type Input = HTMLInputElement | HTMLTextAreaElement;
-const SUCCESS_MESSAGE = 'Message Successfully Sent. \n I will get back to you soon. 😃';
+const SUCCESS_MESSAGE =
+  'Message Successfully Sent. \n I will get back to you soon. 😃';
 const ContactCard = (): JSX.Element => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -34,14 +41,33 @@ const ContactCard = (): JSX.Element => {
 
   return (
     <>
-      <p ref={successRef} className="text-xl whitespace-pre-line text-onBase md:text-3xl">
+      <p
+        ref={successRef}
+        className="text-xl whitespace-pre-line text-onBase md:text-3xl"
+      >
         {success}
       </p>
-      <CardWrapper containerRef={cardRef} style={stl('mx-auto p-5 sm:p-7 md:p-10 max-w-[700px]')}>
+      <CardWrapper
+        containerRef={cardRef}
+        style={stl('mx-auto p-5 sm:p-7 md:p-10 max-w-[700px]')}
+      >
         <div className="contact-card-input-wrapper">
-          <input placeholder="Your Name" value={name} onChange={onChange(setName)} />
-          <input placeholder="Your Email" type="email" value={email} onChange={onChange(setEmail)} />
-          <input placeholder="Subject" value={subject} onChange={onChange(setSubject)} />
+          <input
+            placeholder="Your Name"
+            value={name}
+            onChange={onChange(setName)}
+          />
+          <input
+            placeholder="Your Email"
+            type="email"
+            value={email}
+            onChange={onChange(setEmail)}
+          />
+          <input
+            placeholder="Subject"
+            value={subject}
+            onChange={onChange(setSubject)}
+          />
           <textarea
             className="message-box"
             placeholder="Message"
@@ -50,7 +76,11 @@ const ContactCard = (): JSX.Element => {
           />
         </div>
         {error && <p className="mt-4 text-red-500 md:text-lg">{error}</p>}
-        <button className="contact-form-button" type="submit" onClick={submitHandler}>
+        <button
+          className="contact-form-button"
+          type="submit"
+          onClick={submitHandler}
+        >
           Submit
         </button>
       </CardWrapper>

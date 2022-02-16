@@ -16,5 +16,8 @@ const CardWrapper = (props: CardWrapperProp) => {
   );
 };
 
-CardWrapper.defaultProps = { style: 'py-4 px-5 space-y-4', containerRef: undefined };
+CardWrapper.defaultProps = {
+  style: 'py-4 px-5 space-y-4',
+  containerRef: undefined,
+};
 export default CardWrapper;

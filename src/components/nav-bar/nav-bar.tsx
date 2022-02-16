@@ -21,15 +21,23 @@ const NavBar = (props: NavBarProps): ReactElement => {
       <div className="main-wrapper">
         <Link href="/" passHref>
           <a className="main-icon">
-            {theme === 'dark' ? <WhiteIcon height="48px" /> : <BlackIcon height="48px" />}
+            {theme === 'dark' ? (
+              <WhiteIcon height="48px" />
+            ) : (
+              <BlackIcon height="48px" />
+            )}
             <p className="header-title">{HEADER_TITLE}</p>
           </a>
         </Link>
-        <div className="horizontal-nav-list">{MAIN_PAGES.map(renderHeaderItems)}</div>
+        <div className="horizontal-nav-list">
+          {MAIN_PAGES.map(renderHeaderItems)}
+        </div>
         <div className="theme-wrapper">{renderToggle(theme, toggleTheme)}</div>
       </div>
       <div className="drawer">
-        <div className="grid-container">{MAIN_PAGES.map(renderNavBarListItems)}</div>
+        <div className="grid-container">
+          {MAIN_PAGES.map(renderNavBarListItems)}
+        </div>
       </div>
     </nav>
   );

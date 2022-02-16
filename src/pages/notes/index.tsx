@@ -40,7 +40,9 @@ const Notes = (props: NotePageProps) => {
 
 export default Notes;
 
-export async function getStaticProps(): Promise<StaticPropObject<NotePageProps>> {
+export async function getStaticProps(): Promise<
+  StaticPropObject<NotePageProps>
+> {
   const notes = getAllNotesProperty();
   const notesToShow = notes.filter((note) => !note.omit);
   const props: NotePageProps = { notes: notesToShow };

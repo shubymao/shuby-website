@@ -16,8 +16,16 @@ interface HomePageProps {
   projects: Project[];
 }
 const { title, subtitle, mainIcon, interest, experience, education } = home;
-const homeIcon = importSVGWithClass(mainIcon, stl('w-32 md:w-48 h-32 md:h-48 mx-auto'), '');
-const eduLogo = importSVGWithClass(education.logo, stl('mx-auto md:w-80 w-48'), '');
+const homeIcon = importSVGWithClass(
+  mainIcon,
+  stl('w-32 md:w-48 h-32 md:h-48 mx-auto'),
+  '',
+);
+const eduLogo = importSVGWithClass(
+  education.logo,
+  stl('mx-auto md:w-80 w-48'),
+  '',
+);
 
 const Home = (props: HomePageProps): JSX.Element => {
   const { projects } = props;
@@ -54,7 +62,9 @@ const Home = (props: HomePageProps): JSX.Element => {
 
 export default Home;
 
-export async function getStaticProps(): Promise<StaticPropObject<HomePageProps>> {
+export async function getStaticProps(): Promise<
+  StaticPropObject<HomePageProps>
+> {
   let projects = getAllProjects(HIGHLIGHT_PROJECT);
   projects = projects.filter((proj) => proj.highlight);
   const props: HomePageProps = { projects };
