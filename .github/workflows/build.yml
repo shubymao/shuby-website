@@ -4,8 +4,10 @@
 name: Build
 
 on:
-  push:
-    branches: ['**']
+  branches:
+    - '**'
+    - '!snapshot-patch-**'
+    - '!main'
   pull_request:
     branches: [main]
 
