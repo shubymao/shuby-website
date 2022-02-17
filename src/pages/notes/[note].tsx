@@ -20,7 +20,7 @@ type StaticPropObject = {
 
 const NotePage = (props: NotePageProps): JSX.Element => {
   const { note } = props;
-  const { emoji, title, date, isNotion, content, author } = note;
+  const { title, date, isNotion, content, author } = note;
   const localTime = getDateInLocalTime(date);
   const renderer = isNotion
     ? getLocalizedRederer('/notion-assets')
@@ -30,7 +30,7 @@ const NotePage = (props: NotePageProps): JSX.Element => {
       <MetaInfo pageTitle={title} />
       <Page>
         <div className="w-full px-5 mx-auto py-14 prose md:prose-lg lg:prose-xl">
-          <h1>{emoji + title}</h1>
+          <h1>{title}</h1>
           <span>
             Last Updated: {localTime} by {author}
           </span>

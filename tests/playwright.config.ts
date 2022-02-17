@@ -6,7 +6,7 @@ const config: PlaywrightTestConfig = {
     timeout: 500 * 1000,
     reuseExistingServer: true,
   },
-  workers: process.env.CI ? 2 : 4,
+  workers: 1,
   timeout: 150 * 1000,
   outputDir: './output',
   snapshotDir: './snapshots',
@@ -29,7 +29,6 @@ const config: PlaywrightTestConfig = {
     {
       name: 'webkit-mobile',
       use: { ...devices['iPhone 11'] },
-      testMatch: ['**/*.spec.ts'],
     },
     {
       name: 'webkit-tablet',
@@ -41,7 +40,7 @@ const config: PlaywrightTestConfig = {
     },
     {
       name: 'android',
-      use: { ...devices['Pixel 4'] },
+      use: { ...devices['Galaxy S8'] },
     },
   ],
 };

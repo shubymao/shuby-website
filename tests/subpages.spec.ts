@@ -1,6 +1,9 @@
 import test from '@playwright/test';
 import { visitAndSnapShot } from './test-helper';
 
+const prjectPattern = new RegExp(/^.*\/projects\/(.+$)/);
+const notePattern = new RegExp(/^.*\/notes\/(.+$)/);
+
 test('All the notes pages', async ({ context, baseURL }) => {
   const page = await context.newPage();
   await page.goto(baseURL + '/notes');
@@ -8,12 +11,10 @@ test('All the notes pages', async ({ context, baseURL }) => {
     return Array.from(document.links).map((item) => item.href);
   });
   const noteLinks = hrefs.filter((url) => url.match(/^.*\/notes\/.+$/));
-  const promises: Promise<void>[] = [];
   for (const url of noteLinks) {
-    const name = url.match(/^.*\/notes\/(.+$)/)[1];
-    promises.push(visitAndSnapShot(context, url, name + '.jpg'));
+    const name = url.match(notePattern)[1];
+    await visitAndSnapShot(context, url, name + '.jpg');
   }
-  await Promise.all(promises);
 });
 
 test('All the projects pages', async ({ context, baseURL }) => {
@@ -23,10 +24,9 @@ test('All the projects pages', async ({ context, baseURL }) => {
     return Array.from(document.links).map((item) => item.href);
   });
   const projectLinks = hrefs.filter((url) => url.match(/^.*\/projects\/.+$/));
-  const promises: Promise<void>[] = [];
   for (const url of projectLinks) {
-    const name = url.match(/^.*\/projects\/(.+$)/)[1];
-    promises.push(visitAndSnapShot(context, url, name + '.jpg'));
+    const name = url.match(prjectPattern)[1];
+    console.log(name);
+    await visitAndSnapShot(context, url, name + '.jpg');
   }
-  await Promise.all(promises);
 });
