@@ -1,12 +1,12 @@
 ---
+order: 1
 title: 'Java Basic Syntax and Usage'
 author: 'Shuby Mao'
-date: '2022-02-06T18:55:00.000Z'
+date: '2022-02-16T18:25:00.000Z'
 category: 'Java'
 tags: []
 emoji: '☕'
 ---
-
 ### Data Types
 
 ```java
@@ -40,7 +40,7 @@ class Student {
 
 // ...
 // create a student object with name and gpa
-Student james = new Student("James", 2.35);
+Student james = new Student("James", 2.35); 
 ```
 
 ### Class Scope
@@ -51,7 +51,7 @@ class Example {
 
 	// Access using ex.everyOneCanSee
 	public int everyOneCanSee = 20;
-
+	
 	// only method within class can see/use
 	private int onlyWithincanSee = 30;
 
@@ -78,7 +78,7 @@ class Example {
 ### Main Handle
 
 ```java
-class Main {
+class Main { 
 	// every function in java must be wrapped inside a class
 	public static void main(String args[]){
 		// get run here
@@ -94,7 +94,7 @@ int[] arr = new int[30]; // array of length 30
 int[] withValue = {1,2,3,4,5};
 
 // assignment
-arr[0] = 25; // 0 indexing
+arr[0] = 25; // 0 indexing 
 
 // loop through it
 for( int i = 0 ; i < arr.length ; i++ ){ }
