@@ -1,12 +1,12 @@
 ---
+order: 1
 title: 'C++ Basic Syntax and Usage'
 author: 'Shuby Mao'
-date: '2022-02-08T20:27:00.000Z'
+date: '2022-02-16T18:25:00.000Z'
 category: 'C++'
 tags: []
-emoji: '⛺'
+emoji: '🐠'
 ---
-
 ### Data Types
 
 ```cpp
@@ -52,7 +52,7 @@ while(size > 0) {
 ```cpp
 #include <iostream>
 int main(int argc, char* argv[]) {
-	std::cout << "Hello word";
+	std::cout << "Hello word"; 
 }
 ```
 

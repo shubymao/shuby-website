@@ -1,25 +1,25 @@
 ---
+order: 1
 title: 'TypeScript Basic Syntax and Usage'
 author: 'Shuby Mao'
-date: '2022-02-08T20:26:00.000Z'
-category: 'TypeScript/JavaScript'
+date: '2022-02-16T18:23:00.000Z'
+category: 'Typescript/JavaScript'
 tags: []
 emoji: '⌨️'
 ---
-
 ### Variable Initialization
 
 ```tsx
 const CONSTANT = 3.14159; // can't be re assigned
 
-let variable: string = 'Hello';
+let variable : string = 'Hello';
 variable = 'world'; // let can be reassigned
 
 // global scope variable (dangerous and should avoid)
-var globalVar: number = 8;
-if (true) {
-  var globalVar = 25;
-  // globalVar is 25 here
+var globalVar : number = 8; 
+if(true){
+	var globalVar = 25
+	// globalVar is 25 here
 }
 // globalVar is still 25 here
 ```
@@ -29,22 +29,21 @@ if (true) {
 ```tsx
 // Three primiative from javascript (string, number, boolean)
 const myQuote = 'Javascript is unsafe and not intuitive'; // defalt to string
-const myFloat = 25.123456,
-  myInt = 12; // both are number type
+const myFloat = 25.123456, myInt = 12; // both are number type
 const isSmart = true; // boolean type
 ```
 
 ### **Arithmetic Operators**
 
-| Operator            | Description                                           | Example                                              |
-| ------------------- | ----------------------------------------------------- | ---------------------------------------------------- |
-| + (Addition)        | returns the sum of the operands                       | 2 + 3 is 5                                           |
-| - (Subtraction)     | returns the difference of the values                  | 16 - 5 is 11                                         |
-| \* (Multiplication) | returns the product of the values                     | 2 \* 21 is 42                                        |
-| / (Division)        | performs division operation and returns the quotient  | 4 / 2 is 2, 7 / 5 is 1.4                             |
-| % (Modulus)         | performs division operation and returns the remainder | 12 % 7 is 5, -11 % 7 is -4 (Note it can be negative) |
-| ++ (Increment)      | Increments the value of the variable by one           | a++ (a = a+1)                                        |
-| -- (Decrement)      | Decrements the value of the variable by one           | b-- (b=b-1)                                          |
+| Operator | Description | Example |
+| --- | --- | --- |
+| + (Addition) | returns the sum of the operands | 2 + 3 is 5 |
+| - (Subtraction) | returns the difference of the values | 16 - 5 is 11 |
+| * (Multiplication) | returns the product of the values | 2 * 21 is 42 |
+| / (Division) | performs division operation and returns the quotient | 4 / 2  is 2, 7 / 5  is 1.4 |
+| % (Modulus) | performs division operation and returns the remainder | 12 % 7 is 5, -11 % 7 is -4 (Note it can be negative) |
+| ++ (Increment) | Increments the value of the variable by one | a++ (a = a+1) |
+| -- (Decrement) | Decrements the value of the variable by one | b-- (b=b-1) |
 
 ### **Relational Operators**
 
@@ -53,13 +52,13 @@ const isSmart = true; // boolean type
 ```tsx
 // default function declaration
 function addOne(num: number): number {
-  return num + 1;
+	return num + 1;
 }
 
 // Arrow function declaration
 const addTwo = (num: number): number => {
-  return num + 2;
-};
+	return num + 2;
+}
 
 // Usage
 let four = addOne(3);
@@ -106,7 +105,7 @@ const descArr = myArr.sort((a, b) => {
 
 ```tsx
 // initialize object
-let myObj = { hello: 'world' };
+let myObj = { hello : 'world' };
 
 // Access object
 let world = myObj.hello;
@@ -118,22 +117,22 @@ world = myObj['world'];
 ```tsx
 // Defining type
 type Student = {
-  name: string;
-  preferedName?: string; // can be undefined;
-  gpa: number;
-};
+	name: string;
+	preferedName?: string; // can be undefined;
+	gpa: number;
+}
 
 // Initializing type
 let james: Student = { name: 'James', gpa: 2.31 };
 
 // Extend Type
-type GradStudent = Student & {
-  numberOfPaper: number;
-};
+type GradStudent = Student & { 
+	numberOfPaper: number;
+}; 
 
 type Professor = {
-  name: string;
-};
+	name: string;
+}
 
 // Union - either or
 type SchoolPersonal = Professor | Student;
@@ -143,17 +142,17 @@ type SchoolPersonal = Professor | Student;
 
 ```tsx
 // any to represent any type object (dangerous)
-let badUnknown: any = { hell: '0' };
+let badUnknown :any = {'hell': '0'};
 let myA = badUnknown['a']; // undefined or null or a value
 
 // Use unknown to represent uncertain object instead
-let goodUnknown: unknown = {};
-myA = goodUnknown['a']; // not allowed, will create compiled error
+let goodUnknown : unknown = {};
+myA  = goodUnknown['a'] // not allowed, will create compiled error
 
 // It forces you to do a type check on the input to ensure things are correct
-if (typeof unknownVar === 'object' && unknownVar.hasOwnProperty('a')) {
-  // compiler know at this point key 'a' exist in the object
-  myA = goodUnknown['a'];
+if(typeof unknownVar === 'object' && unknownVar.hasOwnProperty('a')){
+	// compiler know at this point key 'a' exist in the object
+	myA = goodUnknown['a']; 
 }
 ```
 
@@ -167,37 +166,33 @@ nameAgeMapping.set('Lokesh', 37);
 nameAgeMapping.set('John', 40);
 
 // Get entries
-let age = nameAgeMapping.get('John'); // 40
+let age = nameAgeMapping.get('John');		// 40
 let unknownAge = nameAgeMapping.get('Hello'); // undefined
 
 // Check entry by Key
-nameAgeMapping.has('Lokesh'); // true
-nameAgeMapping.has('Brian'); // false
+nameAgeMapping.has('Lokesh');		        // true
+nameAgeMapping.has('Brian');		        // false
 
 // Size of the Map
-let count = nameAgeMapping.size; // count = 2
+let count = nameAgeMapping.size; 	        // count = 2
 
 // Delete an entry
-let isDeleted = nameAgeMapping.delete('Lokesh'); // isDeleted = true
+let isDeleted = nameAgeMapping.delete("Lokesh");	        // isDeleted = true
 
 // Clear whole Map
-nameAgeMapping.clear(); //Clear all entries
+nameAgeMapping.clear();				//Clear all entries
 
 //1. Iterate over map keys
-for (let key of nameAgeMapping.keys()) {
-}
+for (let key of nameAgeMapping.keys()) {}
 
 // Iterate over map values
-for (let value of nameAgeMapping.values()) {
-}
+for (let value of nameAgeMapping.values()) {}
 
 // Iterate over map entries
-for (let entry of nameAgeMapping.entries()) {
-}
+for (let entry of nameAgeMapping.entries()) {}
 
 // Using object destructuring
-for (let [key, value] of nameAgeMapping) {
-}
+for (let [key, value] of nameAgeMapping) {}
 ```
 
 ### Queue
@@ -220,41 +215,41 @@ More complex but more efficient implementation
 
 ```tsx
 class MyQueue<Type> {
-  private _storage: Map<number, Type>;
-  private _frontIndex: number;
-  private _backIndex: number;
-
-  constructor() {
-    this._storage = new Map<number, Type>();
-    this._frontIndex = 0;
-    this._backIndex = 0;
-  }
-
-  push(item: Type): void {
-    this._storage.set(this._backIndex, item);
-    this._backIndex++;
-  }
-
-  peek(): Type | null {
-    if (this._backIndex === this._frontIndex) {
-      return null;
+    private _storage: Map<number,Type>;
+    private _frontIndex: number;
+    private _backIndex: number;
+    
+    constructor() {
+        this._storage = new Map<number,Type>();
+        this._frontIndex = 0;
+        this._backIndex = 0;
     }
-    return this._storage.get(this._frontIndex);
-  }
 
-  pop(): Type | null {
-    if (this._backIndex === this._frontIndex) {
-      return null;
+    push(item: Type): void {
+        this._storage.set(this._backIndex, item);
+        this._backIndex++;
     }
-    let item = this._storage.get(this._frontIndex);
-    this._storage.delete(this._frontIndex);
-    this._frontIndex++;
-    return item;
-  }
 
-  size(): number {
-    return this._backIndex - this._frontIndex;
-  }
+    peek(): Type | null {
+        if(this._backIndex === this._frontIndex){
+            return null;
+        }
+        return this._storage.get(this._frontIndex);
+    }
+
+    pop(): Type | null {
+        if(this._backIndex === this._frontIndex){
+            return null;
+        }
+        let item = this._storage.get(this._frontIndex);
+        this._storage.delete(this._frontIndex);
+        this._frontIndex++;
+        return item;
+    }
+
+    size(): number {
+        return this._backIndex - this._frontIndex;
+    }
 }
 
 // Initialization
@@ -266,7 +261,7 @@ q.push(30);
 
 q.size(); // O(1) - 2
 
-q.pop(); // O(1) - 25
+q.pop();  // O(1) - 25
 
 q.peek(); // O(1) - 30
 ```

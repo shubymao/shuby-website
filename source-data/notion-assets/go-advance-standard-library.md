@@ -1,12 +1,12 @@
 ---
+order: 2
 title: 'Go Advance Standard Library'
 author: 'Shuby Mao'
-date: '2022-02-05T19:14:00.000Z'
+date: '2022-02-16T18:25:00.000Z'
 category: 'Golang'
 tags: []
 emoji: '🚆'
 ---
-
 ### Environment Variable
 
 ```go
@@ -55,7 +55,7 @@ func main() {
     fmt.Println(r.FindAllString("peach punch pinch", -1)) // [peach punch pinch]
 
     fmt.Println("all:", r.FindAllStringSubmatchIndex(
-        "peach punch pinch", -1))
+        "peach punch pinch", -1)) 
 		// all: [[0 5 1 3] [6 11 7 9] [12 17 13 15]]
 
     fmt.Println(r.FindAllString("peach punch pinch", 2))
@@ -66,7 +66,7 @@ func main() {
     r = regexp.MustCompile("p([a-z]+)ch")
     fmt.Println("regexp:", r) // regexp: p([a-z]+)ch
 
-    fmt.Println(r.ReplaceAllString("a peach", "<fruit>"))
+    fmt.Println(r.ReplaceAllString("a peach", "<fruit>")) 
 		// a <fruit>
 
     in := []byte("a peach")
