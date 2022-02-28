@@ -4,7 +4,7 @@ async function goToAndWait(page: Page, url: string, timeout: number) {
   // Reduce motion to avoid animations.
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto(url);
-  if (timeout !== 0) await page.waitForTimeout(timeout);
+  await page.waitForTimeout(timeout);
 }
 
 export async function visitAndSnapShot(
