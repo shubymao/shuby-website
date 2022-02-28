@@ -42,7 +42,7 @@ export function getNoteByURL(noteURL: string): Note {
   const { data, content } = matter(fileContent);
   const { title, date, category, author } = data;
   const { tags = [], emoji = '📗' } = data;
-  const isNotion = noteURL.includes('notion');
+  const isNotion = filePath.includes('notion');
   return { title, date, emoji, category, author, tags, content, isNotion };
 }
 

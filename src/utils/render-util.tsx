@@ -27,8 +27,8 @@ function img({ ...props }): JSX.Element {
 
 function localImage(path): (prop: any) => JSX.Element {
   const handler = (prop: any): JSX.Element => {
-    prop['src'] = path + '/' + prop['src'];
-    return <Image {...prop} />;
+    const src = path + '/' + prop['src'];
+    return <Image {...prop} src={src} />;
   };
   return handler;
 }
