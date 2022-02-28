@@ -35,6 +35,7 @@ export interface CardData {
 export interface NoteProperty {
   id: string;
   emoji: string;
+  order: number;
   filePath: string;
   title: string;
   category: string;

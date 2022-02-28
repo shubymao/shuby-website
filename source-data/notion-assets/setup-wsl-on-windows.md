@@ -1,7 +1,8 @@
 ---
+order: 1
 title: 'Setup WSL On Windows'
 author: 'Shuby Mao'
-date: '2022-02-12T08:23:00.000Z'
+date: '2022-02-24T23:07:00.000Z'
 category: 'Linux'
 tags: []
 emoji: '🐧'
@@ -25,7 +26,13 @@ This will install wsl 2 by default.
 
 Go into the Microsoft Store and install your preferred Linux distribution. Here we will install Ubuntu as many of the common workflows will have instructions for it online.
 
-![Untitled](Setup%20WSL%20On%20Windows%20a5a481028c4740c88d1c3014e122f3b2/Untitled.png)
+![Untitled](Setup%20WSL%20%20a5a48/Untitled.png)
+
+You can also use the command line to perform the installation
+
+```powershell
+wsl --install -d ubuntu
+```
 
 ## Setting Up ZSH
 
@@ -51,6 +58,18 @@ To install Oh My ZSH Run
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+Some notable plugins to use (Bold means not built-in)
+
+- vscode
+- node
+- npm
+- yarn
+- nvm
+- docker
+- docker-compose
+- **[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)**
+- **[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)**
+
 ### Theme
 
 Install power level 10k theme by following the instruction on the GitHub repository [here](https://github.com/romkatv/powerlevel10k#oh-my-zsh). TLDR. Install font here and run one-line install below
@@ -58,6 +77,8 @@ Install power level 10k theme by following the instruction on the GitHub reposit
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
+
+Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
 
 ### Configure Vim
 
@@ -68,4 +89,22 @@ git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 ```
 
-### Install Docker
+### Set Up SSH Key
+
+To generate an ssh key for pushing to GitHub or logging into a remote terminal. Simply run
+
+```powershell
+ssh-keygen
+```
+
+After saving the public-private key pair, simply copy the public key string to the desired location you wish to authenticate with. The default location where the file is stored is `home/<user-name>/.ssh`.
+
+## Install Development Tools (Optional)
+
+Note these examples are for Ubuntu or Debian systems. Other Linux distro could vary
+
+### Java
+
+```bash
+sudo apt install default-jdk
+```

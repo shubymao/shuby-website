@@ -1,8 +1,9 @@
 ---
+order: 1
 title: 'TypeScript Basic Syntax and Usage'
 author: 'Shuby Mao'
-date: '2022-02-08T20:26:00.000Z'
-category: 'TypeScript/JavaScript'
+date: '2022-02-16T18:23:00.000Z'
+category: 'Typescript/JavaScript'
 tags: []
 emoji: '⌨️'
 ---

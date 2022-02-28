@@ -1,7 +1,8 @@
 ---
+order: 1
 title: 'Java Basic Syntax and Usage'
 author: 'Shuby Mao'
-date: '2022-02-06T18:55:00.000Z'
+date: '2022-02-16T18:25:00.000Z'
 category: 'Java'
 tags: []
 emoji: '☕'

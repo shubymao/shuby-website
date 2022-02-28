@@ -1,7 +1,8 @@
 ---
+order: 1
 title: 'Go Basic Syntax And Usage'
 author: 'Shuby Mao'
-date: '2022-02-05T19:14:00.000Z'
+date: '2022-02-16T18:25:00.000Z'
 category: 'Golang'
 tags: []
 emoji: '🚂'
