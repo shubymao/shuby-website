@@ -2,7 +2,7 @@ import { test } from '@playwright/test';
 import { visitAndSnapShot } from './test-helper';
 
 test('Home Page', async ({ context, baseURL }) => {
-  await visitAndSnapShot(context, baseURL, 'home.jpg');
+  await visitAndSnapShot(context, baseURL, 'home.jpg', 2000);
 });
 
 test('Software Page', async ({ context, baseURL }) => {
@@ -14,7 +14,7 @@ test('System Page', async ({ context, baseURL }) => {
 });
 
 test('Contact Page', async ({ context, baseURL }) => {
-  await visitAndSnapShot(context, baseURL + '/contact', 'contact.jpg');
+  await visitAndSnapShot(context, baseURL + '/contact', 'contact.jpg', 1500);
 });
 
 test('Projects Pages', async ({ context, baseURL }) => {
