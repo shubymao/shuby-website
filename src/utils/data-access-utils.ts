@@ -42,7 +42,7 @@ export function getNoteByURL(noteURL: string): Note {
   const { data, content } = matter(fileContent);
   const { title, date, category, author } = data;
   const { tags = [], emoji = '📗' } = data;
-  const isNotion = noteURL.includes('filePath');
+  const isNotion = filePath.includes('notion');
   return { title, date, emoji, category, author, tags, content, isNotion };
 }
 
@@ -53,12 +53,13 @@ export function getAllNotesProperty(): NoteProperty[] {
     loadAllFiles(dir, (filePath, fileContent) => {
       if (!filePath.endsWith('.md')) return;
       const { data } = matter(fileContent);
-      const { title, emoji = '📗', category, omit = false } = data;
+      const { emoji = '📗', order = 1000, omit = false } = data;
+      const { title, category } = data;
       if (!title || !category) return;
       const id = title.replace(/\s/g, '-').toLowerCase();
       const url = `/notes/${id}`;
       const link = { name: title, url };
-      notes.push({ id, omit, filePath, title, emoji, category, link });
+      notes.push({ id, omit, order, filePath, title, emoji, category, link });
       urlToPath[id] = filePath;
     });
   });

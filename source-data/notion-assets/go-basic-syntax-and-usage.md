@@ -7,6 +7,7 @@ category: 'Golang'
 tags: []
 emoji: '🚂'
 ---
+
 ### Initialize variable
 
 ```go
@@ -48,7 +49,7 @@ var utf8Heart rune = '♥' // range same as int32
 // Floating point number
 var f = 4.12356 // infered as float64
 
-// Boolean 
+// Boolean
 var mybool = false
 ```
 
@@ -58,7 +59,7 @@ var mybool = false
 // Make the map
 var mp = make(map[int]int)
 // assignment
-mp[15] = 25 
+mp[15] = 25
 // check exist and get value
 value, exist := mp[15]
 // iterate through the map
@@ -101,7 +102,7 @@ var arr [2]int{1,2} // size 2
 // Access Element
 fmt.Printf("%d \n" , nums[3]) // 3
 
-// Slice array 
+// Slice array
 // inclusive-> [start : end) <- exclusive
 slice := nums[1:3] // [1,2]
 oneToEnd := nums[1:] // [1,2,3,4]
@@ -134,7 +135,7 @@ var q []int
 // Push
 append(q, 1)
 // Pop
-var out = q[0] 
+var out = q[0]
 q = q[1:]
 // Is empty
 if len(q) == 0 {}
@@ -168,16 +169,16 @@ type Student struct {
 }
 
 // Initialize a object
-empty := Student{} 
+empty := Student{}
 // Student{id:"", name:"", gpa:0}
-john := Student{"123","John Doe",3.0} 
+john := Student{"123","John Doe",3.0}
 // Student{id:"123", name:"John Wick", gpa:3}
 
 // Getting reference to struct
-emptyRef := &john 
+emptyRef := &john
 
-// Setting Fields 
-empty.id = "null" 
+// Setting Fields
+empty.id = "null"
 emptyRef.name = "ghost" // ref also use '.'
 // Student{id:"null", name:"ghost", gpa:0}
 

@@ -8,7 +8,8 @@ export const groupNotesByCategory = (notes: NoteProperty[]): NoteGroup[] => {
   const uniqueCategories = [...new Set(noteCategories)];
   uniqueCategories.forEach((category) => {
     const notesInCategory = notes.filter((note) => note.category === category);
-    noteGroups.push({ category, notes: notesInCategory });
+    const sortedNotes = notesInCategory.sort((a, b) => a.order - b.order);
+    noteGroups.push({ category, notes: sortedNotes });
   });
   return noteGroups;
 };
