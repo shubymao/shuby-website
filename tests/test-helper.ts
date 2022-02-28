@@ -11,7 +11,7 @@ export async function visitAndSnapShot(
   context: BrowserContext,
   url: string,
   name: string,
-  timeout = 0,
+  timeout = 1000,
   fullPage = true,
 ) {
   const page = await context.newPage();
