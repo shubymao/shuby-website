@@ -14,7 +14,7 @@ test('System Page', async ({ context, baseURL }) => {
 });
 
 test('Contact Page', async ({ context, baseURL }) => {
-  await visitAndSnapShot(context, baseURL + '/contact', 'contact.jpg', 1500);
+  await visitAndSnapShot(context, baseURL + '/contact', 'contact.jpg');
 });
 
 test('Projects Pages', async ({ context, baseURL }) => {
