@@ -13,7 +13,7 @@ test('All the notes pages', async ({ context, baseURL }) => {
   const noteLinks = hrefs.filter((url) => url.match(/^.*\/notes\/.+$/));
   for (const url of noteLinks) {
     const name = url.match(notePattern)[1];
-    await visitAndSnapShot(context, url, name + '.jpg');
+    await visitAndSnapShot(context, url, name + '.jpg', 0, false);
   }
 });
 
@@ -27,6 +27,6 @@ test('All the projects pages', async ({ context, baseURL }) => {
   for (const url of projectLinks) {
     const name = url.match(prjectPattern)[1];
     console.log(name);
-    await visitAndSnapShot(context, url, name + '.jpg');
+    await visitAndSnapShot(context, url, name + '.jpg', 0, false);
   }
 });

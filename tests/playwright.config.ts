@@ -12,7 +12,7 @@ const config: PlaywrightTestConfig = {
   snapshotDir: './snapshots',
   testMatch: ['**/integration.spec.ts'],
   expect: {
-    toMatchSnapshot: { threshold: 0.1 },
+    toMatchSnapshot: { threshold: 0.4 },
   },
   use: {
     screenshot: 'only-on-failure',
