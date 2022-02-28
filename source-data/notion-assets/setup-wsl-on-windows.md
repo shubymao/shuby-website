@@ -2,7 +2,7 @@
 order: 1
 title: 'Setup WSL On Windows'
 author: 'Shuby Mao'
-date: '2022-02-16T18:26:00.000Z'
+date: '2022-02-24T23:07:00.000Z'
 category: 'Linux'
 tags: []
 emoji: '🐧'
@@ -97,3 +97,13 @@ ssh-keygen
 ```
 
 After saving the public-private key pair, simply copy the public key string to the desired location you wish to authenticate with. The default location where the file is stored is `home/<user-name>/.ssh`.
+
+## Install Development Tools (Optional)
+
+Note these examples are for Ubuntu or Debian systems. Other Linux distro could vary
+
+### Java
+
+```bash
+sudo apt install default-jdk
+```
