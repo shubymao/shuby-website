@@ -7,7 +7,6 @@ category: 'Linux'
 tags: []
 emoji: '🐧'
 ---
-
 ## Introduction
 
 Windows Subsystem for Linux or WSL for short allows you to run Linux virtually within windows. This enables developers to run, test, and develop within the Linux environment as servers tend to run using Linux.
@@ -31,14 +30,14 @@ Go into the Microsoft Store and install your preferred Linux distribution. Here 
 You can also use the command line to perform the installation
 
 ```powershell
-wsl --install -d ubuntu
+wsl --install -d ubuntu 
 ```
 
 ## Setting Up ZSH
 
 ### Install ZSH
 
-On ubuntu simply install ZSH by running
+On ubuntu simply install ZSH by running 
 
 ```bash
 sudo apt install zsh -y
@@ -91,7 +90,7 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 ### Set Up SSH Key
 
-To generate an ssh key for pushing to GitHub or logging into a remote terminal. Simply run
+To generate an ssh key for pushing to GitHub or logging into a remote terminal. Simply run 
 
 ```powershell
 ssh-keygen

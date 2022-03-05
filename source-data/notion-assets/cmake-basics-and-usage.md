@@ -7,7 +7,6 @@ category: 'C++'
 tags: []
 emoji: '🏗️'
 ---
-
 ## Introduction
 
 CMake is an open-source, cross-platform family of tools designed to build, test, and package software. Its primary use is for compiling and testing C++ projects. The example here is inspired by this [GitHub repository](https://github.com/ttroy50/cmake-examples). Feel free to check it out for more advanced usage and example.
@@ -69,23 +68,23 @@ To create a static library use the `add_library` command with the `STATIC` flag 
 ```
 # Create a library
 #Generate the static library from the library sources
-add_library(hello_library STATIC
+add_library(hello_library STATIC 
     src/Hello.cpp
 )
 
 # assume hello.h lives in the include folder
 target_include_directories(hello_library
     PUBLIC # available to library user when linked
-    src/include
+    src/include 
 )
 
-# Create the executable here
+# Create the executable here 
 # Assume main.cpp also import header file from src/include
 add_executable(hello_binary src/main.cpp)
 
 # link the new hello_library target with the hello_binary target
 target_link_libraries( hello_binary
-    PRIVATE
+    PRIVATE 
 		# private means that hello_binary don't need to share the header
 		# from hello library to anyone which makes sense because it is an
 		# executable
@@ -110,11 +109,11 @@ target_include_directories(hello_library PUBLIC src/include)
 
 ## Import Third-Party Library
 
-To import a third-party library first read the library documentation and fetch the package using git and other package managers. A popular C++ package manager is the [vcpkg](https://github.com/microsoft/vcpkg).
+To import a third-party library first read the library documentation and fetch the package using git and other package managers. A popular C++ package manager is the [vcpkg](https://github.com/microsoft/vcpkg). 
 
 ### find_package command
 
-For some libraries, we can also use the `find_package`. Here is an example where we import boost.
+For some libraries, we can also use the `find_package`. Here is an example where we import boost. 
 
 ```
 # find a boost install with the libraries filesystem and system
@@ -145,6 +144,7 @@ To build the CMake project,
 3. This should generate a `makefile`. To finalize the build, simply run `make` to compile to project.
 
 > Tips: **`cmake -S . -B build` to output the build to the build directory from the project root.**
+> 
 
 ## Passing and Using CLI Arguements in CMake
 
@@ -175,7 +175,7 @@ add_executable(my_perfect_application src/main.cpp)
 # link library
 target_link_libraries( my_perfect_application PRIVATE my_perfect_lib)
 
-install (TARGETS my_perfect_application DESTINATION bin)
+install (TARGETS my_perfect_application DESTINATION bin) 
 # here bin is the path/directory to store the executable
 
 # Install the library at a desired location (only needed for shared lib)
