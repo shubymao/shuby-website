@@ -7,7 +7,6 @@ category: 'C++'
 tags: []
 emoji: '🐠'
 ---
-
 ### Data Types
 
 ```cpp
@@ -53,7 +52,7 @@ while(size > 0) {
 ```cpp
 #include <iostream>
 int main(int argc, char* argv[]) {
-	std::cout << "Hello word";
+	std::cout << "Hello word"; 
 }
 ```
 

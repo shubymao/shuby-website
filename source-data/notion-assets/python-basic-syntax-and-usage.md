@@ -7,7 +7,6 @@ category: 'Python'
 tags: []
 emoji: '🐍'
 ---
-
 ### Initialize Variable
 
 ```python
