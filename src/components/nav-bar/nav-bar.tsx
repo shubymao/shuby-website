@@ -19,7 +19,7 @@ const NavBar = (props: NavBarProps): ReactElement => {
   return (
     <nav className={`nav-bar ${drawerStatus}`}>
       <div className="main-wrapper">
-        <Link href="/" passHref>
+        <Link href="/" className="main-icon">
           <div className="main-icon">
             {theme === 'dark' ? (
               <WhiteIcon height="48px" />
