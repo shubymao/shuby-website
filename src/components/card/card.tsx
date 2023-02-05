@@ -1,5 +1,6 @@
 import { PageLink } from '@typeDefs/data';
 import { processAttribution } from '@utils/graphics-utils';
+import Link from 'next/link';
 import React from 'react';
 import CardWrapper from './card-wrapper';
 
@@ -8,9 +9,13 @@ const getLinks = (links: Array<PageLink>) => {
   return (
     <div className="links-container">
       {links.map((link) => (
-        <a className="mx-1 whitespace-nowrap" key={link.name} href={link.url}>
+        <Link
+          className="mx-1 whitespace-nowrap"
+          key={link.name}
+          href={link.url}
+        >
           {link.name}
-        </a>
+        </Link>
       ))}
     </div>
   );

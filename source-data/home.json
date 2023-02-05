@@ -37,7 +37,19 @@
     "title": "Experiences",
     "cards": [
       {
-        "id": "experience-card-1",
+        "id": "experience-card-4",
+        "type": "reveal",
+        "date": "March 2022 - Present",
+        "location": "Meta",
+        "title": "Software Engineer",
+        "description": "Build scalable and distributed software system to help bring people closer together. ",
+        "detail": [
+          "Currently working hard to make big impact toward many aspect across messenger, instagram and facebook app. More detail to be added :)"
+        ],
+        "attribution": { "path": "home/meta.svg" }
+      },
+      {
+        "id": "experience-card-3",
         "type": "reveal",
         "date": "May - Sept. 2020 & 2021",
         "location": "Amazon",
@@ -71,7 +83,7 @@
         }
       },
       {
-        "id": "experience-card-3",
+        "id": "experience-card-1",
         "type": "reveal",
         "date": "Sept. 2017 - Present",
         "location": "McGill Computer Taskforce",

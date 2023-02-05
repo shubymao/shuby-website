@@ -5,6 +5,7 @@ import ContactCard from '@components/card/contact-card';
 import { CONTACT_INFORMATION } from '@constants/page-info';
 import PageContainer from '@components/layout/container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 
 const title = 'Contact Me';
 const ComingSoon = (): JSX.Element => (
@@ -23,10 +24,10 @@ const ComingSoon = (): JSX.Element => (
                   key={info.name}
                   className="text-lg col-span-2 xsm:col-span-1 sm:col-span-2 sm:text-xl"
                 >
-                  <a href={info.url}>
+                  <Link href={info.url}>
                     <FontAwesomeIcon icon={info.icon} />
                     {` ${info.name}`}
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
