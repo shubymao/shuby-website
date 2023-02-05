@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-
 const nextConfig = {
   transpilePackages: ['emailjs-com'],
   publicRuntimeConfig: {
@@ -9,6 +7,7 @@ const nextConfig = {
   },
 
   images: {
+    unoptimized: true,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
