@@ -4,6 +4,7 @@ import React from 'react';
 import { md } from '@constants/page-info';
 import { useMediaQuery } from 'react-responsive';
 import { stl } from './graphics-utils';
+import Image from 'next/image';
 
 /* eslint-disable */
 
@@ -34,7 +35,17 @@ function localImage(path): (prop: any) => JSX.Element {
 }
 
 function ImageComponent({ ...props }): JSX.Element {
-  return <img className="bg-white max-h-screen/2 object-contain" {...props} />;
+  const { src = '' } = props;
+  return (
+    <Image
+      width={100}
+      height={100}
+      alt="note-image"
+      src={src}
+      className="bg-white max-h-screen/2 object-contain"
+      {...props}
+    />
+  );
 }
 
 function pre({ ...props }): JSX.Element {

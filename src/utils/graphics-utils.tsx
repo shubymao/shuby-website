@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import React, { ComponentType } from 'react';
 import { Attribution } from '@typeDefs/data';
 import SkeletonDiv from '@components/widget/skeleton-div';
-import Image, { ImageLoader } from 'next/image';
+import Image from 'next/image';
 
 export function stl(style: string): string {
   return style;
@@ -31,11 +31,17 @@ export function processAttribution(attribution: Attribution): JSX.Element {
   if (!attribution) return null;
   const { path, alt, style } = attribution;
   const { contentStyle, wrapperStyle } = style;
-  if (path.includes('.svg'))
-    return importSVGWithClass(path, contentStyle, wrapperStyle);
+  // if (path.includes('.svg'))
+  //   return importSVGWithClass(path, contentStyle, wrapperStyle);
   return (
     <div className={wrapperStyle}>
-      <img src={path} alt={alt} className={contentStyle} />
+      <Image
+        width={100}
+        height={100}
+        src={path}
+        alt={alt}
+        className={contentStyle}
+      />
     </div>
   );
 }

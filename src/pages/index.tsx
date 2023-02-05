@@ -11,20 +11,29 @@ import { getAllProjects } from '@utils/data-access-utils';
 import { Project, StaticPropObject } from '@typeDefs/data';
 import { HIGHLIGHT_PROJECT } from '@constants/page-info';
 import { makeCardDataFromProjects } from '@utils/data-translation-util';
+import Image from 'next/image';
 
 interface HomePageProps {
   projects: Project[];
 }
 const { title, subtitle, mainIcon, interest, experience, education } = home;
-const homeIcon = importSVGWithClass(
-  mainIcon,
-  stl('w-32 md:w-48 h-32 md:h-48 mx-auto'),
-  '',
+const homeIcon = (
+  <Image
+    width={400}
+    height={400}
+    alt="Logo"
+    className={stl('w-32 md:w-48 h-32 md:h-48 mx-auto')}
+    src={mainIcon}
+  />
 );
-const eduLogo = importSVGWithClass(
-  education.logo,
-  stl('mx-auto md:w-80 w-48'),
-  '',
+const eduLogo = (
+  <Image
+    width={400}
+    height={400}
+    alt="Logo"
+    className={stl('mx-auto md:w-80 w-48')}
+    src={education.logo}
+  />
 );
 
 const Home = (props: HomePageProps): JSX.Element => {

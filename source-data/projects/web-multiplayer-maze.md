@@ -6,7 +6,7 @@ github: https://github.com/shubymao/multiplayer-maze-web
 demo: https://shubymao.github.io/multiplayer-maze-web/
 category: 'Game'
 highlight: true
-attribution: { path: 'projects/maze.svg' }
+attribution: { path: '/projects/maze.svg' }
 ---
 
 ## Motivation

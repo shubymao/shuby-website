@@ -1,7 +1,7 @@
 {
   "title": "Shuby Mao",
   "subtitle": "Developer • Engineer",
-  "mainIcon": "home/main-icon-home.svg",
+  "mainIcon": "/home/main-icon-home.svg",
   "interest": {
     "title": "Skills and Interests",
     "cards": [
@@ -9,21 +9,21 @@
         "id": "interest-card-1",
         "title": "Software Development",
         "description": "Familiar with advanced software development process and tools. Fluent in full stack development.",
-        "attribution": { "path": "home/code.svg" },
+        "attribution": { "path": "/home/code.svg" },
         "links": [{ "name": "Learn More", "url": "/software" }]
       },
       {
         "id": "interest-card-2",
         "title": "System Management",
         "description": "Experienced in managing IT infrastructure through the use scripting and management tools.",
-        "attribution": { "path": "home/server.svg" },
+        "attribution": { "path": "/home/server.svg" },
         "links": [{ "name": "Learn More", "url": "/system" }]
       },
       {
         "id": "interest-card-3",
         "title": "Competitive Programing",
         "description": "Actively participated in global coding competitions such as Google Kick Start and Leetcode Contests.",
-        "attribution": { "path": "home/cp.svg" },
+        "attribution": { "path": "/home/cp.svg" },
         "links": [
           {
             "name": "LeetCode Profile",
@@ -46,7 +46,7 @@
         "detail": [
           "Currently working hard to make big impact toward many aspect across messenger, instagram and facebook app. More detail to be added :)"
         ],
-        "attribution": { "path": "home/meta.svg" }
+        "attribution": { "path": "/home/meta.svg" }
       },
       {
         "id": "experience-card-3",
@@ -60,7 +60,7 @@
           "Developed a back-end service in Java to facilitate vector graphics uploading for Alexa Skill using AWS",
           "Designed an deployed vector graphics editor in react to facilitate the creation and editing of Alexa Vector Graphics"
         ],
-        "attribution": { "path": "home/amazon.svg" }
+        "attribution": { "path": "/home/amazon.svg" }
       },
       {
         "id": "experience-card-2",
@@ -75,7 +75,7 @@
           "Performed code reviews & system verification on a production software to ensure system quality."
         ],
         "attribution": {
-          "path": "home/fonex.svg",
+          "path": "/home/fonex.svg",
           "style": {
             "contentStyle": "h-14 md:h-16 min-w-[3.75rem] md:min-w-[4rem] flex-none object-contain mx-auto",
             "wrapperStyle": "p-2 bg-white rounded-2xl flex"
@@ -93,12 +93,12 @@
           "Utilized Fog and MDT to manage system image and group policies on the school computers.",
           "Contributed to the development of a printing service website and laptop lending system."
         ],
-        "attribution": { "path": "home/ctf.png" }
+        "attribution": { "path": "/home/ctf.png" }
       }
     ]
   },
   "education": {
-    "logo": "home/mcgill.svg",
+    "logo": "/home/mcgill.svg",
     "title": "Education",
     "Subtitle": "Bachelor of Software Engineering",
     "cards": [

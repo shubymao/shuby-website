@@ -5,7 +5,7 @@ brief: Comparison Between K-nearest Neighbor and Decision Tree Across Adult and 
 category: 'AI & ML'
 github: 'https://github.com/shubymao/COMP-551-Projects'
 highlight: true
-attribution: { path: 'projects/classification.svg' }
+attribution: { path: '/projects/classification.svg' }
 ---
 
 ## Abstract
