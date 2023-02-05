@@ -4,7 +4,7 @@ import Banner from '@components/banner';
 import Section from '@components/layout/section';
 import MetaInfo from '@components/meta-info';
 import home from '@data/home.json';
-import importSVGWithClass, { stl } from '@utils/graphics-utils';
+import { stl } from '@utils/graphics-utils';
 import CardGrid, { generateCards } from '@components/layout/card-grid';
 import PageContainer from '@components/layout/container';
 import { getAllProjects } from '@utils/data-access-utils';
