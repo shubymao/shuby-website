@@ -2,18 +2,14 @@
   "extends": ["config:base"],
   "packageRules": [
     {
-      "matchPackagePatterns": ["^remark-gfm"],
-      "excludePackageNames": ["remark-gfm"]
-    },
-    {
       "updateTypes": ["major"],
-      "automerge": false
+      "automerge": true
     },
     {
       "updateTypes": ["minor", "patch"],
       "automerge": true
     }
   ],
-  "timezone": "Canada/Eastern",
+  "timezone": "Pacific",
   "schedule": ["every weekend"]
 }
