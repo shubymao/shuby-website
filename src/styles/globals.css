@@ -1,8 +1,8 @@
-@import "./base.css";
-@import "../components/footer/footer.css";
-@import "../components/nav-bar/nav-bar.css";
-@import "../components/widget/hamburger-btn/hamburger-btn.css";
-@import "../components/card/card.css";
+@import url("./base.css");
+@import url("../components/footer/footer.css");
+@import url("../components/nav-bar/nav-bar.css");
+@import url("../components/widget/hamburger-btn/hamburger-btn.css");
+@import url("../components/card/card.css");
 
 @tailwind base;
 @tailwind components;

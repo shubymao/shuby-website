@@ -25,4 +25,10 @@ jobs:
       - name: Install Playwright browser
         run: npx playwright install --with-deps
       - name: Run End to End Test
-        run: yarn build && yarn test
+        run: yarn build && yarn test:report
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: playwright-report
+          path: playwright-report

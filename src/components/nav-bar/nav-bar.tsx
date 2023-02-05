@@ -1,11 +1,10 @@
 import { PageLink } from '@typeDefs/data';
 import React, { ReactElement } from 'react';
 import { MAIN_PAGES, HEADER_TITLE } from 'src/constants/page-info';
-import BlackIcon from '@public/misc/icon-no-background.svg';
-import WhiteIcon from '@public/misc/icon-no-background-white.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export interface NavBarProps {
   drawerStatus: string;
@@ -19,12 +18,22 @@ const NavBar = (props: NavBarProps): ReactElement => {
   return (
     <nav className={`nav-bar ${drawerStatus}`}>
       <div className="main-wrapper">
-        <Link href="/" passHref>
+        <Link href="/" className="main-icon">
           <div className="main-icon">
             {theme === 'dark' ? (
-              <WhiteIcon height="48px" />
+              <Image
+                width={48}
+                height={48}
+                alt="Logo"
+                src="/misc/icon-no-background-white.svg"
+              />
             ) : (
-              <BlackIcon height="48px" />
+              <Image
+                width={48}
+                height={48}
+                alt="Logo"
+                src="/misc/icon-no-background.svg"
+              />
             )}
             <p className="header-title">{HEADER_TITLE}</p>
           </div>

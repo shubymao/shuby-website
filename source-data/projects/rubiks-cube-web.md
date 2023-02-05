@@ -5,7 +5,7 @@ brief: "A web-based rubik's cube engine using the three js library"
 github: 'https://github.com/shubymao/rubiks-cube-web'
 demo: 'https://shubymao.github.io/rubiks-cube-web'
 category: 'Graphics'
-attribution: { path: 'projects/cube.png' }
+attribution: { path: '/projects/cube.png' }
 ---
 
 ## Description

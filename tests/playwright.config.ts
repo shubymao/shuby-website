@@ -18,7 +18,10 @@ const config: PlaywrightTestConfig = {
     baseURL: 'http://localhost:3000/',
   },
   reporter: [
-    ['html', { outputFolder: 'tests/output/test-report', open: 'never' }],
+    [
+      'html',
+      { outputFolder: 'tests/playwright-report/index.html', open: 'never' },
+    ],
   ],
   projects: [
     {

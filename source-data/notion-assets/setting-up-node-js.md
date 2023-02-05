@@ -7,6 +7,7 @@ category: 'Typescript/JavaScript'
 tags: []
 emoji: '⏺️'
 ---
+
 ## Setting Up Node Version Manager
 
 You may work with many projects that require you to quickly switch back and forth between versions. `nvm` or node version manager allows you to do this. To install this follow the following instruction.
@@ -33,4 +34,4 @@ Download the installer [here](https://github.com/coreybutler/nvm-windows) and in
 
 `nvm use <version>` to switch to a particular version for that particular session.
 
-`nvm alias default <version>` to set default version.****
+`nvm alias default <version>` to set default version.\*\*\*\*

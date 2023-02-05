@@ -33,7 +33,7 @@ jobs:
       - name: Lint
         run: yarn lint
       - name: Lint Style
-        run: yarn lintStyle
+        run: yarn lint-style
       - name: Building production site
         run: yarn run export
         env:

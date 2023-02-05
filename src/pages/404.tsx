@@ -1,14 +1,19 @@
 import Banner from '@components/banner';
 import MetaInfo from '@components/meta-info';
 import Page from '@components/layout/page';
-import importSVGWithClass, { stl } from '@utils/graphics-utils';
+import { stl } from '@utils/graphics-utils';
 import React from 'react';
+import Image from 'next/image';
 
 const title = 'Page Not Found';
-const lighthouse = importSVGWithClass(
-  'misc/lighthouse.svg',
-  stl('w-48 mx-auto'),
-  '',
+const lighthouse = (
+  <Image
+    alt="/misc/lighthouse.svg"
+    src="/misc/lighthouse.svg"
+    className={stl('w-48 mx-auto')}
+    width={400}
+    height={400}
+  />
 );
 const Custom404 = () => (
   <>
