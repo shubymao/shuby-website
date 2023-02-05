@@ -20,14 +20,14 @@ const NavBar = (props: NavBarProps): ReactElement => {
     <nav className={`nav-bar ${drawerStatus}`}>
       <div className="main-wrapper">
         <Link href="/" passHref>
-          <a className="main-icon">
+          <div className="main-icon">
             {theme === 'dark' ? (
               <WhiteIcon height="48px" />
             ) : (
               <BlackIcon height="48px" />
             )}
             <p className="header-title">{HEADER_TITLE}</p>
-          </a>
+          </div>
         </Link>
         <div className="horizontal-nav-list">
           {MAIN_PAGES.map(renderHeaderItems)}
@@ -45,19 +45,19 @@ const NavBar = (props: NavBarProps): ReactElement => {
 
 function renderHeaderItems(item: PageLink) {
   return (
-    <a className="block px-3 py-2" key={item.name} href={item.url}>
+    <Link className="block px-3 py-2" key={item.name} href={item.url}>
       <span>{item.name}</span>
-    </a>
+    </Link>
   );
 }
 
 function renderNavBarListItems(item: PageLink) {
   return (
-    <a key={item.name} href={item.url}>
+    <Link key={item.name} href={item.url}>
       <div className="drawer-item hover:opacity-80">
         <p className="text-lg">{item.name}</p>
       </div>
-    </a>
+    </Link>
   );
 }
 

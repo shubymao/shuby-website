@@ -22,7 +22,6 @@ const NotePage = (props: NotePageProps): JSX.Element => {
   const { note } = props;
   const { title, date, isNotion, content, author } = note;
   const localTime = getDateInLocalTime(date);
-  console.log(isNotion);
   const renderer = isNotion
     ? getLocalizedRederer('/notion-assets')
     : DefaultRenderer;

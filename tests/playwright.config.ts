@@ -2,9 +2,8 @@ import { devices, PlaywrightTestConfig } from '@playwright/test';
 const config: PlaywrightTestConfig = {
   webServer: {
     command: 'yarn start',
-    port: 3000,
-    timeout: 500 * 1000,
-    reuseExistingServer: true,
+    url: 'http://localhost:3000/',
+    reuseExistingServer: false,
   },
   workers: 1,
   timeout: 150 * 1000,
@@ -16,6 +15,7 @@ const config: PlaywrightTestConfig = {
   },
   use: {
     screenshot: 'only-on-failure',
+    baseURL: 'http://localhost:3000/',
   },
   reporter: [
     ['html', { outputFolder: 'tests/output/test-report', open: 'never' }],

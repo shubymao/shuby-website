@@ -22,18 +22,18 @@ export const getLocalizedRederer = (path: string): any => {
 };
 
 function img({ ...props }): JSX.Element {
-  return <Image {...props} />;
+  return <ImageComponent {...props} />;
 }
 
 function localImage(path): (prop: any) => JSX.Element {
   const handler = (prop: any): JSX.Element => {
     const src = path + '/' + prop['src'];
-    return <Image {...prop} src={src} />;
+    return <ImageComponent {...prop} src={src} />;
   };
   return handler;
 }
 
-function Image({ ...props }): JSX.Element {
+function ImageComponent({ ...props }): JSX.Element {
   return <img className="bg-white max-h-screen/2 object-contain" {...props} />;
 }
 
