@@ -29,7 +29,7 @@ function importSVGWithClass(
 
 export function processAttribution(attribution: Attribution): JSX.Element {
   if (!attribution) return null;
-  const { path, alt, style } = attribution;
+  const { path, alt = path, style } = attribution;
   const { contentStyle, wrapperStyle } = style;
   // if (path.includes('.svg'))
   //   return importSVGWithClass(path, contentStyle, wrapperStyle);
