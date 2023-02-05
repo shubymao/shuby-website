@@ -21,7 +21,7 @@ const config: PlaywrightTestConfig = {
   reporter: [
     [
       'html',
-      { outputFolder: 'tests/playwright-report/index.html', open: 'never' },
+      { outputFolder: 'output/playwright-report/index.html', open: 'never' },
     ],
   ],
   projects: [
