@@ -10,8 +10,9 @@ You can find the deployed site [here](https://shuby-mao.web.app/)
 ## Installing Dependency
 
 1. Make sure you have NodeJS (Ver 15 +) install on your machine.
-2. Simply run `npm install` within the command line within the project folder
-3. Done!!
+2. Install yarn using `npm install -g yarn`.
+3. Simply run `yarn install` within the command line within the project folder.
+4. Done!!
 
 ## Getting Started
 
@@ -20,7 +21,7 @@ You can find the deployed site [here](https://shuby-mao.web.app/)
 To start the dev server simply run the dev command.
 
 ```bash
-npm run dev
+yarn run dev
 ```
 
 ### Test
@@ -34,7 +35,7 @@ npx playwright install
 Then simply run the test command.
 
 ```bash
-npm run test
+yarn run test
 ```
 
 ### Build/Export
@@ -42,5 +43,5 @@ npm run test
 To build and export the project as static site simply run the export command.
 
 ```bash
-npm run export
+yarn run export
 ```
