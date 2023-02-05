@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "format": "yarn lint && yarn tidy && yarn lintStyle",
+    "format": "yarn lint && yarn tidy && yarn lint-style",
     "lint": "next lint --ignore-path .lintignore",
     "tidy": "prettier --w '**/*.{js,jsx,md,ts,tsx,json}' --ignore-path .lintignore",
     "lint-style": "stylelint src/**/*.css --fix ",
