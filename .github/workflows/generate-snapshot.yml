@@ -52,5 +52,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: Reports
-          path: ./tests/output/**/*
+          name: playwright report and trace
+          path: |
+            ./tests/output/**/*
+            ./tests/playwright-report/*

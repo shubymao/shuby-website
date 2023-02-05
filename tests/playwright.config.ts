@@ -18,12 +18,7 @@ const config: PlaywrightTestConfig = {
     screenshot: 'only-on-failure',
     baseURL: 'http://localhost:3000/',
   },
-  reporter: [
-    [
-      'html',
-      { outputFolder: 'output/playwright-report/index.html', open: 'never' },
-    ],
-  ],
+  reporter: [['html', { outputFolder: './playwright-report/', open: 'never' }]],
   projects: [
     {
       name: 'chromium',
