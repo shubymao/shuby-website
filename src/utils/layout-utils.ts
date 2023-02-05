@@ -15,8 +15,10 @@ export function useDelayState(
 ): boolean {
   const [delayState, setDelayState] = useState(initState);
   useEffect(() => {
-    let timeoutId: null | ReturnType<typeof setTimeout>;
-    timeoutId = setTimeout(() => setDelayState(state), delayTime);
+    const timeoutId: null | ReturnType<typeof setTimeout> = setTimeout(
+      () => setDelayState(state),
+      delayTime,
+    );
     return () => clearTimeout(timeoutId);
   }, [state, delayTime, delayState]);
   return delayState;

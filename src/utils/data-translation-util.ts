@@ -6,7 +6,7 @@ export default function makePage(name: string, url: string): PageLink {
 
 export function getDateInLocalTime(isoTime: string): string {
   if (!isoTime) return null;
-  let localTime = new Date(isoTime);
+  const localTime = new Date(isoTime);
   return localTime.toDateString();
 }
 
