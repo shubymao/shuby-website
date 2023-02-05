@@ -39,3 +39,4 @@ yarn-error.log*
 cache.tmp
 tests/output
 tests/reports
+.vscode/settings.json
