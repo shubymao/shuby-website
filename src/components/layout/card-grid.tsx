@@ -6,9 +6,9 @@ import RevealCard from '../card/reveal-card';
 
 export const CARD_SVG_STYLE: AttributionStyle = {
   contentStyle: stl(
-    'h-14 w-14 md:h-16 md:w-16 flex-none object-contain mx-auto',
+    'h-16 w-16 md:h-18 md:w-18 flex-none object-contain mx-auto',
   ),
-  wrapperStyle: stl('p-3 bg-white rounded-2xl block'),
+  wrapperStyle: stl('p-2 bg-white rounded-2xl block'),
 };
 
 export interface CardGridProps {

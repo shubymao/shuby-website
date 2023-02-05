@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import React, { ComponentType } from 'react';
 import { Attribution } from '@typeDefs/data';
 import SkeletonDiv from '@components/widget/skeleton-div';
+import Image, { ImageLoader } from 'next/image';
 
 export function stl(style: string): string {
   return style;

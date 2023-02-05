@@ -1,7 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const withTM = require('next-transpile-modules')(['emailjs-com']);
 
-module.exports = withTM({
+const withImages = require('next-images');
+
+const nextConfig = withImages({
+  transpilePackages: ['emailjs-com'],
   publicRuntimeConfig: {
     EMAILJS_USER_ID: process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
     EMAILJS_SERVICE_ID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
@@ -34,3 +36,5 @@ module.exports = withTM({
     return newConfig;
   },
 });
+
+module.exports = nextConfig;
