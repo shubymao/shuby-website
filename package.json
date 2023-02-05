@@ -6,7 +6,7 @@
     "format": "yarn lint && yarn tidy && yarn lintStyle",
     "lint": "next lint --ignore-path .lintignore",
     "tidy": "prettier --w '**/*.{js,jsx,md,ts,tsx,json}' --ignore-path .lintignore",
-    "lintStyle": "stylelint src/**/*.css --fix ",
+    "lint-style": "stylelint src/**/*.css --fix ",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -31,7 +31,6 @@
     "extends": [
       "next/core-web-vitals",
       "plugin:@typescript-eslint/recommended",
-      "plugin:tailwind/recommended",
       "prettier"
     ]
   },
@@ -93,15 +92,13 @@
     "eslint-config-next": "13.1.6",
     "eslint-config-prettier": "8.6.0",
     "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-tailwind": "0.2.1",
-    "file-loader": "6.2.0",
     "husky": "8.0.3",
     "lint-staged": "13.1.0",
     "postcss": "8.4.21",
     "postcss-import": "15.1.0",
     "prettier": "2.8.3",
     "stylelint": "14.9.1",
-    "stylelint-config-standard": "26.0.0",
+    "stylelint-config-standard": "^29.0.0",
     "tailwindcss": "3.2.4",
     "typescript": "4.9.5",
     "url-loader": "4.1.1"
