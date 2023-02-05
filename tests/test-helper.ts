@@ -4,14 +4,14 @@ async function goToAndWait(page: Page, url: string, timeout: number) {
   // Reduce motion to avoid animations.
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto(url);
-  await page.waitForTimeout(timeout);
+  await page.waitForLoadState('networkidle', { timeout: timeout });
 }
 
 export async function visitAndSnapShot(
   context: BrowserContext,
   url: string,
   name: string,
-  timeout = 1000,
+  timeout = 3000,
   fullPage = true,
 ) {
   const page = await context.newPage();
