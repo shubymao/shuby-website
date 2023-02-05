@@ -4,7 +4,6 @@ import React from 'react';
 import { md } from '@constants/page-info';
 import { useMediaQuery } from 'react-responsive';
 import { stl } from './graphics-utils';
-import Image from 'next/image';
 
 /* eslint-disable */
 
