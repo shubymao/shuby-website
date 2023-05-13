@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "13.4.2",
-    "@playwright/test": "1.32.3",
+    "@playwright/test": "1.33.0",
     "@svgr/webpack": "7.0.0",
     "@types/node": "18.16.8",
     "@types/react": "17.0.58",
