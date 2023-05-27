@@ -82,7 +82,7 @@
     "@svgr/webpack": "8.0.1",
     "@types/node": "18.16.16",
     "@types/react": "17.0.60",
-    "@types/react-syntax-highlighter": "15.5.6",
+    "@types/react-syntax-highlighter": "15.5.7",
     "@typescript-eslint/eslint-plugin": "5.59.7",
     "@typescript-eslint/parser": "5.59.7",
     "autoprefixer": "10.4.14",
